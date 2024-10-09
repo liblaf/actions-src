@@ -95,7 +95,7 @@ class GhRelease:
 
     @tenacity.retry(wait=tenacity.wait_random_exponential())
     async def _wait_util_release_status(self, tag: str, *, exists: bool = True) -> None:
-        if self.exists(tag) != exists:
+        if await self.exists(tag) != exists:
             msg: str
             if exists:
                 msg = f"Release {tag!r} does not exist"

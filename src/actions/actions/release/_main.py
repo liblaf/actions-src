@@ -23,7 +23,7 @@ async def main(inputs: Inputs) -> None:
         hashsums_local: dict[str, str]
         assets: list[Path]
         hashsums_local, assets = prepare_assets(tmpdir, inputs.files, inputs.algo)
-        if release.exists(inputs.tag):
+        if await release.exists(inputs.tag):
             hashsums_remote: dict[str, str] = await get_remote_hashsums(
                 release, inputs.tag, inputs.algo
             )
