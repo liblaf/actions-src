@@ -1,3 +1,4 @@
+import subprocess as sp
 from collections.abc import Iterable
 from pathlib import Path
 
@@ -27,6 +28,10 @@ def prepare_assets(
 async def get_remote_hashsums(
     release: GhRelease, tag: str, algo: str
 ) -> dict[str, str]:
-    text: str = await release.download(tag, pattern=hashsum.filename(algo))
-    hashsums: dict[str, str] = hashsum.parse(text)
-    return hashsums
+    try:
+        text: str = await release.download(tag, pattern=hashsum.filename(algo))
+        hashsums: dict[str, str] = hashsum.parse(text)
+    except sp.CalledProcessError:
+        return {}
+    else:
+        return hashsums
