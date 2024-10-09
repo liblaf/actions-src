@@ -88,6 +88,7 @@ class GhRelease:
     @property
     def args(self) -> list[str]:
         args: list[str] = self.parent.args
+        args.append("release")
         if self.repo:
             args.extend(["--repo", self.repo])
         return args
