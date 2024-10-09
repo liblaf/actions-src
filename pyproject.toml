@@ -1,0 +1,25 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[project]
+dependencies = [
+  "httpx>=0.27.2",
+  "lazy-loader>=0.4",
+  "loguru>=0.7.2",
+  "pydantic-settings>=2.5.2",
+  "pydantic>=2.9.2",
+  "rich>=13.9.2",
+  "tenacity>=9.0.0",
+]
+description = "Add your description here"
+name = "actions"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.0.0"
+
+[project.scripts]
+release = "actions.actions.release:main"
+
+[tool.uv]
+dev-dependencies = ["icecream>=2.1.3"]

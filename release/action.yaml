@@ -1,0 +1,62 @@
+name: Release
+
+author: liblaf
+
+description: Manage releases
+
+inputs:
+  algo:
+    description: Compute hashsums using the specified digest algorithm
+    required: false
+    default: sha256
+  clobber:
+    description: Recreate the release if it already exists
+    required: false
+    default: "false"
+  files:
+    description: Newline-delimited list of path globs for asset files to upload
+    required: false
+  prerelease:
+    description: Mark the release as a prerelease
+    required: false
+    default: "false"
+  repo:
+    description: Repository name with owner
+    required: false
+    default: ${{ github.repository }}
+  tag:
+    description: Tag name
+    required: true
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.repo }}
+        path: _tmp.W8nAhH91eW
+        fetch-depth: 0
+    - name: Setup UV
+      uses: astral-sh/setup-uv@v3
+    - run: |-
+        npx conventional-changelog-cli --outfile "${{ runner.temp }}/CHANGELOG.md" --config "${{ github.action_path }}/changelog.json"
+        npx prettier --write --ignore-path "" "${{ runner.temp }}/CHANGELOG.md"
+      shell: bash
+      name: Generate Changelog
+      working-directory: _tmp.W8nAhH91eW
+    - run: uvx --from git+https://github.com/liblaf/actions.git --python 3.12 release
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        INPUT_ALGO: ${{ inputs.algo }}
+        INPUT_CHANGELOG_FILE: ${{ runner.temp }}/CHANGELOG.md
+        INPUT_CLOBBER: ${{ inputs.clobber }}
+        INPUT_FILES: ${{ inputs.files }}
+        INPUT_PRERELEASE: ${{ inputs.prerelease }}
+        INPUT_REPO: ${{ github.repository }}
+        INPUT_TAG: ${{ inputs.tag }}
