@@ -52,6 +52,7 @@ runs:
     - run: uvx --from git+https://github.com/liblaf/actions.git --python 3.12 release
       shell: bash
       env:
+        FORCE_COLOR: 1
         GH_TOKEN: ${{ inputs.token }}
         INPUT_ALGO: ${{ inputs.algo }}
         INPUT_CHANGELOG_FILE: ${{ runner.temp }}/CHANGELOG.md
