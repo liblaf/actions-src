@@ -1,5 +1,4 @@
 import functools
-import os
 import re
 from pathlib import Path
 
@@ -37,12 +36,7 @@ class Inputs(BaseSettings):
     @functools.cached_property
     def files(self) -> list[Path]:
         files: list[Path] = []
-        cwd: Path
-        if workspace := os.getenv("GITHUB_WORKSPACE"):
-            cwd = Path(workspace)
-        else:
-            cwd = Path.cwd()
         for line in core.get_multiline_input("FILES"):
-            files.extend(cwd.glob(line))
+            files.extend(Path.cwd().glob(line))
         logger.info("Files:\n{}", "\n".join([str(f) for f in files]))
         return files
