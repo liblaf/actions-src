@@ -21,11 +21,17 @@ class Inputs(BaseSettings):
     def changelog(self) -> str | None:
         fpath: Path = Path(core.get_input("CHANGELOG_FILE"))
         text: str = fpath.read_text().strip()
-        body: str
-        _, _, body = text.partition("\n")
-        if not body:
+        _, _, text = text.partition("\n")
+        if not text:
             return None
-        return body.strip()
+        text = text.strip()
+        body: str = ""
+        for line in text.splitlines():
+            # skip commits
+            if "sync with template repository" in line:
+                continue
+            body += line + "\n"
+        return body
 
     @functools.cached_property
     def files(self) -> list[Path]:
