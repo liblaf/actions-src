@@ -72,7 +72,7 @@ class GitHubRepo:
         await self._gh.rest.repos.async_delete_release(
             self.owner, self.repo, release.id
         )
-        # workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028211951)
+        # workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
         await self._wait_until_release(tag, exists=False)
 
     async def release_download(self, tag: str, asset_name: str) -> bytes:
