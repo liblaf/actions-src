@@ -47,7 +47,7 @@ runs:
       shell: bash
       name: Generate Changelog
       working-directory: _tmp.W8nAhH91eW
-    - run: pipx --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python release
+    - run: pipx run --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python release
       shell: bash
       env:
         FORCE_COLOR: 1
