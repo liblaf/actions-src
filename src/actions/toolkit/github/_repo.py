@@ -48,7 +48,7 @@ class GitHubRepo:
         self,
         tag: str,
         *files: StrPath,
-        algo: str | None = None,
+        hasher: str | None = None,
         notes: str | None = None,
         prerelease: bool = False,
     ) -> m.Release:
@@ -64,7 +64,7 @@ class GitHubRepo:
             generate_release_notes=not notes,
         )
         release: m.Release = resp.parsed_data
-        await self.release_upload(tag, *files, algo=algo)
+        await self.release_upload(tag, *files, hasher=hasher)
         return release
 
     async def release_delete(self, tag: str) -> None:
@@ -92,9 +92,9 @@ class GitHubRepo:
                 )
                 return
 
-    async def release_cksums(self, tag: str, algo: str) -> dict[str, str]:
+    async def release_cksums(self, tag: str, hasher: str) -> dict[str, str]:
         try:
-            data: bytes = await self.release_download(tag, cksum.filename.sums(algo))
+            data: bytes = await self.release_download(tag, cksum.filename.sums(hasher))
         except httpx.HTTPStatusError as err:
             if err.response.status_code == httpx.codes.NOT_FOUND:
                 return {}
@@ -103,11 +103,11 @@ class GitHubRepo:
             return cksum.parse(data)
 
     async def release_upload(
-        self, tag: str, *files: StrPath, algo: str | None = None
+        self, tag: str, *files: StrPath, hasher: str | None = None
     ) -> list[m.ReleaseAsset]:
         cksums: dict[str, str]
-        if algo:
-            cksums = await self.release_cksums(tag, algo)
+        if hasher:
+            cksums = await self.release_cksums(tag, hasher)
         else:
             cksums = {}
         futures: list[Coroutine[Any, Any, m.ReleaseAsset]] = []
@@ -115,21 +115,21 @@ class GitHubRepo:
             fpath: Path = Path(file)
             data: bytes = fpath.read_bytes()
             futures.append(self._release_upload_asset(tag, fpath.name, data=data))
-            if algo:
-                s: str = cksum.hash_bytes(data, algo)
+            if hasher:
+                s: str = cksum.hash_bytes(data, hasher)
                 cksums[fpath.name] = s
                 futures.append(
                     self._release_upload_asset(
                         tag,
-                        cksum.filename.single(fpath, algo),
+                        cksum.filename.single(fpath, hasher),
                         data=cksum.dumps({fpath.name: s}).encode(),
                     )
                 )
-        if algo:
+        if hasher:
             futures.append(
                 self._release_upload_asset(
                     tag,
-                    cksum.filename.sums(algo),
+                    cksum.filename.sums(hasher),
                     data=cksum.dumps(cksums).encode(),
                 )
             )

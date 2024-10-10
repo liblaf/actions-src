@@ -11,8 +11,8 @@ from actions.toolkit import core
 class Inputs(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="INPUT_")
 
-    algo: str = "sha256"
     clobber: bool = False
+    hasher: str = "sha256"
     prerelease: bool = False
     repo: str
     tag: str

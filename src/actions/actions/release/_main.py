@@ -11,10 +11,10 @@ async def main(inputs: Inputs) -> None:
     gh: g.GitHub = g.GitHub()
     repo: g.GitHubRepo = gh.repo(*inputs.repo.split("/"))
     create: bool = False
-    cksums_local: dict[str, str] = cksum.hash_files(*inputs.files, algo=inputs.algo)
+    cksums_local: dict[str, str] = cksum.hash_files(*inputs.files, hasher=inputs.hasher)
     if await repo.release_exists(inputs.tag):
         cksums_remote: dict[str, str] = await repo.release_cksums(
-            inputs.tag, inputs.algo
+            inputs.tag, inputs.hasher
         )
         if cksums_local == cksums_remote:
             core.notice(f"Hashsums match, skip release: {inputs.tag!r}")
@@ -25,7 +25,7 @@ async def main(inputs: Inputs) -> None:
             core.notice(f"Recreate release: {inputs.tag!r}")
         else:
             core.notice(f"Update release: {inputs.tag!r}")
-            await repo.release_upload(inputs.tag, *inputs.files, algo=inputs.algo)
+            await repo.release_upload(inputs.tag, *inputs.files, hasher=inputs.hasher)
     else:
         create = True
         core.notice(f"Create release: {inputs.tag!r}")
@@ -33,7 +33,7 @@ async def main(inputs: Inputs) -> None:
         await repo.release_create(
             inputs.tag,
             *inputs.files,
-            algo=inputs.algo,
+            hasher=inputs.hasher,
             notes=inputs.changelog,
             prerelease=inputs.prerelease,
         )
