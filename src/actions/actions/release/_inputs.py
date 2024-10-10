@@ -1,5 +1,6 @@
 import functools
 import os
+import re
 from pathlib import Path
 
 from loguru import logger
@@ -28,7 +29,7 @@ class Inputs(BaseSettings):
         body: str = ""
         for line in text.splitlines():
             # skip commits
-            if "sync with template repository" in line:
+            if re.search("sync with (template repository|repository template)", line):
                 continue
             body += line + "\n"
         return body
