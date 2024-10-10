@@ -78,7 +78,7 @@ class GitHubRepo:
     async def release_download(self, tag: str, asset_name: str) -> bytes:
         resp: httpx.Response = await self._gh._arequest(  # noqa: SLF001
             "GET",
-            f"https://{self._gh.config.base_url}/{self.owner}/{self.repo}/releases/download/{tag}/{asset_name}",
+            f"https://github.com/{self.owner}/{self.repo}/releases/download/{tag}/{asset_name}",
         )
         resp = resp.raise_for_status()
         return resp.content
