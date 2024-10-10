@@ -13,8 +13,8 @@ async def main(inputs: Inputs) -> None:
     create: bool = False
     cksums_local: dict[str, str] = cksum.hash_files(*inputs.files, algo=inputs.algo)
     if await repo.release_exists(inputs.tag):
-        cksums_remote: dict[str, str] = cksum.parse(
-            await repo.release_download(inputs.tag, cksum.filename.sums(inputs.algo))
+        cksums_remote: dict[str, str] = await repo.release_cksums(
+            inputs.tag, inputs.algo
         )
         if cksums_local == cksums_remote:
             core.notice(f"Hashsums match, skip release: {inputs.tag!r}")
