@@ -41,15 +41,13 @@ runs:
         repository: ${{ inputs.repo }}
         path: _tmp.W8nAhH91eW
         fetch-depth: 0
-    - name: Setup UV
-      uses: astral-sh/setup-uv@v3
     - run: |-
         npx conventional-changelog-cli --outfile "${{ runner.temp }}/CHANGELOG.md" --config "${{ github.action_path }}/changelog.json"
         npx prettier --write --ignore-path "" "${{ runner.temp }}/CHANGELOG.md"
       shell: bash
       name: Generate Changelog
       working-directory: _tmp.W8nAhH91eW
-    - run: uvx --from git+https://github.com/liblaf/actions.git --python 3.12 release
+    - run: pipx --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python release
       shell: bash
       env:
         FORCE_COLOR: 1

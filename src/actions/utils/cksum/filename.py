@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from actions.typing import StrPath
 
 FILENAMES: dict[str, str] = {
@@ -5,11 +7,12 @@ FILENAMES: dict[str, str] = {
 }
 
 
-def filename(algo: str) -> str:
+def sums(algo: str) -> str:
     if algo in FILENAMES:
         return FILENAMES[algo]
     return algo + "sums.txt"
 
 
-def filename_single(fpath: StrPath, algo: str) -> str:
-    return str(fpath) + "." + algo
+def single(fpath: StrPath, algo: str) -> str:
+    fpath: Path = Path(fpath)
+    return fpath.name + "." + algo

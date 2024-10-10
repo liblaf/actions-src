@@ -4,9 +4,11 @@ import actions
 from actions.typing import StrPath
 
 
-def parse(text: str) -> dict[str, str]:
+def parse(text: str | bytes) -> dict[str, str]:
     result: dict[str, str] = {}
-    for line in actions.utils.splitlines(text):
+    for line in actions.utils.splitlines(
+        text if isinstance(text, str) else text.decode()
+    ):
         hashsum: str
         filename: str
         hashsum, filename = line.split()

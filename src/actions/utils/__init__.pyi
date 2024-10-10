@@ -1,4 +1,4 @@
-from . import hashsum
+from . import cksum
 from ._action import action
 from ._env import get_bool_env
 from ._logging import init_logging
@@ -9,8 +9,8 @@ from ._validators import as_bool
 __all__ = [
     "action",
     "as_bool",
+    "cksum",
     "get_bool_env",
-    "hashsum",
     "init_logging",
     "run",
     "splitlines",
