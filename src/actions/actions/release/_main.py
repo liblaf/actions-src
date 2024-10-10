@@ -25,7 +25,7 @@ async def main(inputs: Inputs) -> None:
             core.notice(f"Recreate release: {inputs.tag!r}")
         else:
             core.notice(f"Update release: {inputs.tag!r}")
-            await repo.release_upload(inputs.tag, *inputs.files)
+            await repo.release_upload(inputs.tag, *inputs.files, algo=inputs.algo)
     else:
         create = True
         core.notice(f"Create release: {inputs.tag!r}")
@@ -33,6 +33,7 @@ async def main(inputs: Inputs) -> None:
         await repo.release_create(
             inputs.tag,
             *inputs.files,
+            algo=inputs.algo,
             notes=inputs.changelog,
             prerelease=inputs.prerelease,
         )
