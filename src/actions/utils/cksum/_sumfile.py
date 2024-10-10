@@ -19,7 +19,7 @@ def parse(text: str | bytes) -> dict[str, str]:
 def dumps(data: dict[str, str]) -> str:
     text: str = ""
     for filename, hashsum in data.items():
-        text += f"{filename}  {hashsum}\n"
+        text += f"{hashsum}  {filename}\n"
     return text
 
 
