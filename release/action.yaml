@@ -51,7 +51,7 @@ runs:
       shell: bash
       env:
         FORCE_COLOR: 1
-        GH_TOKEN: ${{ inputs.token }}
+        GITHUB_TOKEN: ${{ inputs.token }}
         INPUT_ALGO: ${{ inputs.algo }}
         INPUT_CHANGELOG_FILE: ${{ runner.temp }}/CHANGELOG.md
         INPUT_CLOBBER: ${{ inputs.clobber }}
