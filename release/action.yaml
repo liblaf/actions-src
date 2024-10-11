@@ -2,7 +2,7 @@ name: Release
 
 author: liblaf
 
-description: Manage releases
+description: This GitHub Action automates the process of creating a release on GitHub, including generating a changelog, formatting it, and uploading specified assets. It supports options for clobbering existing releases, marking releases as prereleases, and computing hash sums for uploaded files. The action is designed to be flexible and customizable, allowing users to specify the repository, tag, and other parameters as needed.
 
 inputs:
   clobber:

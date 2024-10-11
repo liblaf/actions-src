@@ -1,1 +1,4 @@
-# Actions
+# GitHub Actions
+
+- [install](./install/): This GitHub Action allows you to install software packages using various package managers (APT, Homebrew, Chocolatey, eget, Linuxbrew, NPM, and pipx) based on the operating system and inputs provided. It supports Linux, macOS, and Windows, and can be configured to use a GitHub token for authenticated downloads.
+- [release](./release/): This GitHub Action automates the process of creating a release on GitHub, including generating a changelog, formatting it, and uploading specified assets. It supports options for clobbering existing releases, marking releases as prereleases, and computing hash sums for uploaded files. The action is designed to be flexible and customizable, allowing users to specify the repository, tag, and other parameters as needed.
