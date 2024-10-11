@@ -39,19 +39,20 @@ runs:
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.repo }}
-        path: _tmp-github-actions-release
+        path: _tmp.W8nAhH91eW
         fetch-depth: 0
     - name: Generate Changelog
       id: changelog
       env:
-        GIT_CLIFF_REPOSITORY: _tmp-github-actions-release
+        OUTPUT: ${{ runner.temp }}/CHANGELOG.md
+        GIT_CLIFF_REPOSITORY: _tmp.W8nAhH91eW
         GITHUB_TOKEN: ${{ inputs.token }}
         GITHUB_REPO: ${{ inputs.repo }}
       uses: orhun/git-cliff-action@v4
       with:
         config: ${{ github.action_path }}/cliff.toml
         args: --unreleased --strip all
-        token: ${{ inputs.token }}
+        github_token: ${{ inputs.token }}
     - run: npx prettier --write --ignore-path "" "${{ steps.changelog.outputs.changelog }}"
       shell: bash
       name: Format Changelog
@@ -68,3 +69,6 @@ runs:
         INPUT_PRERELEASE: ${{ inputs.prerelease }}
         INPUT_REPO: ${{ github.repository }}
         INPUT_TAG: ${{ inputs.tag }}
+    - run: rm -fr _tmp.W8nAhH91eW
+      shell: bash
+      name: Cleanup
