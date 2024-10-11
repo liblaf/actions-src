@@ -1,0 +1,38 @@
+name: Test Install
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install
+        uses: ./actions/install
+        with:
+          brew: coreutils gnu-sed make
+          choco: gnuwin32-coreutils.install make sed
+          eget: liblaf/pre-commit-hooks
+          npm: prettier
+          pipx: pre-commit
+      - name: Coreutils
+        run: install --version
+      - name: sed
+        run: sed --version
+      - name: make
+        run: make --version
+      - name: liblaf/pre-commit-hooks
+        run: pch --version
+      - name: Prettier
+        run: prettier --version
+      - name: pre-commit
+        run: pre-commit --version
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest

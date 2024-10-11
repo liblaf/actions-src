@@ -1,0 +1,63 @@
+name: Install
+
+author: liblaf
+
+description: Install packages
+
+inputs:
+  apt:
+    description: APT
+    required: false
+  brew:
+    description: Homebrew
+    required: false
+  choco:
+    description: Chocolatey
+    required: false
+  eget:
+    description: Eget
+    required: false
+  linuxbrew:
+    description: Linuxbrew
+    required: false
+  npm:
+    description: NPM
+    required: false
+  pipx:
+    description: pipx
+    required: false
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - run: bash "${{ github.action_path }}/scripts/env.sh"
+      shell: bash
+    - run: |-
+        sudo apt-get update
+        sudo apt-get install ${{ inputs.apt }}
+      shell: bash
+      if: runner.os == 'Linux' && inputs.apt
+    - run: bash "${{ github.action_path }}/scripts/brew.sh" ${{ inputs.brew }}
+      shell: bash
+      if: runner.os == 'macOS' && inputs.brew
+    - run: choco install ${{ inputs.choco }}
+      shell: bash
+      if: runner.os == 'Windows' && inputs.choco
+    - run: bash "${{ github.action_path }}/scripts/eget.sh" ${{ inputs.eget }}
+      shell: bash
+      if: inputs.eget
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+    - run: bash "${{ github.action_path }}/scripts/linuxbrew.sh" ${{ inputs.linuxbrew }}
+      shell: bash
+      if: runner.os == 'Linux' && inputs.linuxbrew
+    - run: npm install --global ${{ inputs.npm }}
+      shell: bash
+      if: inputs.npm
+    - run: pipx install ${{ inputs.pipx }}
+      shell: bash
+      if: inputs.pipx
