@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install
-        uses: ./actions/install
+        uses: ./install
         with:
           brew: coreutils gnu-sed make
           choco: gnuwin32-coreutils.install make sed
