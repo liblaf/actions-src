@@ -1,10 +1,10 @@
-import json
+from typing import Any
 
 import githubkit
+from loguru import logger
 
 import actions
 import actions.toolkit.github as g
-from actions.toolkit import core
 
 from ._inputs import Inputs
 
@@ -23,10 +23,30 @@ async def main(inputs: Inputs) -> None:
         async for repo in gh.app.list_repos_accessible_to_installation():
             if repo.archived or repo.fork or repo.private:
                 continue
-            await gh.rest.actions.async_create_workflow_dispatch(
+            await create_workflow_dispatch(
+                gh._gh,  # noqa: SLF001
                 "liblaf",
                 "actions",
                 "bot-auto-merge.yaml",
                 ref="main",
                 inputs={"owner": repo.owner.login, "repo": repo.name},
             )
+
+
+async def create_workflow_dispatch(
+    gh: githubkit.GitHub,
+    owner: str,
+    repo: str,
+    workflow_id: int | str,
+    *,
+    ref: str = "main",
+    inputs: dict[str, Any] | None = None,
+) -> None:
+    await gh.rest.actions.async_create_workflow_dispatch(
+        owner,
+        repo,
+        workflow_id,
+        ref=ref,
+        inputs=inputs,  # pyright: ignore [reportArgumentType]
+    )
+    logger.info("{}/{}:{} {}", owner, repo, workflow_id, inputs)

@@ -12,5 +12,5 @@ jobs:
       - name: Schedule
         run: pipx run --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python schedule
         env:
-          APP_ID: ${{ vars.APP_ID }}
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          INPUT_APP_ID: ${{ vars.APP_ID }}
+          INPUT_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
