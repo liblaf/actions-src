@@ -24,3 +24,6 @@ runs:
       shell: bash
       name: List Repositories
       id: list-repos
+      env:
+        INPUT_APP_ID: ${{ inputs.app-id }}
+        INPUT_PRIVATE_KEY: ${{ inputs.private-key }}
