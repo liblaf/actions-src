@@ -4,7 +4,7 @@ requires = ["hatchling"]
 
 [project]
 dependencies = [
-  "githubkit>=0.11.13",
+  "githubkit[auth-app]>=0.11.13",
   "httpx>=0.27.2",
   "lazy-loader>=0.4",
   "loguru>=0.7.2",
