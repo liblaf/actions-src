@@ -8,8 +8,8 @@ src_dir=$git_root/src/actions
 
 readarray -t dpaths < <(find "$src_dir" -type d)
 for dpath in "${dpaths[@]}"; do
-  if [[ $dpath -ef $src_dir ]]; then
-    continue
-  fi
-  cp "$src_dir/__init__.py" "$dpath/__init__.py"
+	if [[ $dpath -ef $src_dir ]]; then
+		continue
+	fi
+	cp "$src_dir/__init__.py" "$dpath/__init__.py"
 done

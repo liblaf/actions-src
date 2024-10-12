@@ -31,7 +31,7 @@ steps:
 ### Inputs
 
 | Input       | Description                              | Required | Default               |
-| ----------- | ---------------------------------------- | -------- | --------------------- |
+|-------------|------------------------------------------|----------|-----------------------|
 | `apt`       | Packages to install via APT              | No       |                       |
 | `brew`      | Packages to install via Homebrew         | No       |                       |
 | `choco`     | Packages to install via Chocolatey       | No       |                       |

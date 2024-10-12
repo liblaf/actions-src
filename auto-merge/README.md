@@ -24,7 +24,7 @@ jobs:
 ## Inputs
 
 | Input       | Description                 | Required | Default Value              |
-| ----------- | --------------------------- | -------- | -------------------------- |
+|-------------|-----------------------------|----------|----------------------------|
 | `add-label` | Add labels by name          | No       | `automerge`                |
 | `app`       | Filter by GitHub App author | No       | `github-actions`           |
 | `label`     | Filter by label             | No       | `autorelease: pending`     |
