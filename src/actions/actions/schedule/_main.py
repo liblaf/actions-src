@@ -14,7 +14,6 @@ async def main(inputs: Inputs) -> None:
     gh: g.GitHub = g.GitHub(
         githubkit.AppAuthStrategy(inputs.app_id, inputs.private_key)
     )
-    repos: list[dict[str, str]] = []
     async for installation in gh.app.list_installations():
         gh = g.GitHub(
             githubkit.AppInstallationAuthStrategy(
@@ -24,5 +23,10 @@ async def main(inputs: Inputs) -> None:
         async for repo in gh.app.list_repos_accessible_to_installation():
             if repo.archived or repo.fork or repo.private:
                 continue
-            repos.append({"owner": repo.owner.login, "repo": repo.name})
-    core.set_output("repos", json.dumps(repos))
+            await gh.rest.actions.async_create_workflow_dispatch(
+                "liblaf",
+                "actions",
+                "bot-auto-merge.yaml",
+                ref="main",
+                inputs={"owner": repo.owner.login, "repo": repo.name},
+            )

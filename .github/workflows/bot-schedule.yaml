@@ -1,0 +1,16 @@
+name: Schedule
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Schedule
+        run: pipx run --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python schedule
+        env:
+          APP_ID: ${{ vars.APP_ID }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}

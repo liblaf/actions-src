@@ -1,0 +1,29 @@
+name: Auto Merge Release Please
+
+on:
+  workflow_dispatch:
+    inputs:
+      owner:
+        required: true
+        type: string
+        description: The account owner of the repository. The name is not case sensitive.
+      repo:
+        required: true
+        type: string
+        description: The name of the repository without the .git extension. The name is not case sensitive.
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - id: auth-app
+        name: Authenticate with GitHub App
+        uses: liblaf/actions/auth-app@main
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+      - name: Auto Merge Release Please
+        uses: liblaf/actions/auto-merge@main
+        with:
+          repo: ${{ inputs.owner }}/${{ inputs.repo }}
+          token: ${{ steps.auth-app.outputs.token }}
