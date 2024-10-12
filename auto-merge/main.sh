@@ -11,5 +11,9 @@ if [[ -n ${INPUT_LABEL-} ]]; then
   args+=(--label "$INPUT_LABEL")
 fi
 number=$("${args[@]}")
-echo "::notice::Found PR number: $number"
+if [[ -z $number ]]; then
+  echo "::notice::No PR Found"
+  exit
+fi
+echo "::notice::Found PR Number: $number"
 gh pr --repo "$INPUT_REPO" edit "$number" --add-label "$INPUT_ADD_LABEL"
