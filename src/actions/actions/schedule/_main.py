@@ -31,6 +31,14 @@ async def main(inputs: Inputs) -> None:
                 ref="main",
                 inputs={"owner": repo.owner.login, "repo": repo.name},
             )
+            await create_workflow_dispatch(
+                gh._gh,  # noqa: SLF001
+                "liblaf",
+                "repo",
+                "sync.yaml",
+                ref="main",
+                inputs={"owner": repo.owner.login, "repo": repo.name},
+            )
 
 
 async def create_workflow_dispatch(
