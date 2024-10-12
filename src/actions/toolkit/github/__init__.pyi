@@ -1,4 +1,5 @@
+from ._app import AppClient
 from ._github import GitHub
-from ._repo import GitHubRepo
+from ._repo import RepoClient
 
-__all__ = ["GitHub", "GitHubRepo"]
+__all__ = ["AppClient", "GitHub", "RepoClient"]

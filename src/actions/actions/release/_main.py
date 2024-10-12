@@ -1,3 +1,5 @@
+import githubkit
+
 import actions
 import actions.toolkit.github as g
 from actions.toolkit import core
@@ -8,8 +10,8 @@ from ._inputs import Inputs
 
 @actions.utils.action()
 async def main(inputs: Inputs) -> None:
-    gh: g.GitHub = g.GitHub()
-    repo: g.GitHubRepo = gh.repo(*inputs.repo.split("/"))
+    gh: g.GitHub = g.GitHub(githubkit.ActionAuthStrategy())
+    repo: g.RepoClient = gh.repo(*inputs.repo.split("/"))
     create: bool = False
     cksums_local: dict[str, str] = cksum.hash_files(*inputs.files, hasher=inputs.hasher)
     if await repo.release_exists(inputs.tag):

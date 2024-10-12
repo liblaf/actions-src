@@ -1,4 +1,6 @@
 import os
+from pathlib import Path
+from typing import Any
 
 import actions
 
@@ -14,3 +16,9 @@ def get_multiline_input(name: str) -> list[str]:
 
 def notice(message: str) -> None:
     print(f"::notice::{message}")
+
+
+def set_output(name: str, value: Any) -> None:
+    fpath: Path = Path(os.getenv("GITHUB_OUTPUT", ""))
+    with fpath.open("a") as fp:
+        fp.write(f"{name}={value}\n")

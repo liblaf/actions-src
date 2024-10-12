@@ -1,0 +1,26 @@
+name: List Repositories Accessible to GitHub App
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  app-id:
+    description: GitHub App ID
+    required: true
+  private-key:
+    description: GitHub App private key
+    required: true
+
+outputs:
+  repos:
+    description: List of repositories accessible to the GitHub App in JSON format
+    value: ${{ steps.list-repos.outputs.repos }}
+
+runs:
+  using: composite
+  steps:
+    - run: pipx run --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python app-list-repos
+      shell: bash
+      name: List Repositories
+      id: list-repos

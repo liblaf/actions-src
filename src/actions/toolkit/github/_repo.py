@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     from collections.abc import Coroutine
 
 
-class GitHubRepo:
+class RepoClient:
     _gh: githubkit.GitHub
     owner: str
     repo: str
