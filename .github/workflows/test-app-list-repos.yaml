@@ -33,4 +33,5 @@ jobs:
           echo "repo: ${{ matrix.owner }}/${{ matrix.repo }}"
         shell: bash
     strategy:
-      matrix: ${{ fromJson(needs.list-repos.outputs.repos) }}
+      matrix:
+        include: ${{ fromJson(needs.list-repos.outputs.repos) }}
