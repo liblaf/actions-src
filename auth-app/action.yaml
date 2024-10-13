@@ -1,8 +1,8 @@
-name: Authenticate with a GitHub App
+name: GitHub App Authentication
 
 author: liblaf
 
-description: TODO
+description: This action authenticates with a GitHub App to generate an installation access token for specified repositories.
 
 inputs:
   app-id:

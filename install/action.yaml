@@ -2,7 +2,7 @@ name: Install
 
 author: liblaf
 
-description: This GitHub Action allows you to install software packages using various package managers (APT, Homebrew, Chocolatey, eget, Linuxbrew, NPM, and pipx) based on the operating system and inputs provided. It supports Linux, macOS, and Windows, and can be configured to use a GitHub token for authenticated downloads.
+description: The action allows you to install software packages using various package managers (APT, Homebrew, Chocolatey, eget, Linuxbrew, NPM, and pipx) based on the operating system and inputs provided.
 
 inputs:
   apt:

@@ -1,93 +1,51 @@
-# Install GitHub Action
+# Install Action
 
-The **Install GitHub Action** is a versatile tool designed to simplify the installation of software packages across different operating systems using various package managers. It supports Linux, macOS, and Windows, and integrates seamlessly with popular package managers like APT, Homebrew, Chocolatey, eget, Linuxbrew, NPM, and pipx.
-
-## Features
-
-- **Multi-Platform Support**: Automatically detects the operating system (Linux, macOS, Windows) and uses the appropriate package manager.
-- **Multiple Package Managers**: Supports APT, Homebrew, Chocolatey, eget, Linuxbrew, NPM, and pipx.
-- **Customizable**: Allows you to specify which packages to install via inputs.
-- **Secure**: Optionally uses a GitHub token for authenticated downloads with eget.
+This GitHub Action allows you to install software packages using various package managers (APT, Homebrew, Chocolatey, eget, Linuxbrew, NPM, and pipx) based on the operating system and inputs provided. It supports Linux, macOS, and Windows, and can be configured to use a GitHub token for authenticated downloads.
 
 ## Usage
 
-To use this action in your GitHub workflow, add the following step to your workflow file:
+To use this action in your workflow, specify the packages you want to install using the appropriate package manager for your operating system.
+
+### Example Workflow
 
 ```yaml
-steps:
-  - name: Install Packages
-    uses: liblaf/actions/install@main
-    with:
-      apt: "package1 package2" # Example for APT
-      brew: "package3 package4" # Example for Homebrew
-      choco: "package5 package6" # Example for Chocolatey
-      eget: "user/repo" # Example for eget
-      linuxbrew: "package7" # Example for Linuxbrew
-      npm: "package8" # Example for NPM
-      pipx: "package9" # Example for pipx
-      token: ${{ secrets.GITHUB_TOKEN }} # Optional GitHub token
+name: Install Packages
+
+on: [push]
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Packages
+        uses: liblaf/actions/install@main
+        with:
+          apt: "package1 package2"
+          brew: "package3 package4"
+          choco: "package5 package6"
+          eget: "package7 package8"
+          linuxbrew: "package9 package10"
+          npm: "package11 package12"
+          pipx: "package13 package14"
+          token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ### Inputs
 
-| Input       | Description                              | Required | Default               |
-| ----------- | ---------------------------------------- | -------- | --------------------- |
-| `apt`       | Packages to install via APT              | No       |                       |
-| `brew`      | Packages to install via Homebrew         | No       |                       |
-| `choco`     | Packages to install via Chocolatey       | No       |                       |
-| `eget`      | Packages to install via eget             | No       |                       |
-| `linuxbrew` | Packages to install via Linuxbrew        | No       |                       |
-| `npm`       | Packages to install via NPM              | No       |                       |
-| `pipx`      | Packages to install via pipx             | No       |                       |
-| `token`     | GitHub token for authenticated downloads | No       | `${{ github.token }}` |
-
-## Examples
-
-### Example 1: Installing Packages on Linux
-
-```yaml
-steps:
-  - name: Install Packages on Linux
-    uses: liblaf/actions/install@main
-    with:
-      apt: "git curl"
-      linuxbrew: "some-package"
-      npm: "typescript"
-      pipx: "black"
-```
-
-### Example 2: Installing Packages on macOS
-
-```yaml
-steps:
-  - name: Install Packages on macOS
-    uses: liblaf/actions/install@main
-    with:
-      brew: "wget jq"
-      npm: "eslint"
-      pipx: "isort"
-```
-
-### Example 3: Installing Packages on Windows
-
-```yaml
-steps:
-  - name: Install Packages on Windows
-    uses: liblaf/actions/install@main
-    with:
-      choco: "git vscode"
-      npm: "yarn"
-      pipx: "flake8"
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you encounter any problems or have suggestions for improvements.
+| Input Name  | Description                               | Required | Default Value         |
+| ----------- | ----------------------------------------- | -------- | --------------------- |
+| `apt`       | APT packages to install.                  | No       |                       |
+| `brew`      | Homebrew packages to install.             | No       |                       |
+| `choco`     | Chocolatey packages to install.           | No       |                       |
+| `eget`      | Eget packages to install.                 | No       |                       |
+| `linuxbrew` | Linuxbrew packages to install.            | No       |                       |
+| `npm`       | NPM packages to install.                  | No       |                       |
+| `pipx`      | pipx packages to install.                 | No       |                       |
+| `token`     | GitHub token for authenticated downloads. | No       | `${{ github.token }}` |
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
-
----
-
-For more information, visit the [GitHub repository](https://github.com/liblaf/actions).
