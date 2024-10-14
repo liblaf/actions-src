@@ -21,7 +21,7 @@ async def main(inputs: Inputs) -> None:
             )
         )
         async for repo in gh.app.list_repos_accessible_to_installation():
-            if repo.archived or repo.fork or repo.private:
+            if repo.archived or repo.fork or repo.private or repo.name == ".github":
                 continue
             await create_workflow_dispatch(
                 gh._gh,  # noqa: SLF001
