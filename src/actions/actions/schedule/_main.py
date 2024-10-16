@@ -24,7 +24,7 @@ async def main(inputs: Inputs) -> None:
             if repo.archived or repo.fork or repo.private or repo.name == ".github":
                 continue
             await create_workflow_dispatch(
-                gh._gh,  # noqa: SLF001
+                gh,
                 "liblaf",
                 "actions",
                 "bot-auto-merge.yaml",
@@ -32,17 +32,17 @@ async def main(inputs: Inputs) -> None:
                 inputs={"owner": repo.owner.login, "repo": repo.name},
             )
             await create_workflow_dispatch(
-                gh._gh,  # noqa: SLF001
+                gh,
                 "liblaf",
-                "repo",
-                "sync.yaml",
+                "actions",
+                "bot-copier-update.yaml",
                 ref="main",
                 inputs={"owner": repo.owner.login, "repo": repo.name},
             )
 
 
 async def create_workflow_dispatch(
-    gh: githubkit.GitHub,
+    gh: g.GitHub,
     owner: str,
     repo: str,
     workflow_id: int | str,

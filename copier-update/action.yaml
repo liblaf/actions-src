@@ -1,0 +1,12 @@
+name: Copier Update
+
+author: liblaf
+
+description: TODO
+
+runs:
+  using: composite
+  steps:
+    - run: bash "${{ github.action_path }}/main.sh"
+      shell: bash
+      name: Copier Update
