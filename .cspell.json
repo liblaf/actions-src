@@ -1,16 +1,14 @@
 {
-  "ignorePaths": [
-    "**/node_modules/**",
-    "**/vscode-extension/**",
-    "**/.git/**",
-    "**/.pnpm-lock.json",
-    ".vscode",
-    "megalinter",
-    "package-lock.json",
-    "report"
-  ],
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
+  "version": "0.2",
   "language": "en",
-  "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity"],
-  "version": "0.2"
+  "words": [],
+  "ignorePaths": [
+    "**/.cspell.*",
+    "**/.git",
+    "**/.vscode",
+    "**/*-lock.*",
+    "**/*.lock*"
+  ],
+  "allowCompoundWords": true
 }

@@ -9,8 +9,10 @@ jobs:
   schedule:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Schedule
-        run: pipx run --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python schedule
+        run: pipx run --spec . --python 3.12 --fetch-missing-python schedule
         env:
           INPUT_APP_ID: ${{ vars.APP_ID }}
           INPUT_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
