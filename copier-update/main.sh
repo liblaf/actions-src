@@ -3,13 +3,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-copier=(pipx run)
-specs=(cookiecutter copier)
-for spec in "${specs[@]}"; do
-  copier+=(--spec "$spec")
-done
-copier+=(copier)
-
+copier=(pipx run --pip-args cookiecutter copier)
 readarray -t answers_files < <(find .github/copier/ -iname ".copier-answers.*")
 
 for answers_file in "${answers_files[@]}"; do
