@@ -51,7 +51,7 @@ runs:
       uses: orhun/git-cliff-action@v4
       with:
         config: ${{ github.action_path }}/cliff.toml
-        args: --unreleased --strip all
+        args: ${{ inputs.prerelease == 'true' && '--unreleased' || '--current' }} --strip all
         github_token: ${{ inputs.token }}
     - run: npx prettier --write --ignore-path "" "${{ steps.changelog.outputs.changelog }}"
       shell: bash
