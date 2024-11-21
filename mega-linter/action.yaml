@@ -1,0 +1,90 @@
+name: MegaLinter
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - run: bash "${{ github.action_path }}/scripts/prepare.sh"
+      shell: bash
+      name: Prepare Linter Rules
+    - name: MegaLinter
+      id: ml
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        # https://megalinter.io/latest/config-variables/
+        # Common Variables
+        MEGALINTER_CONFIG: .github/.mega-linter.yaml
+        VALIDATE_ALL_CODEBASE: true
+        # Reporters
+        TEXT_REPORTER: true
+        GITHUB_COMMENT_REPORTER: true
+        GITHUB_STATUS_REPORTER: true
+        SARIF_REPORTER: true
+        UPDATED_SOURCES_REPORTER: true
+        CONFIG_REPORTER: true
+        CONSOLE_REPORTER: true
+        JSON_REPORTER: true
+        MARKDOWN_SUMMARY_REPORTER: true
+      uses: oxsecurity/megalinter@v8
+    - run: bash "${{ github.action_path }}/scripts/remove.sh"
+      shell: bash
+      if: success() || failure()
+      name: Remove Linter Rules
+    - if: success() || failure()
+      name: Archive Production Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: megalinter-reports
+        path: |-
+          mega-linter.log
+          megalinter-reports/
+    - if: success() || failure()
+      name: Upload Megalinter Scan Results To Github Security Tab
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: megalinter-reports/megalinter-report.sarif
+    - run: cat megalinter-reports/megalinter-report.md >> "$GITHUB_STEP_SUMMARY"
+      shell: bash
+      if: success() || failure()
+      name: Add GitHub Summary
+    - run: sudo chown -Rc $UID .git/
+      shell: bash
+      if: >-
+        steps.ml.outputs.has_updated_sources == 1 &&
+        github.ref != 'refs/heads/main' &&
+        (
+          github.event_name == 'push' ||
+          github.event.pull_request.head.repo.full_name == github.repository
+        ) &&
+        !contains(github.event.head_commit.message, 'skip fix')
+      name: Prepare Commit
+    - if: >-
+        steps.ml.outputs.has_updated_sources == 1 &&
+        github.ref != 'refs/heads/main' &&
+        (
+          github.event_name == 'push' ||
+          github.event.pull_request.head.repo.full_name == github.repository
+        ) &&
+        !contains(github.event.head_commit.message, 'skip fix')
+      name: Commit And Push Applied Linter Fixes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore(mega-linter): apply linters fixes"
+        branch: >-
+          ${{
+            github.event.pull_request.head.ref ||
+            github.head_ref ||
+            github.ref
+          }}
+        add_options: --update
+        commit_user_name: megalinter-bot
+        commit_user_email: nicolas.vuillamy@ox.security
