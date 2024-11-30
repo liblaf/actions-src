@@ -1,4 +1,4 @@
-name: Sync Repo Settings
+name: (Bot) Sync Repo Settings
 
 run-name: Sync Repo Settings (${{ inputs.owner }}/${{ inputs.repo }})
 
@@ -28,7 +28,7 @@ jobs:
           repositories: ${{ inputs.repo }}
       - name: Edit Repository Settings
         run: |-
-          gh repo --repo "${{ inputs.owner }}/${{ inputs.repo }}" edit \
+          gh repo edit "${{ inputs.owner }}/${{ inputs.repo }}" \
             --allow-update-branch \
             --delete-branch-on-merge \
             --enable-auto-merge \

@@ -1,4 +1,4 @@
-name: Copier Update
+name: (Bot) Copier Update
 
 run-name: Copier Update (${{ inputs.owner }}/${{ inputs.repo }})
 

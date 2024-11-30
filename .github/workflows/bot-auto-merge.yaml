@@ -1,4 +1,4 @@
-name: Auto Merge Release Please
+name: (Bot) Auto Merge Release Please
 
 run-name: Auto Merge Release Please (${{ inputs.owner }}/${{ inputs.repo }})
 
