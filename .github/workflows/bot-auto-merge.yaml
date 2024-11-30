@@ -1,5 +1,7 @@
 name: Auto Merge Release Please
 
+run-name: Auto Merge Release Please (${{ inputs.owner }}/${{ inputs.repo }})
+
 on:
   workflow_dispatch:
     inputs:

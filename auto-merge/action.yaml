@@ -12,7 +12,6 @@ inputs:
   app:
     description: Filter by GitHub App author
     required: false
-    default: github-actions
   label:
     description: Filter by label
     required: false

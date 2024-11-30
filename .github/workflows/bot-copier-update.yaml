@@ -1,5 +1,7 @@
 name: Copier Update
 
+run-name: Copier Update (${{ inputs.owner }}/${{ inputs.repo }})
+
 on:
   workflow_dispatch:
     inputs:
