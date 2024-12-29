@@ -76,6 +76,7 @@ class RepoClient:
         await self._gh.rest.repos.async_delete_release(
             self.owner, self.repo, release.id
         )
+        await self._gh.rest.git.async_delete_ref(self.owner, self.repo, f"tags/{tag}")
         # workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
         await self._wait_until_release(tag, exists=False)
 
