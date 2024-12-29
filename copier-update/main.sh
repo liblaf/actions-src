@@ -12,6 +12,6 @@ fi
 readarray -t answers_files < <(find .github/copier/ -iname ".copier-answers*")
 for answers_file in "${answers_files[@]}"; do
   echo "::group::$answers_file"
-  "${copier[@]}" update --skip-answered --trust --answers-file "$answers_file"
+  "${copier[@]}" recopy --trust --answers-file "$answers_file" --force
   echo "::endgroup::"
 done
