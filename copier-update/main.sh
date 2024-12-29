@@ -7,7 +7,8 @@ copier=(pipx run --pip-args cookiecutter copier)
 if [[ ! -d .github/copier/ ]]; then
   exit
 fi
-readarray -t answers_files < <(find .github/copier/ -iname ".copier-answers.*")
+readarray -t answers_files < <(find .github/copier/ -iname ".copier-answers*")
 for answers_file in "${answers_files[@]}"; do
-  "${copier[@]}" update --trust --answers-file "$answers_file" --defaults
+  echo "update $answers_file"
+  "${copier[@]}" update --skip-answered --trust --answers-file "$answers_file"
 done
