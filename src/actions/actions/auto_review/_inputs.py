@@ -14,8 +14,6 @@ class Inputs(BaseSettings):
 
     @functools.cached_property
     def author(self) -> list[str]:
-        authors: list[str] = []
-        for line in core.get_multiline_input("AUTHOR"):
-            authors.extend(line.strip())
-        logger.info("Authors:\n{}", "\n".join([str(a) for a in authors]))
+        authors: list[str] = core.get_multiline_input("AUTHOR")
+        logger.info("Authors:\n{}", "\n".join(authors))
         return authors
