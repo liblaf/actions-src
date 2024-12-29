@@ -1,0 +1,32 @@
+name: Auto Review
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  author:
+    description: TODO
+    required: false
+    default: |-
+      release-please[bot]
+      renovate[bot]
+  repo:
+    description: Repository name with owner
+    required: false
+    default: ${{ github.repository }}
+  token:
+    description: GitHub Token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python auto-review
+      shell: bash
+      name: Review
+      env:
+        INPUT_AUTHOR: ${{ inputs.author }}
+        INPUT_REPO: ${{ inputs.repo }}
+        INPUT_TOKEN: ${{ inputs.token }}
