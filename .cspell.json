@@ -46,10 +46,10 @@
     "scrapy",
     "sdist",
     "shellenv",
-    "sitory",
     "stefanzweifel",
     "topo",
     "trimesh",
+    "ubelt",
     "venv",
     "yanyongyu"
   ],

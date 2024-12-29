@@ -1,13 +1,13 @@
 import functools
 
+import pydantic_settings as ps
 from loguru import logger
-from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from actions.toolkit import core
 
 
-class Inputs(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="INPUT_")
+class Inputs(ps.BaseSettings):
+    model_config = ps.SettingsConfigDict(env_prefix="INPUT_")
 
     repo: str
     token: str

@@ -3,6 +3,7 @@ from typing import Any
 import githubkit
 
 import actions
+from actions.toolkit import core
 
 from ._inputs import Inputs
 
@@ -28,6 +29,7 @@ async def main(inputs: Inputs) -> None:
             if review.state == "APPROVED" and review.commit_id == pr.head.sha:
                 break
         else:
+            core.notice(f"Approve PR: <{pr.html_url}>")
             await gh.rest.pulls.async_create_review(
                 owner=owner, repo=repo, pull_number=pr.number, event="APPROVE"
             )

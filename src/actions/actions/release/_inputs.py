@@ -2,14 +2,14 @@ import functools
 import re
 from pathlib import Path
 
+import pydantic_settings as ps
 from loguru import logger
-from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from actions.toolkit import core
 
 
-class Inputs(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="INPUT_")
+class Inputs(ps.BaseSettings):
+    model_config = ps.SettingsConfigDict(env_prefix="INPUT_")
 
     clobber: bool = False
     hasher: str = "sha256"
@@ -20,6 +20,8 @@ class Inputs(BaseSettings):
     @functools.cached_property
     def changelog(self) -> str | None:
         fpath: Path = Path(core.get_input("CHANGELOG_FILE"))
+        if not fpath.exists():
+            return None
         text: str = fpath.read_text().strip()
         _, _, text = text.partition("\n")
         if not text:

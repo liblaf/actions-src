@@ -2,6 +2,9 @@
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
+[dependency-groups]
+dev = ["icecream>=2.1.3"]
+
 [project]
 dependencies = [
   "githubkit[auth-app]>=0.11.13",
@@ -23,6 +26,3 @@ version = "0.0.0"
 auto-review = "actions.actions.auto_review:main"
 release = "actions.actions.release:main"
 schedule = "actions.actions.schedule:main"
-
-[tool.uv]
-dev-dependencies = ["icecream>=2.1.3", "marimo>=0.9.4"]

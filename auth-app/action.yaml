@@ -50,7 +50,7 @@ runs:
         private-key: ${{ inputs.private-key }}
         owner: ${{ inputs.owner }}
         repositories: ${{ inputs.repositories }}
-    # ref: <https://github.com/actions/create-github-app-token/blob/main/README.md#create-a-git-committer-string-for-an-app-installation>
+    # https://github.com/actions/create-github-app-token/blob/main/README.md#create-a-git-committer-string-for-an-app-installation
     - run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
       shell: bash
       name: Get GitHub App User ID

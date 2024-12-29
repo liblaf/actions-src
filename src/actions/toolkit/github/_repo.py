@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Any
 
 import githubkit
 import githubkit.exception
-import githubkit.typing
+import githubkit.utils
 import githubkit.versions.latest.models as m
 import httpx
 import tenacity
@@ -52,6 +52,11 @@ class RepoClient:
         notes: str | None = None,
         prerelease: bool = False,
     ) -> m.Release:
+        kwargs: dict[str, Any] = (
+            {"body": notes, "generate_release_notes": False}
+            if notes
+            else {"generate_release_notes": True}
+        )
         resp: githubkit.Response[
             m.Release
         ] = await self._gh.rest.repos.async_create_release(
@@ -59,9 +64,8 @@ class RepoClient:
             self.repo,
             tag_name=tag,
             name=tag,
-            body=notes,
             prerelease=prerelease,
-            generate_release_notes=not notes,
+            **kwargs,
         )
         release: m.Release = resp.parsed_data
         await self.release_upload(tag, *files, hasher=hasher)
