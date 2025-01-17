@@ -1,0 +1,37 @@
+name: Label PR
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  add-label:
+    description: Add labels by name
+    required: true
+  app:
+    description: Filter by GitHub App author
+    required: false
+  label:
+    description: Filter by label
+    required: false
+  repo:
+    description: Repository name with owner
+    required: false
+    default: ${{ github.repository }}
+  token:
+    description: GitHub Token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - run: bash "${{ github.action_path }}/main.sh"
+      shell: bash
+      name: Merge
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        INPUT_ADD_LABEL: ${{ inputs.add-label }}
+        INPUT_APP: ${{ inputs.app }}
+        INPUT_LABEL: ${{ inputs.label }}
+        INPUT_REPO: ${{ inputs.repo }}
