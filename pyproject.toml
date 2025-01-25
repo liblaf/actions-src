@@ -33,6 +33,7 @@ version = "0.0.0"
 [project.scripts]
 release = "liblaf.actions.actions.release:main"
 review = "liblaf.actions.actions.review:main"
+ruleset-import = "liblaf.actions.actions.ruleset_import:main"
 
 [tool.check-wheel-contents]
 ignore = ["W002"]

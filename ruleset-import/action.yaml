@@ -1,0 +1,34 @@
+name: Ruleset Import
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  repo:
+    description: TODO
+    required: false
+    default: ${{ github.repository }}
+  source-repo:
+    description: TODO
+    required: true
+  source-ruleset-id:
+    description: TODO
+    required: true
+  token:
+    description: TODO
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Ruleset Import
+      run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
+      shell: bash
+      env:
+        FORCE_COLOR: 1
+        INPUT_REPO: ${{ inputs.repo }}
+        INPUT_SOURCE_REPO: ${{ inputs.source-repo }}
+        INPUT_SOURCE_RULESET_ID: ${{ inputs.source-ruleset-id }}
+        INPUT_TOKEN: ${{ inputs.token }}

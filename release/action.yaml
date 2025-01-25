@@ -35,15 +35,15 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Generate Changelog
-      id: changelog
+    - id: changelog
+      name: Generate Changelog
       uses: liblaf/actions/changelog@main
       with:
         args: ${{ inputs.prerelease == 'true' && '--unreleased' || '--current' }} --strip all
         token: ${{ inputs.token }}
-    - run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
+    - name: Release
+      run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
       shell: bash
-      name: Release
       env:
         FORCE_COLOR: 1
         INPUT_CHANGELOG_FILE: ${{ steps.changelog.outputs.changelog }}
