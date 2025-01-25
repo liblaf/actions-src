@@ -40,6 +40,9 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Fetch All History
+      run: git fetch --all --unshallow --tags
+      shell: bash
     - name: git-cliff
       id: cliff
       env:
