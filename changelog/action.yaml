@@ -16,7 +16,7 @@ inputs:
   output:
     description: Output file.
     required: false
-    default: CHANGELOG.md
+    default: ${{ runner.temp }}/CHANGELOG.md
   repository:
     description: The owner and repository name. For example, `octocat/Hello-World`.
     required: false
