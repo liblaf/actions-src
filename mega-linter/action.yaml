@@ -16,25 +16,8 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Prepare Linter Rules
+    - name: Prepare Linter Config
       run: bash "${{ github.action_path }}/scripts/prepare.sh"
-      shell: bash
-    - id: config
-      name: Discover Configuration
-      run: |-
-        MEGALINTER_CONFIG_OPTIONS=(
-          .mega-linter.yaml
-          .mega-linter.yml
-          .github/.mega-linter.yaml
-          .github/.mega-linter.yml
-          "${{ github.action_path }}/.mega-linter.yaml"
-        )
-
-        for config in "${MEGALINTER_CONFIG_OPTIONS[@]}"; do
-          if [[ -f $config ]]; then
-            echo "MEGALINTER_CONFIG=$config" >> "$GITHUB_ENV"
-          fi
-        done
       shell: bash
     - name: MegaLinter
       uses: oxsecurity/megalinter@v8
@@ -54,7 +37,7 @@ runs:
         JSON_REPORTER: true
         MARKDOWN_SUMMARY_REPORTER: true
     - if: success() || failure()
-      name: Remove Linter Rules
+      name: Remove Linter Config
       run: bash "${{ github.action_path }}/scripts/remove.sh"
       shell: bash
     - if: success() || failure()
