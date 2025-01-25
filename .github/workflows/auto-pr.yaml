@@ -1,0 +1,42 @@
+name: (Auto) PR
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  merge:
+    name: Merge
+    permissions:
+      pull-requests: write
+    if: >-
+      (
+        github.event_name == 'schedule' &&
+        github.event.schedule == '0 0 * * 0'
+      ) || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge
+        uses: liblaf/actions/pr-label@main
+        with:
+          add-label: automerge
+          label: "autorelease: pending"
+          token: ${{ secrets.PAT || github.token }}
+
+  review:
+    name: Review
+    permissions:
+      pull-requests: write
+    if: >-
+      (
+        github.event_name == 'schedule' &&
+        github.event.schedule == '0 0 * * *'
+      ) || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Review
+        uses: liblaf/actions/pr-review@main
+        with:
+          token: ${{ secrets.PAT || github.token }}
