@@ -41,7 +41,7 @@ runs:
       with:
         args: ${{ inputs.prerelease == 'true' && '--unreleased' || '--current' }} --strip all
         token: ${{ inputs.token }}
-    - run: pipx run --spec git+https://github.com/liblaf/actions.git --python 3.12 --fetch-missing-python release
+    - run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
       shell: bash
       name: Release
       env:

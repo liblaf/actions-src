@@ -17,5 +17,5 @@ if ((${#number[@]} == 0)); then
 fi
 for pr in "${number[@]}"; do
   gh pr --repo "$INPUT_REPO" edit "$pr" --add-label "$INPUT_ADD_LABEL"
-  echo "::notice::Add '$INPUT_ADD_LABEL' to [$INPUT_REPO#$pr](https://github.com/$INPUT_REPO/pull/$pr)."
+  echo "::notice::Add label '$INPUT_ADD_LABEL' to [$INPUT_REPO#$pr](https://github.com/$INPUT_REPO/pull/$pr)."
 done
