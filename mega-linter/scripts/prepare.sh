@@ -11,10 +11,6 @@ LINTER_RULES=(
 )
 MISSING_LINTER_RULES=()
 
-BRIGHT_RED="\x1b[91m"
-BRIGHT_GREEN="\x1b[92m"
-RESET="\x1b[0m"
-
 function download() {
   local_path=".github/linters/$1"
   remote_path="$LINTER_RULES_PATH/$1"
@@ -23,12 +19,7 @@ function download() {
   fi
   MISSING_LINTER_RULES+=("$1")
   mkdir --parents --verbose ".github/linters"
-  if wget --output-document="$local_path" "$remote_path"; then
-    printf "${BRIGHT_GREEN}SAVED: %s${RESET}\n" "$local_path"
-  else
-    printf "${BRIGHT_RED}DOWNLOAD ERROR: %s${RESET}\n" "$local_path"
-    rm --force "$local_path"
-  fi
+  wget --output-document="$local_path" "$remote_path"
 }
 
 for rule in "${LINTER_RULES[@]}"; do

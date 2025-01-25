@@ -1,3 +1,6 @@
+# https://github.com/oxsecurity/megalinter/blob/main/mega-linter-runner/generators/mega-linter/templates/mega-linter.yml
+# https://megalinter.io
+
 name: MegaLinter
 
 author: liblaf
@@ -13,16 +16,32 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: bash "${{ github.action_path }}/scripts/prepare.sh"
+    - name: Prepare Linter Rules
+      run: bash "${{ github.action_path }}/scripts/prepare.sh"
       shell: bash
-      name: Prepare Linter Rules
+    - id: config
+      name: Discover Configuration
+      run: |-
+        MEGALINTER_CONFIG_OPTIONS=(
+          .mega-linter.yaml
+          .mega-linter.yml
+          .github/.mega-linter.yaml
+          .github/.mega-linter.yml
+          "${{ github.action_path }}/.mega-linter.yaml"
+        )
+
+        for config in "${MEGALINTER_CONFIG_OPTIONS[@]}"; do
+          if [[ -f $config ]]; then
+            echo "MEGALINTER_CONFIG=$config" >> "$GITHUB_ENV"
+          fi
+        done
+      shell: bash
     - name: MegaLinter
-      id: ml
+      uses: oxsecurity/megalinter@v8
       env:
         GITHUB_TOKEN: ${{ inputs.token }}
         # https://megalinter.io/latest/config-variables/
         # Common Variables
-        MEGALINTER_CONFIG: .github/.mega-linter.yaml
         VALIDATE_ALL_CODEBASE: true
         # Reporters
         TEXT_REPORTER: true
@@ -34,11 +53,10 @@ runs:
         CONSOLE_REPORTER: true
         JSON_REPORTER: true
         MARKDOWN_SUMMARY_REPORTER: true
-      uses: oxsecurity/megalinter@v8
-    - run: bash "${{ github.action_path }}/scripts/remove.sh"
-      shell: bash
-      if: success() || failure()
+    - if: success() || failure()
       name: Remove Linter Rules
+      run: bash "${{ github.action_path }}/scripts/remove.sh"
+      shell: bash
     - if: success() || failure()
       name: Archive Production Artifacts
       uses: actions/upload-artifact@v4
@@ -53,39 +71,13 @@ runs:
       with:
         sarif_file: megalinter-reports/megalinter-report.sarif
       continue-on-error: true
-    - run: cat megalinter-reports/megalinter-report.md >> "$GITHUB_STEP_SUMMARY"
-      shell: bash
-      if: success() || failure()
+    - if: success() || failure()
       name: Add GitHub Summary
-    - run: sudo chown -Rc $UID .git/
+      run: cat "megalinter-reports/megalinter-report.md" >> "$GITHUB_STEP_SUMMARY"
       shell: bash
-      if: >-
-        steps.ml.outputs.has_updated_sources == 1 &&
-        github.ref != 'refs/heads/main' &&
-        (
-          github.event_name == 'push' ||
-          github.event.pull_request.head.repo.full_name == github.repository
-        ) &&
-        !contains(github.event.head_commit.message, 'skip fix')
+      continue-on-error: true
+    - if: success() || failure()
       name: Prepare Commit
-    - if: >-
-        steps.ml.outputs.has_updated_sources == 1 &&
-        github.ref != 'refs/heads/main' &&
-        (
-          github.event_name == 'push' ||
-          github.event.pull_request.head.repo.full_name == github.repository
-        ) &&
-        !contains(github.event.head_commit.message, 'skip fix')
-      name: Commit And Push Applied Linter Fixes
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "chore(mega-linter): apply linters fixes"
-        branch: >-
-          ${{
-            github.event.pull_request.head.ref ||
-            github.head_ref ||
-            github.ref
-          }}
-        add_options: --update
-        commit_user_name: megalinter-bot
-        commit_user_email: nicolas.vuillamy@ox.security
+      run: sudo chown --changes --recursive $UID .git/
+      shell: bash
+      continue-on-error: true
