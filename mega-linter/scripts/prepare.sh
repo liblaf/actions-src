@@ -38,7 +38,7 @@ else
   )
   for config in "${MEGALINTER_CONFIG_OPTIONS[@]}"; do
     if [[ -f $config ]]; then
-      cp "$config" ".mega-linter.yml"
+      cp --archive --force --no-target-directory --verbose "$config" ".mega-linter.yml"
       echo "MISSING_MEGALINTER_CONFIG=true" >> "$GITHUB_ENV"
       break
     fi
