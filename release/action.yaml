@@ -35,11 +35,20 @@ inputs:
 runs:
   using: composite
   steps:
+    - id: config
+      name: Config
+      run: |-
+        if [[ ${{ inputs.prerelease }} == "true" ]]; then
+          echo "args=--unreleased --tag ${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+        else
+          echo "args=--current" >> "$GITHUB_OUTPUT"
+        fi
+      shell: bash
     - id: changelog
       name: Generate Changelog
       uses: liblaf/actions/changelog@main
       with:
-        args: ${{ inputs.prerelease == 'true' && '--unreleased' || '--current' }} --strip all
+        args: ${{ steps.config.outputs.args }} --strip all
         token: ${{ inputs.token }}
     - name: Release
       run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
