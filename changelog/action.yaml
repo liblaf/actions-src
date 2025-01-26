@@ -45,7 +45,7 @@ runs:
         if [[ -f "${{ inputs.config }}" ]]; then
           echo "config=${{ inputs.config }}" >> "$GITHUB_OUTPUT"
         else
-          echo "config=$GITHUB_ACTION_PATH/cliff.toml" >> "$GITHUB_OUTPUT""
+          echo "config=$GITHUB_ACTION_PATH/cliff.toml" >> "$GITHUB_OUTPUT"
         fi
       shell: bash
     - id: cliff
