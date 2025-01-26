@@ -4,7 +4,7 @@ set -o nounset
 set -o pipefail
 
 readarray -t repos < <(
-  gh repo list "$OWNER" \
+  gh repo list "${OWNER-}" \
     --jq ".[].nameWithOwner" \
     --json "nameWithOwner" \
     --limit 1000 \
