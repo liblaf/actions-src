@@ -79,7 +79,7 @@ class Client:
         )
         await self._gh.rest.git.async_delete_ref(self.owner, self.repo, f"tags/{tag}")
         # workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
-        await asyncio.sleep(3)
+        await asyncio.sleep(10)
         # await self._wait_until_release(tag, exists=False)
 
     async def release_download(self, tag: str, asset_name: str) -> bytes:
