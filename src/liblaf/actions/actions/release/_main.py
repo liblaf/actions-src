@@ -1,6 +1,4 @@
-import githubkit
-
-from liblaf.actions import toolkit, utils
+from liblaf.actions import utils
 from liblaf.actions.toolkit import core
 
 from . import Client, Inputs
@@ -8,8 +6,7 @@ from . import Client, Inputs
 
 @utils.action()
 async def main(inputs: Inputs) -> None:
-    gh: githubkit.GitHub = toolkit.github.get_octokit()
-    client = Client(gh, *inputs.repo.split("/"))
+    client = Client(*inputs.repo.split("/"))
     create: bool = False
     cksums_local: dict[str, str] = utils.cksum.hash_files(
         *inputs.files, hasher=inputs.hasher

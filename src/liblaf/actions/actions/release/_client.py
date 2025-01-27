@@ -1,5 +1,7 @@
 import asyncio
+import contextlib
 import os
+from collections.abc import Generator
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
@@ -11,6 +13,7 @@ import githubkit.versions.latest.models as ghm
 import httpx
 import tenacity
 
+from liblaf.actions import toolkit
 from liblaf.actions.utils import cksum
 
 if TYPE_CHECKING:
@@ -22,8 +25,8 @@ class Client:
     owner: str
     repo: str
 
-    def __init__(self, gh: githubkit.GitHub, owner: str, repo: str) -> None:
-        self._gh = gh
+    def __init__(self, owner: str, repo: str) -> None:
+        self._gh = toolkit.github.get_octokit(http_cache=False)
         self.owner = owner
         self.repo = repo
 
@@ -73,21 +76,18 @@ class Client:
         return release
 
     async def release_delete(self, tag: str) -> None:
-        try:
+        with suppress_not_found():
             release: ghm.Release = await self.release_get(tag)
             await self._gh.rest.repos.async_delete_release(
                 self.owner, self.repo, release.id
             )
+        with suppress_not_found():
             await self._gh.rest.git.async_delete_ref(
                 self.owner, self.repo, f"tags/{tag}"
             )
-            # TODO: remove workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
-            await asyncio.sleep(10)
-            # await self._wait_until_release(tag, exists=False)
-        except githubkit.exception.RequestFailed as err:
-            if err.response.status_code == httpx.codes.NOT_FOUND:
-                return
-            raise
+        # TODO: remove workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
+        # await asyncio.sleep(10)
+        await self._wait_until_release(tag, exists=False)
 
     async def release_download(self, tag: str, asset_name: str) -> bytes:
         resp: httpx.Response = await self._gh._arequest(  # noqa: SLF001
@@ -98,7 +98,7 @@ class Client:
         return resp.content
 
     async def release_delete_asset(self, tag: str, asset_name: str) -> None:
-        try:
+        with suppress_not_found():
             release: ghm.Release = await self.release_get(tag)
             for asset in release.assets:
                 if asset.name == asset_name:
@@ -106,10 +106,6 @@ class Client:
                         self.owner, self.repo, asset.id
                     )
                     return
-        except githubkit.exception.RequestFailed as err:
-            if err.response.status_code == httpx.codes.NOT_FOUND:
-                return
-            raise
 
     async def release_cksums(self, tag: str, hasher: str) -> dict[str, str]:
         try:
@@ -155,7 +151,7 @@ class Client:
         return await asyncio.gather(*futures)
 
     @tenacity.retry(
-        wait=tenacity.wait_random_exponential(),
+        wait=tenacity.wait_random_exponential(max=60),
         retry=tenacity.retry_if_exception_type(tenacity.TryAgain),
     )
     async def _wait_until_release(self, tag: str, *, exists: bool) -> None:
@@ -187,3 +183,12 @@ class Client:
         await self._gh.rest.repos.async_update_release(
             self.owner, self.repo, release.id, body=body
         )
+
+
+@contextlib.contextmanager
+def suppress_not_found() -> Generator[None]:
+    try:
+        yield
+    except githubkit.exception.RequestFailed as err:
+        if err.response.status_code != httpx.codes.NOT_FOUND:
+            raise
