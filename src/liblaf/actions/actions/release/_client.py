@@ -73,14 +73,21 @@ class Client:
         return release
 
     async def release_delete(self, tag: str) -> None:
-        release: ghm.Release = await self.release_get(tag)
-        await self._gh.rest.repos.async_delete_release(
-            self.owner, self.repo, release.id
-        )
-        await self._gh.rest.git.async_delete_ref(self.owner, self.repo, f"tags/{tag}")
-        # workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
-        await asyncio.sleep(10)
-        # await self._wait_until_release(tag, exists=False)
+        try:
+            release: ghm.Release = await self.release_get(tag)
+            await self._gh.rest.repos.async_delete_release(
+                self.owner, self.repo, release.id
+            )
+            await self._gh.rest.git.async_delete_ref(
+                self.owner, self.repo, f"tags/{tag}"
+            )
+            # TODO: remove workaround for [cli/cli#5024 (comment)](https://github.com/cli/cli/issues/5024#issuecomment-1028018586)
+            await asyncio.sleep(10)
+            # await self._wait_until_release(tag, exists=False)
+        except githubkit.exception.RequestFailed as err:
+            if err.response.status_code == httpx.codes.NOT_FOUND:
+                return
+            raise
 
     async def release_download(self, tag: str, asset_name: str) -> bytes:
         resp: httpx.Response = await self._gh._arequest(  # noqa: SLF001
@@ -91,13 +98,18 @@ class Client:
         return resp.content
 
     async def release_delete_asset(self, tag: str, asset_name: str) -> None:
-        release: ghm.Release = await self.release_get(tag)
-        for asset in release.assets:
-            if asset.name == asset_name:
-                await self._gh.rest.repos.async_delete_release_asset(
-                    self.owner, self.repo, asset.id
-                )
+        try:
+            release: ghm.Release = await self.release_get(tag)
+            for asset in release.assets:
+                if asset.name == asset_name:
+                    await self._gh.rest.repos.async_delete_release_asset(
+                        self.owner, self.repo, asset.id
+                    )
+                    return
+        except githubkit.exception.RequestFailed as err:
+            if err.response.status_code == httpx.codes.NOT_FOUND:
                 return
+            raise
 
     async def release_cksums(self, tag: str, hasher: str) -> dict[str, str]:
         try:
