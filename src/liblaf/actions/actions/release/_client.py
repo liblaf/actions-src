@@ -72,6 +72,7 @@ class Client:
             **kwargs,
         )
         release: ghm.Release = resp.parsed_data
+        await self._wait_until_release(tag, exists=True)
         await self.release_upload(tag, *files, hasher=hasher)
         return release
 
