@@ -9,6 +9,7 @@ inputs:
     description: TODO
     required: false
     default: |-
+      github-actions[bot]
       release-please[bot]
       renovate[bot]
   repo:
