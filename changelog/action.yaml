@@ -58,6 +58,12 @@ runs:
         GITHUB_REPO: ${{ inputs.repository }}
         GITHUB_TOKEN: ${{ inputs.token }}
         OUTPUT: ${{ inputs.output }}
+    - run: |-
+        if [[ ! -f "${{ inputs.output }}" ]]; then
+          touch "${{ inputs.output }}"
+        fi
+      shell: bash
+      name: Ensure Output
     - run: npx prettier --write "${{ inputs.output }}"
       shell: bash
       name: Prettier
