@@ -8,6 +8,14 @@ author: liblaf
 description: TODO
 
 inputs:
+  github-status-reporter:
+    description: TODO
+    required: false
+    default: "true"
+  sarif-reporter:
+    description: TODO
+    required: false
+    default: "false"
   token:
     description: GitHub token
     required: false
@@ -29,18 +37,18 @@ runs:
         # Reporters
         TEXT_REPORTER: true
         GITHUB_COMMENT_REPORTER: true
-        GITHUB_STATUS_REPORTER: true
-        SARIF_REPORTER: true
+        GITHUB_STATUS_REPORTER: ${{ inputs.github-status-reporter }}
+        SARIF_REPORTER: ${{ inputs.sarif-reporter }}
         UPDATED_SOURCES_REPORTER: true
         CONFIG_REPORTER: true
         CONSOLE_REPORTER: true
         JSON_REPORTER: true
         MARKDOWN_SUMMARY_REPORTER: true
-    - if: success() || failure()
+    - if: always()
       name: Remove Linter Config
       run: bash "${{ github.action_path }}/scripts/remove.sh"
       shell: bash
-    - if: success() || failure()
+    - if: always()
       name: Archive Production Artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -48,19 +56,18 @@ runs:
         path: |-
           mega-linter.log
           megalinter-reports/
-    - if: success() || failure()
+    - if: always() && inputs.sarif-reporter == 'true'
       name: Upload Megalinter Scan Results To Github Security Tab
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: megalinter-reports/megalinter-report.sarif
       continue-on-error: true
-    - if: success() || failure()
+    - if: always()
       name: Add GitHub Summary
       run: cat "megalinter-reports/megalinter-report.md" >> "$GITHUB_STEP_SUMMARY"
       shell: bash
       continue-on-error: true
-    - if: success() || failure()
+    - if: always()
       name: Prepare Commit
       run: sudo chown --changes --recursive $UID .git/
       shell: bash
-      continue-on-error: true
