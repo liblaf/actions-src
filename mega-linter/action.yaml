@@ -11,7 +11,7 @@ inputs:
   github-status-reporter:
     description: TODO
     required: false
-    default: "true"
+    default: "false"
   sarif-reporter:
     description: TODO
     required: false
