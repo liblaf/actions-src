@@ -4,7 +4,6 @@ author: liblaf
 
 description: TODO
 
-
 runs:
   using: composite
   steps:
@@ -12,9 +11,9 @@ runs:
       name: Setup Pixi
       uses: prefix-dev/setup-pixi@v0
       with:
-          run-install: true
-          activate-environment: true
-          locked: false
+        run-install: true
+        activate-environment: true
+        locked: false
     - if: hashFiles('**/uv.lock') != ''
       name: Setup uv
       uses: astral-sh/setup-uv@v5
