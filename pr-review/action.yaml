@@ -10,6 +10,7 @@ inputs:
     required: false
     default: |-
       github-actions[bot]
+      liblaf-bot[bot]
       release-please[bot]
       renovate[bot]
   repo:
