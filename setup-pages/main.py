@@ -23,7 +23,7 @@ class Inputs(actions.Inputs):
 async def main(inputs: Inputs) -> None:
     owner: str
     repo: str
-    owner, _, repo = inputs.repo
+    owner, _, repo = inputs.repo.partition("/")
     gh: githubkit.GitHub = github.get_octokit()
     try:
         await gh.rest.repos.async_get_pages(owner=owner, repo=repo)
