@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/liblaf/actions/compare/v0.1.0...v0.1.1) (2025-03-23)
+
+
+### 🐛 Bug Fixes
+
+* **release:** re-enable checksum calculation for assets ([4b3ca45](https://github.com/liblaf/actions/commit/4b3ca458244739ab8e98a09e37660f92721960fb))
+
 ## [0.1.0] - 2025-03-23
 
 ### ✨ Features
