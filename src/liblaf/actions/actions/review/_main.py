@@ -2,7 +2,7 @@ from typing import Any
 
 import githubkit
 
-from liblaf.actions import core, toolkit, utils
+from liblaf.actions import core, github, utils
 
 from . import Inputs
 
@@ -10,7 +10,7 @@ from . import Inputs
 @utils.action()
 async def main(inputs: Inputs) -> None:
     _: Any
-    gh: githubkit.GitHub = toolkit.github.get_octokit()
+    gh: githubkit.GitHub = github.get_octokit()
     owner: str
     repo: str
     owner, _, repo = inputs.repo.partition("/")

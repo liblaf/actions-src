@@ -5,7 +5,7 @@ import githubkit.versions.latest.models as ghm
 import githubkit.versions.latest.types as ght
 import pydantic
 
-from liblaf.actions import core, toolkit, utils
+from liblaf.actions import core, github, utils
 
 from . import Inputs
 
@@ -13,7 +13,7 @@ from . import Inputs
 @utils.action()
 async def main(inputs: Inputs) -> None:
     _: Any
-    gh: githubkit.GitHub = toolkit.github.get_octokit()
+    gh: githubkit.GitHub = github.get_octokit()
     owner: str
     repo: str
     owner, _, repo = inputs.repo.partition("/")
@@ -37,7 +37,7 @@ async def main(inputs: Inputs) -> None:
 async def find_ruleset(
     owner: str, repo: str, name: str
 ) -> ghm.RepositoryRuleset | None:
-    gh: githubkit.GitHub = toolkit.github.get_octokit()
+    gh: githubkit.GitHub = github.get_octokit()
     async for ruleset in gh.paginate(
         gh.rest.repos.async_get_repo_rulesets, owner=owner, repo=repo
     ):
@@ -49,7 +49,7 @@ async def find_ruleset(
 
 
 async def create_ruleset(owner: str, repo: str, ruleset: ghm.RepositoryRuleset) -> None:
-    gh: githubkit.GitHub = toolkit.github.get_octokit()
+    gh: githubkit.GitHub = github.get_octokit()
     adapter = pydantic.TypeAdapter(ght.ReposOwnerRepoRulesetsPostBodyType)
     data: ght.ReposOwnerRepoRulesetsPostBodyType = adapter.validate_python(
         ruleset.model_dump(exclude_unset=True, exclude_defaults=True, exclude_none=True)
@@ -61,7 +61,7 @@ async def create_ruleset(owner: str, repo: str, ruleset: ghm.RepositoryRuleset) 
 async def update_ruleset(
     owner: str, repo: str, ruleset: ghm.RepositoryRuleset, target_ruleset_id: int
 ) -> None:
-    gh: githubkit.GitHub = toolkit.github.get_octokit()
+    gh: githubkit.GitHub = github.get_octokit()
     adapter = pydantic.TypeAdapter(ght.ReposOwnerRepoRulesetsRulesetIdPutBodyType)
     data: ght.ReposOwnerRepoRulesetsRulesetIdPutBodyType = adapter.validate_python(
         ruleset.model_dump(exclude_unset=True, exclude_defaults=True, exclude_none=True)

@@ -13,7 +13,7 @@ import githubkit.versions.latest.models as ghm
 import httpx
 import tenacity
 
-from liblaf.actions import toolkit
+from liblaf.actions import github
 from liblaf.actions.utils import cksum
 
 if TYPE_CHECKING:
@@ -26,7 +26,7 @@ class Client:
     repo: str
 
     def __init__(self, owner: str, repo: str) -> None:
-        self._gh = toolkit.github.get_octokit(http_cache=False)
+        self._gh = github.get_octokit(http_cache=False)
         self.owner = owner
         self.repo = repo
 

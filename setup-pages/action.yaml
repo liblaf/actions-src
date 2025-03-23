@@ -19,6 +19,8 @@ runs:
   steps:
     - name: Setup uv
       uses: astral-sh/setup-uv@v5
+      with:
+        enable-cache: false
     - name: Setup GitHub Pages
       run: uv run "$GITHUB_ACTION_PATH/main.py"
       shell: bash

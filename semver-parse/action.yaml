@@ -32,6 +32,8 @@ runs:
   steps:
     - name: Setup uv
       uses: astral-sh/setup-uv@v5
+      with:
+        enable-cache: false
     - id: semver
       name: SemVer Parse
       run: uv run "$GITHUB_ACTION_PATH/main.py"
