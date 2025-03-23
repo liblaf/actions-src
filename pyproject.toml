@@ -7,12 +7,7 @@ requires = ["hatch-vcs", "hatchling"]
 
 [dependency-groups]
 build = ["check-wheel-contents", "hatch", "twine"]
-dev = [
-    "icecream",
- "pynacl>=1.5.0",
- "semver>=3.0.4",
- "typer>=0.15.2",
-]
+dev = ["icecream", "pynacl>=1.5.0", "semver>=3.0.4", "typer>=0.15.2"]
 docs = [
   "gitpython",
   "mdx-truly-sane-lists",

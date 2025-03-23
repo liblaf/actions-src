@@ -5,8 +5,7 @@ import githubkit.versions.latest.models as ghm
 import githubkit.versions.latest.types as ght
 import pydantic
 
-from liblaf.actions import toolkit, utils
-from liblaf.actions.toolkit import core
+from liblaf.actions import core, toolkit, utils
 
 from . import Inputs
 

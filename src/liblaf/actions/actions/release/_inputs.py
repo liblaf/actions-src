@@ -5,7 +5,7 @@ from pathlib import Path
 import pydantic_settings as ps
 from loguru import logger
 
-from liblaf.actions.toolkit import core
+from liblaf.actions import core
 
 
 class Inputs(ps.BaseSettings):

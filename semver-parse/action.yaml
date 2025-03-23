@@ -1,0 +1,40 @@
+name: SemVer Parse
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  version:
+    description: version
+    required: false
+    default: ${{ github.ref_name }}
+
+outputs:
+  major:
+    description: major
+    value: ${{ steps.semver.outputs.major }}
+  minor:
+    description: minor
+    value: ${{ steps.semver.outputs.minor }}
+  patch:
+    description: patch
+    value: ${{ steps.semver.outputs.patch }}
+  prerelease:
+    description: prerelease
+    value: ${{ steps.semver.outputs.prerelease }}
+  build:
+    description: build
+    value: ${{ steps.semver.outputs.build }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v5
+    - id: semver
+      name: SemVer Parse
+      run: uv run "$GITHUB_ACTION_PATH/main.py"
+      shell: bash
+      env:
+        INPUT_VERSION: ${{ inputs.version }}

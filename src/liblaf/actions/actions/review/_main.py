@@ -2,8 +2,7 @@ from typing import Any
 
 import githubkit
 
-from liblaf.actions import toolkit, utils
-from liblaf.actions.toolkit import core
+from liblaf.actions import core, toolkit, utils
 
 from . import Inputs
 

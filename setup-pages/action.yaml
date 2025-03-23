@@ -1,0 +1,22 @@
+name: Setup GitHub Pages
+
+author: liblaf
+
+description: TODO
+
+inputs:
+  repo:
+    description: repo
+    required: false
+    default: ${{ github.repository }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v5
+    - name: Setup GitHub Pages
+      run: uv run "$GITHUB_ACTION_PATH/main.py"
+      shell: bash
+      env:
+        INPUT_REPO: ${{ inputs.repo }}
