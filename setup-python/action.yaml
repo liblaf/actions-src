@@ -9,18 +9,36 @@ inputs:
     description: The version of Python to set UV_PYTHON to
     required: false
 
+outputs:
+  pixi:
+    description: pixi
+    value: ${{ steps.manager.outputs.pixi }}
+  uv:
+    description: uv
+    value: ${{ steps.manager.outputs.uv }}
+
 runs:
   using: composite
   steps:
-    - if: hashFiles('**/pixi.lock') != ''
+    - id: manager
+      name: Detect Package Manager
+      run: |-
+        echo "pixi=${{ hashFiles('**/pixi.lock') != '' }}" >> "$GITHUB_OUTPUT"
+        echo "uv=${{ hashFiles('**/uv.lock') != '' }}" >> "$GITHUB_OUTPUT"
+      shell: bash
+    - if: steps.manager.outputs.pixi == 'true'
       name: Setup Pixi
       uses: prefix-dev/setup-pixi@v0
       with:
         run-install: true
         activate-environment: true
         locked: false
-    - if: hashFiles('**/uv.lock') != ''
+    - if: steps.manager.outputs.uv == 'true'
       name: Setup uv
       uses: astral-sh/setup-uv@v5
       with:
         python-version: ${{ inputs.python-version }}
+    - if: steps.manager.outputs.uv == 'true'
+      name: Install Dependencies
+      run: uv sync --all-extras --all-groups
+      shell: bash
