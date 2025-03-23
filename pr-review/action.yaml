@@ -29,6 +29,7 @@ runs:
       shell: bash
       name: Review
       env:
+        FORCE_COLOR: "1"
         INPUT_AUTHOR: ${{ inputs.author }}
         INPUT_REPO: ${{ inputs.repo }}
         INPUT_TOKEN: ${{ inputs.token }}

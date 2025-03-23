@@ -39,4 +39,5 @@ runs:
       run: uv run "$GITHUB_ACTION_PATH/main.py"
       shell: bash
       env:
+        FORCE_COLOR: "1"
         INPUT_VERSION: ${{ inputs.version }}

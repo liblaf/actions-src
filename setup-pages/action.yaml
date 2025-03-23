@@ -25,5 +25,6 @@ runs:
       run: uv run "$GITHUB_ACTION_PATH/main.py"
       shell: bash
       env:
+        FORCE_COLOR: "1"
         INPUT_REPO: ${{ inputs.repo }}
         INPUT_TOKEN: ${{ inputs.token }}

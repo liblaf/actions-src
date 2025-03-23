@@ -54,7 +54,7 @@ runs:
       run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
       shell: bash
       env:
-        FORCE_COLOR: 1
+        FORCE_COLOR: "1"
         INPUT_CHANGELOG_FILE: ${{ steps.changelog.outputs.changelog }}
         INPUT_CLOBBER: ${{ inputs.clobber }}
         INPUT_FILES: ${{ inputs.files }}

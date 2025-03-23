@@ -27,7 +27,7 @@ runs:
       run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python ruleset-import
       shell: bash
       env:
-        FORCE_COLOR: 1
+        FORCE_COLOR: "1"
         INPUT_REPO: ${{ inputs.repo }}
         INPUT_SOURCE_REPO: ${{ inputs.source-repo }}
         INPUT_SOURCE_RULESET_ID: ${{ inputs.source-ruleset-id }}
