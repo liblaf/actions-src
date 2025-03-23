@@ -9,6 +9,10 @@ inputs:
     description: repo
     required: false
     default: ${{ github.repository }}
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
 
 runs:
   using: composite
@@ -20,3 +24,4 @@ runs:
       shell: bash
       env:
         INPUT_REPO: ${{ inputs.repo }}
+        INPUT_TOKEN: ${{ inputs.token }}
