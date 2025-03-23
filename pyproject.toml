@@ -11,6 +11,7 @@ dev = ["icecream", "pynacl>=1.5.0", "semver>=3.0.4", "typer>=0.15.2"]
 docs = [
   "gitpython",
   "mdx-truly-sane-lists",
+  "mike",
   "mkdocs",
   "mkdocs-autorefs",
   "mkdocs-gen-files",
