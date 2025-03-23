@@ -131,16 +131,16 @@ class Client:
             fpath: Path = Path(file)
             data: bytes = fpath.read_bytes()
             futures.append(self._release_upload_asset(tag, fpath.name, data=data))
-            # if hasher:
-            #     s: str = cksum.hash_bytes(data, hasher)
-            #     cksums[fpath.name] = s
-            #     futures.append(
-            #         self._release_upload_asset(
-            #             tag,
-            #             cksum.filename.single(fpath, hasher),
-            #             data=cksum.dumps({fpath.name: s}).encode(),
-            #         )
-            #     )
+            if hasher:
+                s: str = cksum.hash_bytes(data, hasher)
+                cksums[fpath.name] = s
+                # futures.append(
+                #     self._release_upload_asset(
+                #         tag,
+                #         cksum.filename.single(fpath, hasher),
+                #         data=cksum.dumps({fpath.name: s}).encode(),
+                #     )
+                # )
         if hasher:
             futures.append(
                 self._release_upload_asset(
