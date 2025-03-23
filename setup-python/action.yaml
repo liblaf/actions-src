@@ -4,6 +4,11 @@ author: liblaf
 
 description: TODO
 
+inputs:
+  python-version:
+    description: The version of Python to set UV_PYTHON to
+    required: false
+
 runs:
   using: composite
   steps:
@@ -17,3 +22,5 @@ runs:
     - if: hashFiles('**/uv.lock') != ''
       name: Setup uv
       uses: astral-sh/setup-uv@v5
+      with:
+        python-version: ${{ inputs.python-version }}
