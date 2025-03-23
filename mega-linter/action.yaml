@@ -1,5 +1,5 @@
-# https://github.com/oxsecurity/megalinter/blob/main/mega-linter-runner/generators/mega-linter/templates/mega-linter.yml
-# https://megalinter.io
+# ref: <https://github.com/oxsecurity/megalinter/blob/main/mega-linter-runner/generators/mega-linter/templates/mega-linter.yml>
+# ref: <https://megalinter.io>
 
 name: MegaLinter
 
@@ -24,7 +24,8 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Prepare Linter Config
+    - id: prepare
+      name: Prepare Linter Config
       run: bash "${{ github.action_path }}/scripts/prepare.sh"
       shell: bash
     - name: MegaLinter
@@ -48,6 +49,8 @@ runs:
       name: Remove Linter Config
       run: bash "${{ github.action_path }}/scripts/remove.sh"
       shell: bash
+      env:
+        REMOVE: ${{ steps.prepare.outputs.remove }}
     - if: always()
       name: Archive Production Artifacts
       uses: actions/upload-artifact@v4
@@ -69,5 +72,5 @@ runs:
       continue-on-error: true
     - if: always()
       name: Prepare Commit
-      run: sudo chown --changes --recursive $UID .git/
+      run: sudo chown --changes --recursive "${UID}" ".git/"
       shell: bash

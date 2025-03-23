@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
-# https://megalinter.io/latest/config-file/
+# ref: <https://megalinter.io/latest/config-file/>
 
 EXTENDS:
-  - https://github.com/liblaf/.github/raw/refs/heads/main/.mega-linter.yaml
+  - https://raw.githubusercontent.com/liblaf/.github/main/.mega-linter.yaml

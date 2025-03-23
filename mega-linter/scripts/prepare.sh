@@ -3,7 +3,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-LINTER_RULES_PATH="https://github.com/liblaf/.github/raw/refs/heads/main/.github/linters"
+FILES_TO_REMOVE=()
 LINTER_RULES=(
   .checkov.yml
   .devskim.json
@@ -11,36 +11,39 @@ LINTER_RULES=(
   kics.config
   pyrightconfig.json
 )
-MISSING_LINTER_RULES=()
-function download() {
-  local_path=".github/linters/$1"
-  remote_path="$LINTER_RULES_PATH/$1"
-  if [[ -f ".github/linters/$1" ]]; then
-    return
-  fi
-  MISSING_LINTER_RULES+=("$1")
-  mkdir --parents --verbose ".github/linters"
-  wget --output-document="$local_path" "$remote_path"
-}
-for rule in "${LINTER_RULES[@]}"; do
-  download "$rule"
-done
-echo "MISSING_LINTER_RULES=${MISSING_LINTER_RULES[*]}" >> "$GITHUB_ENV"
+LINTER_RULES_REMOTE="https://raw.githubusercontent.com/liblaf/.github/main/.github/linters/"
+MEGALINTER_CONFIG_OPTIONS=(
+  .mega-linter.yaml
+  .config/.mega-linter.yaml
+  .config/.mega-linter.yml
+  .github/.mega-linter.yaml
+  .github/.mega-linter.yml
+  "$GITHUB_ACTION_PATH/.mega-linter.yaml"
+)
 
-if [[ -f ".mega-linter.yml" ]]; then
-  echo "MISSING_MEGALINTER_CONFIG=false" >> "$GITHUB_ENV"
-else
-  MEGALINTER_CONFIG_OPTIONS=(
-    .mega-linter.yaml
-    .github/.mega-linter.yml
-    .github/.mega-linter.yaml
-    "$GITHUB_ACTION_PATH/.mega-linter.yaml"
-  )
+for rule in "${LINTER_RULES[@]}"; do
+  if [[ -f ".github/linters/$rule" ]]; then continue; fi
+  mkdir --parents --verbose ".github/linters"
+  if [[ -f ".config/linters/$rule" ]]; then
+    cp --archive --force --no-target-directory --verbose ".config/linters/$rule" ".github/linters/$rule"
+  else
+    wget --output-document=".github/linters/$rule" "$LINTER_RULES_REMOTE/$rule"
+  fi
+  FILES_TO_REMOVE+=(".config/linters/$rule")
+done
+
+if [[ ! -f ".mega-linter.yml" ]]; then
+  FILES_TO_REMOVE+=(".mega-linter.yml")
   for config in "${MEGALINTER_CONFIG_OPTIONS[@]}"; do
     if [[ -f $config ]]; then
       cp --archive --force --no-target-directory --verbose "$config" ".mega-linter.yml"
-      echo "MISSING_MEGALINTER_CONFIG=true" >> "$GITHUB_ENV"
       break
     fi
   done
 fi
+
+{
+  echo "remove<<EOF"
+  printf "%s\n" "${FILES_TO_REMOVE[@]}"
+  echo "EOF"
+} >> "$GITHUB_OUTPUT"

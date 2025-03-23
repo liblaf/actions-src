@@ -1,45 +1,102 @@
+#:schema https://json.schemastore.org/pyproject.json
+# ref: <https://packaging.python.org/en/latest/specifications/pyproject-toml/>
+
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatchling"]
+requires = ["hatch-vcs", "hatchling"]
 
 [dependency-groups]
-build = [
-  "build>=1.2.2.post1,<2",
-  "check-wheel-contents>=0.6.1,<0.7",
-  "twine>=6.1.0,<7",
+build = ["check-wheel-contents", "hatch", "twine"]
+dev = ["icecream"]
+docs = [
+  "gitpython",
+  "mdx-truly-sane-lists",
+  "mkdocs",
+  "mkdocs-autorefs",
+  "mkdocs-gen-files",
+  "mkdocs-git-committers-plugin-2",
+  "mkdocs-git-revision-date-localized-plugin",
+  "mkdocs-literate-nav",
+  "mkdocs-material[imaging]",
+  "mkdocs-section-index",
+  "mkdocstrings",
+  "mkdocstrings-python",
+  "pymdown-extensions",
+  "ruff",
 ]
-dev = ["icecream>=2.1.3,<3"]
+test = ["pytest", "pytest-codspeed", "pytest-cov", "pytest-xdist"]
 
 [project]
+authors = [
+  { email = "30631553+liblaf@users.noreply.github.com", name = "liblaf" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "License :: OSI Approved",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python",
+  "Typing :: Typed",
+]
 dependencies = [
-  "environs>=14.1.0,<15",
-  "githubkit[auth-app]>=0.12.5,<0.13",
+  "environs>=14.1.1,<15",
+  "githubkit[auth-app]>=0.12.9,<0.13",
   "httpx>=0.28.1,<0.29",
-  "icecream>=2.1.3,<3",
   "lazy-loader>=0.4,<0.5",
-  "liblaf-grapes>=0.0.1",
+  "liblaf-grapes>=0.1.11,<0.2",
   "loguru>=0.7.2,<0.8",
-  "pydantic-settings>=2.7.1,<3",
+  "pydantic-settings>=2.8.1,<3",
   "pydantic>=2.9.2,<3",
   "rich>=13.9.2,<14",
   "tenacity>=9.0.0,<10",
 ]
 description = "Add your description here"
+dynamic = ["version"]
+keywords = []
 name = "liblaf-actions"
 readme = "docs/README.md"
 requires-python = ">=3.12"
-version = "0.0.0"
 
 [project.scripts]
 release = "liblaf.actions.actions.release:main"
 review = "liblaf.actions.actions.review:main"
 ruleset-import = "liblaf.actions.actions.ruleset_import:main"
 
+[project.urls]
+"Changelog" = "https://github.com/liblaf/actions/blob/main/CHANGELOG.md"
+"Documentation" = "https://liblaf.github.io/actions/"
+"Homepage" = "https://github.com/liblaf/actions"
+"Issue Tracker" = "https://github.com/liblaf/actions/issues"
+"Release Notes" = "https://github.com/liblaf/actions/releases"
+"Source Code" = "https://github.com/liblaf/actions"
+
 [tool.check-wheel-contents]
 ignore = ["W002"]
+
+[tool.coverage.run]
+branch = true
+source = ["src/"]
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/liblaf/actions/_version.py"
+
+[tool.hatch.build.targets.sdist]
+only-packages = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/liblaf"]
 
+[tool.hatch.version]
+source = "vcs"
+
+[tool.pytest.ini_options]
+addopts = ["--numprocesses=auto"]
+junit_family = "legacy"
+testpaths = ["tests/"]
+
 [tool.uv]
-default-groups = ["build", "dev"]
+default-groups = ["build", "dev", "docs", "test"]

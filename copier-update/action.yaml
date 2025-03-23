@@ -7,6 +7,6 @@ description: TODO
 runs:
   using: composite
   steps:
-    - run: bash "${{ github.action_path }}/main.sh"
+    - name: Copier Update
+      run: "$GITHUB_ACTION_PATH/main.sh"
       shell: bash
-      name: Copier Update

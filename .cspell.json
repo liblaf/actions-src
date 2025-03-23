@@ -23,6 +23,7 @@
     "mkdocs",
     "mkdocstrings",
     "mypy",
+    "numprocesses",
     "numpy",
     "octocat",
     "orhun",
@@ -55,6 +56,7 @@
     "trimesh",
     "ubelt",
     "venv",
+    "xdist",
     "yanyongyu"
   ],
   "ignorePaths": [
