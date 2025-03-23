@@ -1,14 +1,25 @@
 # Changelog
 
+## [0.1.2](https://github.com/liblaf/actions/compare/v0.1.1..v0.1.2) - 2025-03-23
+
+### ✨ Features
+
+- **setup-pages:** add GitHub token input to action - ([37bf1f7](https://github.com/liblaf/actions/commit/37bf1f7600b4db1314097917bd2242a2b84727e0))
+- add SemVer parse and GitHub Pages setup actions - ([01a6e39](https://github.com/liblaf/actions/commit/01a6e391b4586c1dd2852f1197c88019573a3072))
+
+### ♻ Code Refactoring
+
+- replace toolkit.github with github module in actions - ([c81d559](https://github.com/liblaf/actions/commit/c81d559fae1201ad1a28af37d6e6cfeca041b7ef))
+
+### ❤️ New Contributors
+
+- @liblaf made their first contribution
+
 ## [0.1.1](https://github.com/liblaf/actions/compare/v0.1.0..v0.1.1) - 2025-03-23
 
 ### 🐛 Bug Fixes
 
 - **release:** re-enable checksum calculation for assets - ([4b3ca45](https://github.com/liblaf/actions/commit/4b3ca458244739ab8e98a09e37660f92721960fb))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
 
 ## [0.1.0] - 2025-03-23
 
