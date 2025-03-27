@@ -11,8 +11,8 @@ site_url:
     "https://liblaf.github.io/actions/"
   ]
 site_author: "liblaf"
-repo_name: "/actions"
-repo_url: "https://github.com//actions"
+repo_name: "liblaf/actions"
+repo_url: "https://github.com/liblaf/actions"
 edit_uri: blob/main/docs/
 
 extra_css:
@@ -87,11 +87,12 @@ plugins:
       - docs/scripts/gen-ref-pages.py
   git-committers:
     enabled: !ENV [READTHEDOCS, CI, false]
-    repository: "/actions"
+    repository: "liblaf/actions"
     branch: main
   literate-nav:
   section-index:
   # External plugins, schema provided by our community
+  include-markdown:
   git-revision-date-localized:
     enable_creation_date: true
   mkdocstrings:
@@ -99,7 +100,7 @@ plugins:
     enable_inventory: true
     handlers:
       python:
-        import:
+        inventories:
           - https://docs.python.org/3/objects.inv
         options:
           # General
@@ -144,5 +145,7 @@ extra:
     provider: mike
 
 watch:
+  - .config/copier/mkdocs.yaml
   - docs/
+  - README.md
   - src/

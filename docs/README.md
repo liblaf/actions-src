@@ -1,1 +1,1 @@
-# Actions
+{% include "../README.md" %}

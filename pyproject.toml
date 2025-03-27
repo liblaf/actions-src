@@ -17,6 +17,7 @@ docs = [
   "mkdocs-gen-files",
   "mkdocs-git-committers-plugin-2",
   "mkdocs-git-revision-date-localized-plugin",
+  "mkdocs-include-markdown-plugin",
   "mkdocs-literate-nav",
   "mkdocs-material[imaging]",
   "mkdocs-section-index",
@@ -25,7 +26,13 @@ docs = [
   "pymdown-extensions",
   "ruff",
 ]
-test = ["pytest", "pytest-codspeed", "pytest-cov", "pytest-xdist"]
+test = [
+  "pytest",
+  "pytest-benchmark",
+  "pytest-codspeed",
+  "pytest-cov",
+  "pytest-xdist",
+]
 
 [project]
 authors = [
@@ -58,6 +65,7 @@ dependencies = [
 description = "Add your description here"
 dynamic = ["version"]
 keywords = []
+license = "MIT"
 name = "liblaf-actions"
 readme = "docs/README.md"
 requires-python = ">=3.12"
@@ -86,18 +94,18 @@ source = ["src/"]
 version-file = "src/liblaf/actions/_version.py"
 
 [tool.hatch.build.targets.sdist]
-only-packages = true
+only-include = ["src/"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/liblaf"]
+packages = ["src/liblaf/"]
 
 [tool.hatch.version]
 source = "vcs"
 
 [tool.pytest.ini_options]
-addopts = ["--numprocesses=auto"]
+addopts = ["--showlocals", "--strict-config", "--strict-markers"]
 junit_family = "legacy"
-testpaths = ["tests/"]
+testpaths = ["benches/", "tests/"]
 
 [tool.uv]
 default-groups = ["build", "dev", "docs", "test"]
