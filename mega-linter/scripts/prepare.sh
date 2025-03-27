@@ -29,7 +29,7 @@ for rule in "${LINTER_RULES[@]}"; do
   else
     wget --output-document=".github/linters/$rule" "$LINTER_RULES_REMOTE/$rule"
   fi
-  FILES_TO_REMOVE+=(".config/linters/$rule")
+  FILES_TO_REMOVE+=(".github/linters/$rule")
 done
 
 if [[ ! -f ".mega-linter.yml" ]]; then
