@@ -8,6 +8,7 @@ inputs:
   python-version:
     description: The version of Python to set UV_PYTHON to
     required: false
+    deprecationMessage: "`python-version` is no longer used."
 
 outputs:
   pixi:
@@ -36,8 +37,11 @@ runs:
     - if: steps.manager.outputs.uv == 'true'
       name: Setup uv
       uses: astral-sh/setup-uv@v5
+    - if: steps.manager.outputs.uv == 'true'
+      name: Setup Python
+      uses: actions/setup-python@v5
       with:
-        python-version: ${{ inputs.python-version }}
+        python-version-file: pyproject.toml
     - if: steps.manager.outputs.uv == 'true'
       name: Install Dependencies
       run: uv sync --all-extras --all-groups
