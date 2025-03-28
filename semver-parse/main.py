@@ -16,7 +16,8 @@ class Inputs(actions.Inputs):
 
 
 async def main(inputs: Inputs) -> None:
-    version: semver.Version = semver.Version.parse(inputs.version)
+    version_str: str = inputs.version.removeprefix("v")
+    version: semver.Version = semver.Version.parse(version_str)
     core.set_output("major", version.major)
     core.set_output("minor", version.minor)
     core.set_output("patch", version.patch)
