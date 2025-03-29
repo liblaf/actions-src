@@ -34,14 +34,17 @@ runs:
         run-install: true
         activate-environment: true
         locked: false
-    - if: steps.manager.outputs.uv == 'true'
-      name: Setup uv
-      uses: astral-sh/setup-uv@v5
-    - if: steps.manager.outputs.uv == 'true'
+    - id: python
+      if: steps.manager.outputs.uv == 'true'
       name: Setup Python
       uses: actions/setup-python@v5
       with:
         python-version-file: pyproject.toml
+    - if: steps.manager.outputs.uv == 'true'
+      name: Setup uv
+      uses: astral-sh/setup-uv@v5
+      with:
+        python-version: ${{ steps.python.outputs.python-version }}
     - if: steps.manager.outputs.uv == 'true'
       name: Install Dependencies
       run: uv sync --all-extras --all-groups
