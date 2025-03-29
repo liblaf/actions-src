@@ -1,37 +1,36 @@
 # Changelog
 
-## [0.1.3](https://github.com/liblaf/actions/compare/v0.1.2...v0.1.3) (2025-03-29)
-
+## [0.1.3](https://github.com/liblaf/actions/compare/v0.1.2..v0.1.3) - 2025-03-29
 
 ### ✨ Features
 
-* **setup-python:** deprecate python-version input in favor of pyproject.toml ([d6c60f3](https://github.com/liblaf/actions/commit/d6c60f31bedef4b2c8f362854dbf307eec098cf0))
-
+- **setup-python:** deprecate python-version input in favor of pyproject.toml - ([d6c60f3](https://github.com/liblaf/actions/commit/d6c60f31bedef4b2c8f362854dbf307eec098cf0))
 
 ### 🐛 Bug Fixes
 
-* correct linter config paths and step conditions ([c00fca9](https://github.com/liblaf/actions/commit/c00fca91da11865a9e9752a7f5753bb5e1e9365e))
-* **semver-parse:** strip 'v' prefix from version string ([27eacdb](https://github.com/liblaf/actions/commit/27eacdb02cc0e1e7048ae205d48237936a001918))
-* **setup-pages:** correctly parse repository owner and name ([1860a58](https://github.com/liblaf/actions/commit/1860a582f255cfa3125cf801672a2b5f85254766))
-* **setup-python:** ensure correct Python version is passed to uv ([c942476](https://github.com/liblaf/actions/commit/c942476c75c228a047cdddbb23c5a6ec87b62695))
-* standardize FORCE_COLOR environment variable format ([c15d23e](https://github.com/liblaf/actions/commit/c15d23e0916a70eb5a420ba110d127040131a1f1))
-
+- **semver-parse:** strip 'v' prefix from version string - ([27eacdb](https://github.com/liblaf/actions/commit/27eacdb02cc0e1e7048ae205d48237936a001918))
+- **setup-pages:** correctly parse repository owner and name - ([1860a58](https://github.com/liblaf/actions/commit/1860a582f255cfa3125cf801672a2b5f85254766))
+- **setup-python:** ensure correct Python version is passed to uv - ([c942476](https://github.com/liblaf/actions/commit/c942476c75c228a047cdddbb23c5a6ec87b62695))
+- correct linter config paths and step conditions - ([c00fca9](https://github.com/liblaf/actions/commit/c00fca91da11865a9e9752a7f5753bb5e1e9365e))
+- standardize FORCE_COLOR environment variable format - ([c15d23e](https://github.com/liblaf/actions/commit/c15d23e0916a70eb5a420ba110d127040131a1f1))
 
 ### 📝 Documentation
 
-* add mike as a dependency for documentation ([9966636](https://github.com/liblaf/actions/commit/9966636a9a1017b82e803e0923857821ea15bcd8))
-
+- add mike as a dependency for documentation - ([9966636](https://github.com/liblaf/actions/commit/9966636a9a1017b82e803e0923857821ea15bcd8))
 
 ### 👷 Build System
 
-* update project configuration and structure ([54caf55](https://github.com/liblaf/actions/commit/54caf55a214638d9548b1de3c76fa25bcdafcb74))
-
+- update project configuration and structure - ([54caf55](https://github.com/liblaf/actions/commit/54caf55a214638d9548b1de3c76fa25bcdafcb74))
 
 ### 🔧 Continuous Integration
 
-* remove deprecated secret-set workflow ([c2fad1d](https://github.com/liblaf/actions/commit/c2fad1db93d4fe409a21a129d7183f16d9227073))
-* restructure documentation workflows and integrate mike ([93da719](https://github.com/liblaf/actions/commit/93da719bdb3bd51aabe6499d8e3a5f4cba16ea48))
-* update GitHub Pages token configuration in docs workflows ([cc0495f](https://github.com/liblaf/actions/commit/cc0495fa2fa7d44f24c796b94d3cb7db42858911))
+- remove deprecated secret-set workflow - ([c2fad1d](https://github.com/liblaf/actions/commit/c2fad1db93d4fe409a21a129d7183f16d9227073))
+- update GitHub Pages token configuration in docs workflows - ([cc0495f](https://github.com/liblaf/actions/commit/cc0495fa2fa7d44f24c796b94d3cb7db42858911))
+- restructure documentation workflows and integrate mike - ([93da719](https://github.com/liblaf/actions/commit/93da719bdb3bd51aabe6499d8e3a5f4cba16ea48))
+
+### ❤️ New Contributors
+
+- @liblaf made their first contribution
 
 ## [0.1.2](https://github.com/liblaf/actions/compare/v0.1.1..v0.1.2) - 2025-03-23
 
@@ -43,10 +42,6 @@
 ### ♻ Code Refactoring
 
 - replace toolkit.github with github module in actions - ([c81d559](https://github.com/liblaf/actions/commit/c81d559fae1201ad1a28af37d6e6cfeca041b7ef))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
 
 ## [0.1.1](https://github.com/liblaf/actions/compare/v0.1.0..v0.1.1) - 2025-03-23
 
