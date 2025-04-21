@@ -1,6 +1,18 @@
 # Changelog
 
-## [0.1.3](https://github.com/liblaf/actions/compare/v0.1.2..v0.1.3) - 2025-03-29
+## [0.1.4](https://github.com/liblaf/actions/compare/v0.1.3..v0.1.4) - 2025-04-21
+
+### ⬆️ Dependencies
+
+- **deps:** update dependency rich to v14 (#13) - ([0baa503](https://github.com/liblaf/actions/commit/0baa503acd4b79af35b8defa03e17f5ee41e48a7))
+
+### ❤️ New Contributors
+
+- @liblaf-bot[bot] made their first contribution
+- @renovate[bot] made their first contribution in [#13](https://github.com/liblaf/actions/pull/13)
+- @liblaf made their first contribution
+
+## [0.1.3](https://github.com/liblaf/actions/compare/v0.1.2..v0.1.3) - 2025-03-30
 
 ### ✨ Features
 
@@ -27,10 +39,6 @@
 - remove deprecated secret-set workflow - ([c2fad1d](https://github.com/liblaf/actions/commit/c2fad1db93d4fe409a21a129d7183f16d9227073))
 - update GitHub Pages token configuration in docs workflows - ([cc0495f](https://github.com/liblaf/actions/commit/cc0495fa2fa7d44f24c796b94d3cb7db42858911))
 - restructure documentation workflows and integrate mike - ([93da719](https://github.com/liblaf/actions/commit/93da719bdb3bd51aabe6499d8e3a5f4cba16ea48))
-
-### ❤️ New Contributors
-
-- @liblaf made their first contribution
 
 ## [0.1.2](https://github.com/liblaf/actions/compare/v0.1.1..v0.1.2) - 2025-03-23
 
