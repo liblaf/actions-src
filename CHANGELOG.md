@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/liblaf/actions/compare/v0.1.3...v0.1.4) (2025-04-21)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency rich to v14 ([#13](https://github.com/liblaf/actions/issues/13)) ([0baa503](https://github.com/liblaf/actions/commit/0baa503acd4b79af35b8defa03e17f5ee41e48a7))
+
 ## [0.1.3](https://github.com/liblaf/actions/compare/v0.1.2..v0.1.3) - 2025-03-29
 
 ### ✨ Features
