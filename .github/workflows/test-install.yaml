@@ -21,6 +21,7 @@ jobs:
         run: |-
           mkdir --version
           mkdir --help
+        shell: bash
       - name: Coreutils
         run: install --version
       - name: sed
