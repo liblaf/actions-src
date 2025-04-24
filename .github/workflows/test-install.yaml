@@ -17,6 +17,10 @@ jobs:
           choco: gnuwin32-coreutils.install make sed
           npm: prettier
           pipx: pre-commit
+      - name: mkdir
+        run: |-
+          mkdir --version
+          mkdir --help
       - name: Coreutils
         run: install --version
       - name: sed
