@@ -17,6 +17,15 @@ body = """
       ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }}))
 {%- endmacro -%}
 
+{%- macro user(username) -%}
+  {%- if username is ending_with("[bot]") -%}
+    {%- set botname = username | trim_end_matches(pat="[bot]") -%}
+    [@{{ username }}](https://github.com/apps/{{ botname }})
+  {%- else -%}
+    [@{{ username }}](https://github.com/{{ username }})
+  {%- endif -%}
+{%- endmacro user -%}
+
 {%- if version -%}
   {%- if previous.version -%}
     ## [{{ version | trim_start_matches(pat="v") }}]\
@@ -45,7 +54,7 @@ body = """
     ### ❤️ New Contributors
   {% endif -%}
   {%- for contributor in github.contributors | filter(attribute="is_first_time", value=true) -%}
-    - @{{ contributor.username }} made their first contribution
+    - {{ self::user(username=contributor.username) }} made their first contribution
       {%- if contributor.pr_number %} in \
         [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }})
       {%- endif %}
