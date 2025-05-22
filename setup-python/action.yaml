@@ -49,3 +49,10 @@ runs:
       name: Install Dependencies
       run: uv sync --all-extras --all-groups
       shell: bash
+    - if: steps.manager.outputs.uv == 'true'
+      name: Activate Venv
+      run: |-
+        source .venv/bin/activate
+        echo "$VIRTUAL_ENV/bin" >> "$GITHUB_PATH"
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> "$GITHUB_ENV"
+      shell: bash
