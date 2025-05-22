@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.1.5](https://github.com/liblaf/actions/compare/v0.1.4...v0.1.5) (2025-05-22)
+
+
+### ✨ Features
+
+* **auth-app:** add new input options and improve git config ([980bf8c](https://github.com/liblaf/actions/commit/980bf8ca4a45e563c8cec8474332d50de2b0520c))
+* **setup-python:** activate virtual environment when using uv ([8054e02](https://github.com/liblaf/actions/commit/8054e021fb0c17f1ea3441f54d85dc495a849f15))
+
+
+### 📝 Documentation
+
+* enhance changelog contributor mentions with GitHub links ([bb0da78](https://github.com/liblaf/actions/commit/bb0da789ed882ddc83b77cf492475cb62cc5f0e9))
+
+
+### 👷 Build System
+
+* migrate from Just to Mise for task management ([cf53d38](https://github.com/liblaf/actions/commit/cf53d38bf304506f24b2df3fe2f2343b27653e4e))
+
+
+### 🔧 Continuous Integration
+
+* add mkdir version check in test workflow ([008c344](https://github.com/liblaf/actions/commit/008c344fc64059ecbac3ed9751473fe0376e2934))
+* specify bash shell for mkdir command in test workflow ([ec469cb](https://github.com/liblaf/actions/commit/ec469cbf8aee2f0212a93aa3cdd31bfdd2acf6e3))
+
 ## [0.1.4](https://github.com/liblaf/actions/compare/v0.1.3..v0.1.4) - 2025-04-21
 
 ### ⬆️ Dependencies
