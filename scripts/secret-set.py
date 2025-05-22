@@ -14,10 +14,10 @@ from loguru import logger
 
 
 def encrypt(public_key: str, secret_value: str) -> str:
-    r"""Encrypt a Unicode string using the public key.
+    """Encrypt a Unicode string using the public key.
 
     References:
-        \[1\]: [Example encrypting a secret using Python](https://docs.github.com/en/rest/guides/encrypting-secrets-for-the-rest-api#example-encrypting-a-secret-using-python)
+        1. [Example encrypting a secret using Python](https://docs.github.com/en/rest/guides/encrypting-secrets-for-the-rest-api#example-encrypting-a-secret-using-python)
     """
     public_key: nacl.public.PublicKey = nacl.public.PublicKey(
         public_key.encode("utf-8"),
