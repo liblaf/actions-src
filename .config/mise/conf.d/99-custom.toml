@@ -1,0 +1,7 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
+[env]
+GITHUB_ENV = "{{ config_root }}/temp/github-env.env"
+GITHUB_OUTPUT = "{{ config_root }}/temp/github-output.env"
+GITHUB_PATH = "{{ config_root }}/temp/github-path.env"
+GITHUB_TOKEN = '{{ exec(command="gh auth token") }}'

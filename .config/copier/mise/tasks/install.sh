@@ -10,5 +10,5 @@ if [[ -f "pixi.lock" ]]; then
 fi
 
 if [[ -f "uv.lock" ]]; then
-  uv sync
+  uv sync --all-extras --all-groups
 fi
