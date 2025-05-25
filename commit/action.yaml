@@ -54,7 +54,7 @@ runs:
       uses: dsanders11/github-app-commit-action@v1
       with:
         fail-on-no-changes: ${{ inputs.fail-on-no-changes }}
-        force: ${{ inputs.force }}
+        force: ${{ inputs.force == 'true' }}
         message: ${{ inputs.message }}
         owner: ${{ inputs.owner }}
         ref: ${{ inputs.ref }}
