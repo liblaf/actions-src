@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.6](https://github.com/liblaf/actions/compare/v0.1.5...v0.1.6) (2025-06-01)
+
+
+### ✨ Features
+
+* add composite GitHub action for git commits ([a444236](https://github.com/liblaf/actions/commit/a4442368ce40f7f3660cfffeb6751d1e8b41c257))
+
+
+### 🐛 Bug Fixes
+
+* **commit:** change default fail-on-no-changes to false ([bb87604](https://github.com/liblaf/actions/commit/bb87604037f384c0314e69503f27b78ca6deb017))
+* **commit:** ensure force input is properly evaluated as boolean ([1c8bb5f](https://github.com/liblaf/actions/commit/1c8bb5f88706e198eec05fea936f49b939d8a21d))
+* migrate from mike to mkdocs gh-deploy ([05b5b80](https://github.com/liblaf/actions/commit/05b5b80268bffe3f477ce50889fb4edee92f2546))
+* rename mise config file from 99-custom.toml to config.dev.toml ([b2b6443](https://github.com/liblaf/actions/commit/b2b64432058f2c23dccc7a415ec006dbb9e39931))
+
 ## [0.1.5](https://github.com/liblaf/actions/compare/v0.1.4..v0.1.5) - 2025-05-22
 
 ### ✨ Features
