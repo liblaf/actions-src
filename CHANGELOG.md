@@ -1,6 +1,24 @@
 # Changelog
 
-## [0.1.5](https://github.com/liblaf/actions/compare/v0.1.4..v0.1.5) - 2025-05-22
+## [0.1.6](https://github.com/liblaf/actions/compare/v0.1.5..v0.1.6) - 2025-06-01
+
+### ✨ Features
+
+- add composite GitHub action for git commits - ([a444236](https://github.com/liblaf/actions/commit/a4442368ce40f7f3660cfffeb6751d1e8b41c257))
+
+### 🐛 Bug Fixes
+
+- **commit:** ensure force input is properly evaluated as boolean - ([1c8bb5f](https://github.com/liblaf/actions/commit/1c8bb5f88706e198eec05fea936f49b939d8a21d))
+- **commit:** change default fail-on-no-changes to false - ([bb87604](https://github.com/liblaf/actions/commit/bb87604037f384c0314e69503f27b78ca6deb017))
+- rename mise config file from 99-custom.toml to config.dev.toml - ([b2b6443](https://github.com/liblaf/actions/commit/b2b64432058f2c23dccc7a415ec006dbb9e39931))
+- migrate from mike to mkdocs gh-deploy - ([05b5b80](https://github.com/liblaf/actions/commit/05b5b80268bffe3f477ce50889fb4edee92f2546))
+
+### ❤️ New Contributors
+
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
+## [0.1.5](https://github.com/liblaf/actions/compare/v0.1.4..v0.1.5) - 2025-05-23
 
 ### ✨ Features
 
@@ -19,12 +37,6 @@
 
 - specify bash shell for mkdir command in test workflow - ([ec469cb](https://github.com/liblaf/actions/commit/ec469cbf8aee2f0212a93aa3cdd31bfdd2acf6e3))
 - add mkdir version check in test workflow - ([008c344](https://github.com/liblaf/actions/commit/008c344fc64059ecbac3ed9751473fe0376e2934))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
-- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
-- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#17](https://github.com/liblaf/actions/pull/17)
 
 ## [0.1.4](https://github.com/liblaf/actions/compare/v0.1.3..v0.1.4) - 2025-04-21
 
