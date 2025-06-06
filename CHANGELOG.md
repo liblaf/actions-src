@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/liblaf/actions/compare/v0.1.6...v0.1.7) (2025-06-06)
+
+
+### ⬆️ Dependencies
+
+* **deps:** update dependency liblaf-grapes to &gt;=0.2,&lt;0.3 ([#19](https://github.com/liblaf/actions/issues/19)) ([79a6f87](https://github.com/liblaf/actions/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326))
+
 ## [0.1.6](https://github.com/liblaf/actions/compare/v0.1.5..v0.1.6) - 2025-06-01
 
 ### ✨ Features
