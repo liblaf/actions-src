@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.7](https://github.com/liblaf/actions/compare/v0.1.6..v0.1.7) - 2025-06-06
+
+### ⬆️ Dependencies
+
+- **deps:** update dependency liblaf-grapes to >=0.2,<0.3 (#19) - ([79a6f87](https://github.com/liblaf/actions/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326))
+
+### ❤️ New Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#19](https://github.com/liblaf/actions/pull/19)
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
+
 ## [0.1.6](https://github.com/liblaf/actions/compare/v0.1.5..v0.1.6) - 2025-06-01
 
 ### ✨ Features
@@ -12,11 +23,6 @@
 - **commit:** change default fail-on-no-changes to false - ([bb87604](https://github.com/liblaf/actions/commit/bb87604037f384c0314e69503f27b78ca6deb017))
 - rename mise config file from 99-custom.toml to config.dev.toml - ([b2b6443](https://github.com/liblaf/actions/commit/b2b64432058f2c23dccc7a415ec006dbb9e39931))
 - migrate from mike to mkdocs gh-deploy - ([05b5b80](https://github.com/liblaf/actions/commit/05b5b80268bffe3f477ce50889fb4edee92f2546))
-
-### ❤️ New Contributors
-
-- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.1.5](https://github.com/liblaf/actions/compare/v0.1.4..v0.1.5) - 2025-05-23
 
