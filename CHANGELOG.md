@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.8](https://github.com/liblaf/actions/compare/v0.1.7...v0.1.8) (2025-06-08)
+
+
+### 🐛 Bug Fixes
+
+* **commit:** correct conditional expression syntax ([2b394af](https://github.com/liblaf/actions/commit/2b394af580b48145675b72534881b97392a57bd7))
+* **commit:** improve branch reference handling ([1026cca](https://github.com/liblaf/actions/commit/1026cca96cfc055956c16faf1197eb3722bc68f0))
+* **commit:** properly handle branch ref format ([8f26d0c](https://github.com/liblaf/actions/commit/8f26d0c0b70e26d59043150aebb3ffc740fb64eb))
+
+
+### ♻ Code Refactoring
+
+* **commit:** simplify branch handling logic ([26f76e1](https://github.com/liblaf/actions/commit/26f76e15b202f646c0f2feb87c0a3336c9639975))
+
 ## [0.1.7](https://github.com/liblaf/actions/compare/v0.1.6..v0.1.7) - 2025-06-06
 
 ### ⬆️ Dependencies
