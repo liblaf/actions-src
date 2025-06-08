@@ -27,7 +27,6 @@ inputs:
   ref:
     description: Git reference to associate the commit with (e.g. `main`). If it does not exist it will be created. Defaults to the the current checkout ref.
     required: false
-    default: ${{ github.head_ref || github.ref }}
   repository:
     description: The GitHub repository to commit to, defaults to the repository this action is running in
     required: false
@@ -42,30 +41,16 @@ inputs:
 runs:
   using: composite
   steps:
-    - if: ${{ !startsWith(inputs.ref, 'refs/heads/') }}
-      name: Skip Commit
-      run: echo "::warning title=Commit Action Skipped::This action only runs on branch refs. Current ref is `${{ inputs.ref }}`."
-      shell: bash
-    - id: ref
-      if: startsWith(inputs.ref, 'refs/heads/')
-      name: Get Head Ref
-      run: |-
-        ref="${{ inputs.ref }}"
-        branch="${ref#"refs/heads"}"
-        printf "branch=%q\n" "$branch" > "$GITHUB_OUTPUT"
-      shell: bash
-    - if: startsWith(inputs.ref, 'refs/heads/')
-      name: Git Add
+    - name: Git Add
       run: git add ${{ inputs.add-options }}
       shell: bash
-    - if: startsWith(inputs.ref, 'refs/heads/')
-      name: Commit
+    - name: Commit
       uses: dsanders11/github-app-commit-action@v1
       with:
         fail-on-no-changes: ${{ inputs.fail-on-no-changes }}
         force: ${{ inputs.force == 'true' }}
         message: ${{ inputs.message }}
         owner: ${{ inputs.owner }}
-        ref: ${{ steps.ref.outputs.branch }}
+        ref: ${{ inputs.ref }}
         repository: ${{ inputs.repository }}
         token: ${{ inputs.token }}
