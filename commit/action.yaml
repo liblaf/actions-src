@@ -27,6 +27,7 @@ inputs:
   ref:
     description: Git reference to associate the commit with (e.g. `main`). If it does not exist it will be created. Defaults to the the current checkout ref.
     required: false
+    default: ${{ github.head_ref || github.ref }}
   repository:
     description: The GitHub repository to commit to, defaults to the repository this action is running in
     required: false
@@ -41,15 +42,15 @@ inputs:
 runs:
   using: composite
   steps:
-    - if: ${{ github.ref_type != 'branch' }}
+    - if: ${{ !startsWith(inputs.ref, "refs/heads/") }}
       name: Skip Commit
-      run: echo "::warning title=Commit Action Skipped::This action only runs on branch refs. Current ref is `${{ github.ref }}`."
+      run: echo "::warning title=Commit Action Skipped::This action only runs on branch refs. Current ref is `${{ inputs.ref }}`."
       shell: bash
-    - if: ${{ github.ref_type == 'branch' }}
+    - if: ${{ startsWith(inputs.ref, "refs/heads/") }}
       name: Git Add
       run: git add ${{ inputs.add-options }}
       shell: bash
-    - if: ${{ github.ref_type == 'branch' }}
+    - if: ${{ startsWith(inputs.ref, "refs/heads/") }}
       name: Commit
       uses: dsanders11/github-app-commit-action@v1
       with:
