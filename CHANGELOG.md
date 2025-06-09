@@ -1,15 +1,26 @@
 # Changelog
 
-## [0.1.7](https://github.com/liblaf/actions/compare/v0.1.6..v0.1.7) - 2025-06-06
+## [0.1.8](https://github.com/liblaf/actions/compare/v0.1.7..v0.1.8) - 2025-06-08
+
+### 🐛 Bug Fixes
+
+- **commit:** properly handle branch ref format - ([8f26d0c](https://github.com/liblaf/actions/commit/8f26d0c0b70e26d59043150aebb3ffc740fb64eb))
+- **commit:** correct conditional expression syntax - ([2b394af](https://github.com/liblaf/actions/commit/2b394af580b48145675b72534881b97392a57bd7))
+- **commit:** improve branch reference handling - ([1026cca](https://github.com/liblaf/actions/commit/1026cca96cfc055956c16faf1197eb3722bc68f0))
+
+### ♻ Code Refactoring
+
+- **commit:** simplify branch handling logic - ([26f76e1](https://github.com/liblaf/actions/commit/26f76e15b202f646c0f2feb87c0a3336c9639975))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
+## [0.1.7](https://github.com/liblaf/actions/compare/v0.1.6..v0.1.7) - 2025-06-07
 
 ### ⬆️ Dependencies
 
 - **deps:** update dependency liblaf-grapes to >=0.2,<0.3 (#19) - ([79a6f87](https://github.com/liblaf/actions/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326))
-
-### ❤️ New Contributors
-
-- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#19](https://github.com/liblaf/actions/pull/19)
-- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
 
 ## [0.1.6](https://github.com/liblaf/actions/compare/v0.1.5..v0.1.6) - 2025-06-01
 
