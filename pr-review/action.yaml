@@ -25,7 +25,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python review
+    - run: pipx run --spec "git+https://github.com/liblaf/actions.git" --fetch-missing-python review
       shell: bash
       name: Review
       env:

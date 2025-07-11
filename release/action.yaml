@@ -51,7 +51,7 @@ runs:
         args: ${{ steps.config.outputs.args }} --strip all
         token: ${{ inputs.token }}
     - name: Release
-      run: pipx run --spec "git+https://github.com/liblaf/actions.git" --python "3.13" --fetch-missing-python release
+      run: pipx run --spec "git+https://github.com/liblaf/actions.git" --fetch-missing-python release
       shell: bash
       env:
         FORCE_COLOR: "1"
