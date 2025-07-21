@@ -34,6 +34,10 @@ runs:
         run-install: true
         activate-environment: true
         locked: false
+    - if: steps.manager.outputs.pixi == 'true'
+      name: Install Dependencies
+      run: hatch build --hooks-only
+      shell: bash
     - id: python
       if: steps.manager.outputs.uv == 'true'
       name: Setup Python
