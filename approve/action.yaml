@@ -1,15 +1,21 @@
-name: PR Review
+name: Approve
 
 author: liblaf
 
-description: TODO
+description: Approve
 
 inputs:
   authors:
     description: authors
     required: false
     default: |-
-      renovate[bot]
+      app/renovate
+  filters:
+    description: filters
+    required: false
+    default: >-
+      --app renovate
+      --state open
   pr-number:
     description: PR number
     required: false
@@ -32,5 +38,6 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.token }}
         INPUT_AUTHORS: ${{ inputs.authors }}
+        INPUT_FILTERS: ${{ inputs.filters }}
         INPUT_PR_NUMBER: ${{ inputs.pr-number }}
         INPUT_REPO: ${{ inputs.repo }}

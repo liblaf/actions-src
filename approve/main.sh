@@ -15,7 +15,7 @@ function approve() {
   # shellcheck disable=SC1087
   if grep --extended-regexp --quiet "^[[:space:]]*$author[[:space:]]*$" <<< "$INPUT_AUTHORS"; then
     if [[ $review_decision == 'REVIEW_REQUIRED' ]]; then
-      echo gh pr --repo "$INPUT_REPO" review "$number" --approve
+      gh pr --repo "$INPUT_REPO" review "$number" --approve
     fi
   fi
 }
@@ -25,7 +25,8 @@ if [[ -n ${INPUT_PR_NUMBER-} ]]; then
     --json 'author,number,reviewDecision' |
     approve
 else
-  gh pr --repo "$INPUT_REPO" list \
+  readarray -t filters <<< "$INPUT_FILTERS"
+  gh pr --repo "$INPUT_REPO" list "${filters[@]}" \
     --json 'author,number,reviewDecision' |
     while read -r json; do
       approve <<< "$json"
