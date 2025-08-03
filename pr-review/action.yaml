@@ -5,14 +5,15 @@ author: liblaf
 description: TODO
 
 inputs:
-  author:
-    description: TODO
+  authors:
+    description: authors
     required: false
     default: |-
-      github-actions[bot]
-      liblaf-bot[bot]
-      release-please[bot]
       renovate[bot]
+  pr-number:
+    description: PR number
+    required: false
+    default: ${{ github.event.pull_request.number || github.event.pull_request_review.pull_request.number }}
   repo:
     description: Repository name with owner
     required: false
@@ -25,11 +26,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: pipx run --spec "git+https://github.com/liblaf/actions.git" --fetch-missing-python review
+    - name: Review
+      run: bash '${{ github.action_path }}/main.sh'
       shell: bash
-      name: Review
       env:
-        FORCE_COLOR: "1"
-        INPUT_AUTHOR: ${{ inputs.author }}
+        GH_TOKEN: ${{ inputs.token }}
+        INPUT_AUTHORS: ${{ inputs.authors }}
+        INPUT_PR_NUMBER: ${{ inputs.pr-number }}
         INPUT_REPO: ${{ inputs.repo }}
-        INPUT_TOKEN: ${{ inputs.token }}
