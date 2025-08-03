@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.0](https://github.com/liblaf/actions/compare/v0.1.8...v0.2.0) (2025-08-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **approve:** 
+
+### ✨ Features
+
+* **actions:** add delete-cancelled-runs action ([9f1f1c2](https://github.com/liblaf/actions/commit/9f1f1c28ebd2692ea20b405366b67dab37fedcd4))
+
+
+### 🐛 Bug Fixes
+
+* **ruleset-import:** remove explicit Python version from pipx command ([4b963cf](https://github.com/liblaf/actions/commit/4b963cfc3c662e7fd82a785b399ba578913bc389))
+
+
+### ♻ Code Refactoring
+
+* **approve:** rename from pr-review and improve functionality ([87105ee](https://github.com/liblaf/actions/commit/87105eefc13f43b8cd7d83341733982305e3a097))
+* **pr-review:** migrate to shell script implementation ([99cb933](https://github.com/liblaf/actions/commit/99cb9331aca97776d8f325012974fa053d46e769))
+
 ## [0.1.8](https://github.com/liblaf/actions/compare/v0.1.7..v0.1.8) - 2025-06-08
 
 ### 🐛 Bug Fixes
