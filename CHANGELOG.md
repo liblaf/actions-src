@@ -1,6 +1,17 @@
 # Changelog
 
-## [0.2.0](https://github.com/liblaf/actions/compare/v0.1.8..v0.2.0) - 2025-08-03
+## [0.2.1](https://github.com/liblaf/actions/compare/v0.2.0..v0.2.1) - 2025-08-25
+
+### 📝 Documentation
+
+- add deprecation warning to README - ([73bdd58](https://github.com/liblaf/actions/commit/73bdd58ac025fa0a3d04c89d1580c460e2d0b06b))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
+
+## [0.2.0](https://github.com/liblaf/actions/compare/v0.1.8..v0.2.0) - 2025-08-04
 
 ### 💥 BREAKING CHANGES
 
@@ -17,11 +28,6 @@
 ### ♻ Code Refactoring
 
 - **pr-review:** migrate to shell script implementation - ([99cb933](https://github.com/liblaf/actions/commit/99cb9331aca97776d8f325012974fa053d46e769))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
-- [@liblaf-bot[bot]](https://github.com/apps/liblaf-bot) made their first contribution
 
 ## [0.1.8](https://github.com/liblaf/actions/compare/v0.1.7..v0.1.8) - 2025-06-09
 
