@@ -1,3 +1,6 @@
+> [!WARNING]
+> ⛔ DEPRECATED - This repository has been deprecated. Please visit [liblaf/actions-ts](https://github.com/liblaf/actions-ts) for alternatives.
+
 # GitHub Actions Collection
 
 This repository contains a collection of GitHub Actions designed to automate various tasks within your GitHub workflows. Each action is tailored to perform specific functions, enhancing the efficiency and reliability of your CI/CD pipelines.
