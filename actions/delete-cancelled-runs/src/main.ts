@@ -1,6 +1,6 @@
 import path from "node:path";
 import * as core from "@actions/core";
-import { Octokit } from "octokit";
+import { Octokit, RequestError } from "octokit";
 import { getOwnerRepo } from "../../../lib";
 
 function getWorkflowId(): string {
@@ -30,15 +30,22 @@ export async function run(): Promise<void> {
     per_page: maxDeletions,
   });
   for (const run of workflow_runs) {
-    await octokit.rest.actions.deleteWorkflowRun({
-      owner,
-      repo,
-      run_id: run.id,
-    });
-    core.info(
-      `\
-Delete workflow run: ${run.display_title}.
-${run.name} #${run.run_number}: ${run.event} by ${run.actor?.login} 📅 ${run.created_at}`,
-    );
+    try {
+      core.info(
+        `\
+        Deleting cancelled workflow run: ${run.display_title}.
+        ${run.name} #${run.run_number}: ${run.event} by ${run.actor?.login} 📅 ${run.created_at}`,
+      );
+      await octokit.rest.actions.deleteWorkflowRun({
+        owner,
+        repo,
+        run_id: run.id,
+      });
+    } catch (err) {
+      if (!(err instanceof RequestError && err.status === 404)) {
+        core.error(`${err}`);
+        throw err;
+      }
+    }
   }
 }
