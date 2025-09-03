@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Setup Python
+
+author: liblaf
+
+description: Setup Python
+
+outputs:
+  pixi:
+    description: pixi
+    value: ${{ steps.manager.outputs.pixi }}
+  uv:
+    description: uv
+    value: ${{ steps.manager.outputs.uv }}
+
+runs:
+  using: composite
+  steps:
+    - id: manager
+      name: Detect Package Manager
+      run: |-
+        function detect-manager() {
+          local manager="$1"
+          local lockfile="$2"
+          if [[ -n "$(find '.' -name "$lockfile" -type f)" ]]; then
+            printf '%s=true\n' "$manager" >> "$GITHUB_OUTPUT"
+          else
+            printf '%s=false\n' "$manager" >> "$GITHUB_OUTPUT"
+          fi
+        }
+        detect-manager 'uv' 'uv.lock'
+        detect-manager 'pixi' 'pixi.lock'
+      shell: bash
+    - if: steps.manager.outputs.pixi == 'true'
+      name: Setup Pixi
+      uses: prefix-dev/setup-pixi@v0
+      with:
+        run-install: true
+        activate-environment: true
+        locked: false
+    - if: steps.manager.outputs.pixi == 'true'
+      name: Install Dependencies
+      run: hatch build --hooks-only
+      shell: bash
+    - id: python
+      if: steps.manager.outputs.uv == 'true'
+      name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version-file: pyproject.toml
+    - if: steps.manager.outputs.uv == 'true'
+      name: Setup uv
+      uses: astral-sh/setup-uv@v6
+      with:
+        python-version: ${{ steps.python.outputs.python-version }}
+    - if: steps.manager.outputs.uv == 'true'
+      name: Install Dependencies
+      run: uv sync --all-extras --all-groups
+      shell: bash
+    - if: steps.manager.outputs.uv == 'true'
+      name: Activate venv
+      run: |-
+        source '.venv/bin/activate'
+        echo "$VIRTUAL_ENV/bin" >> "$GITHUB_PATH"
+        printf 'VIRTUAL_ENV=%s\n' "$VIRTUAL_ENV" >> "$GITHUB_OUTPUT"
+      shell: bash

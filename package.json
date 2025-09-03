@@ -1,0 +1,74 @@
+{
+  "name": "@liblaf/actions",
+  "description": "",
+  "version": "0.2.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "homepage": "https://github.com/liblaf/actions-ts",
+  "bugs": {
+    "url": "https://github.com/liblaf/actions-ts/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "liblaf",
+    "url": "https://github.com/liblaf",
+    "email": "30631553+liblaf@users.noreply.github.com"
+  },
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liblaf/actions-ts.git"
+  },
+  "funding": {
+    "url": "https://github.com/liblaf/actions-ts?sponsor=1",
+    "type": "github"
+  },
+  "scripts": {
+    "build": "bunup",
+    "format:fix": "biome format --write",
+    "format": "biome format",
+    "lint:fix": "biome check --write",
+    "lint": "biome check",
+    "prepack": "npm run build",
+    "test:coverage": "bun test --coverage",
+    "test:watch": "bun test --watch",
+    "test": "bun test",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@actions/core": "^1",
+    "@actions/github": "^6",
+    "@actions/glob": "^0.5",
+    "@biomejs/biome": "^2",
+    "@github/local-action": "^5",
+    "@liblaf/config": "^0.1.0",
+    "@octokit/app": "^16",
+    "@octokit/core": "^7",
+    "@octokit/graphql": "^9",
+    "@octokit/openapi-types": "^25",
+    "@octokit/plugin-paginate-rest": "^13",
+    "@octokit/plugin-rest-endpoint-methods": "^16",
+    "@types/node": "^24",
+    "bunup": "^0.11",
+    "consola": "^3",
+    "octokit": "^5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
+  },
+  "readme": "./README.md"
+}

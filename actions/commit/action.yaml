@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Commit
+
+author: liblaf
+
+description: Commit
+
+inputs:
+  add-options:
+    description: Add options (eg. --update)
+    required: false
+    default: --verbose --update
+  fail-on-no-changes:
+    description: Whether or not to set action failure if there are no changes to commit
+    required: false
+    default: "false"
+  force:
+    description: Whether to force the update or to make sure the update is a fast-forward update when updating an existing ref
+    required: false
+    default: "false"
+  message:
+    description: The commit message
+    required: true
+  owner:
+    description: The owner of the GitHub repo, defaults to the owner of the repository this action is running in
+    required: false
+  ref:
+    description: Git reference to associate the commit with (e.g. `main`). If it does not exist it will be created. Defaults to the the current checkout ref.
+    required: false
+  repository:
+    description: The GitHub repository to commit to, defaults to the repository this action is running in
+    required: false
+  token:
+    description: The GitHub app installation token
+    required: false
+    default: ${{ github.token }}
+  working-directory:
+    description: The working directory, defaults to the current working directory
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Git Add
+      run: git add ${{ inputs.add-options }}
+      shell: bash
+    - name: Commit
+      uses: dsanders11/github-app-commit-action@v1
+      with:
+        fail-on-no-changes: ${{ inputs.fail-on-no-changes }}
+        force: ${{ inputs.force }}
+        message: ${{ inputs.message }}
+        owner: ${{ inputs.owner }}
+        ref: ${{ inputs.ref }}
+        repository: ${{ inputs.repository }}
+        token: ${{ inputs.token }}
+        working-directory: ${{ inputs.working-directory }}

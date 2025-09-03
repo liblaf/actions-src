@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+# ref: <https://github.com/oxsecurity/megalinter/blob/main/mega-linter-runner/generators/mega-linter/templates/mega-linter.yml>
+# ref: <https://megalinter.io>
+
+name: MegaLinter
+
+author: liblaf
+
+description: MegaLinter
+
+inputs:
+  token:
+    description: GitHub Token
+    required: true
+    default: ${{ github.token }}
+
+  # Reporters
+  github-status-reporter:
+    description: GitHub Status Reporter
+    required: true
+    default: "false"
+  markdown-summary-reporter:
+    description: Markdown Summary Reporter
+    required: true
+    default: "true"
+
+outputs:
+  has-updated-sources:
+    description: 0 if no source file has been updated, 1 if source files has been updated
+    value: ${{ steps.lint.outputs.has_updated_sources }}
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout Linter Rules
+      uses: actions/checkout@v5
+      with:
+        repository: ${{ github.repository_owner }}/.github
+        token: ${{ inputs.token }}
+        path: tmp.6NE8UxMvCk
+        sparse-checkout: linters
+    - name: Pre
+      run: bash '${{ github.action_path }}/pre.sh'
+      shell: bash
+    - id: lint
+      name: MegaLinter
+      uses: liblaf/megalinter-custom-flavor-all@main
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        # ref: <https://megalinter.io/latest/config-variables/>
+        # Reporters
+        GITHUB_STATUS_REPORTER: ${{ inputs.github-status-reporter }}
+        MARKDOWN_SUMMARY_REPORTER: ${{ inputs.markdown-summary-reporter }}
+    - if: success() || failure()
+      name: Post
+      run: bash '${{ github.action_path }}/post.sh'
+      shell: bash
+    - if: success() || failure()
+      name: Clean Linter Rules
+      run: sudo rm --force --recursive 'tmp.6NE8UxMvCk'
+      shell: bash
+    - if: success() || failure()
+      name: Prepare Commit
+      run: sudo chown --changes --recursive "$UID" '.git/'
+      shell: bash

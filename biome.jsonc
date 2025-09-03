@@ -1,0 +1,5 @@
+{
+  "$schema": "https://biomejs.dev/schemas/latest/schema.json",
+  "extends": ["@liblaf/config/biome"],
+  "root": true
+}

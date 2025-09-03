@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://www.schemastore.org/github-action.json
+
+name: PR Label
+
+author: liblaf
+
+description: PR Label
+
+inputs:
+  add-labels:
+    description: Labels to add to the pull request.
+    required: true
+  authors:
+    description: authors
+    required: false
+  bot:
+    description: bot
+    required: false
+    default: "true"
+  labels:
+    description: labels
+    required: false
+  pull-number:
+    description: The pull request number to approve.
+    required: false
+    default: ${{ github.event.pull_request.number }}
+  repository:
+    description: The owner and repository name. For example, `octocat/Hello-World`.
+    required: false
+    default: ${{ github.repository }}
+  token:
+    description: token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node24
+  main: dist/index.js

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Install
+
+author: liblaf
+
+description: Install
+
+inputs:
+  apt:
+    description: apt
+    required: false
+  brew:
+    description: brew
+    required: false
+  choco:
+    description: choco
+    required: false
+  token:
+    description: GitHub Token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - if: runner.os == 'Linux' && inputs.apt
+      name: apt
+      run: |-
+        read -a packages -r <<< "$INPUT_APT"
+        sudo apt-get update
+        sudo apt-get install "${packages[@]}"
+      shell: bash
+      env:
+        INPUT_APT: ${{ inputs.apt }}
+    - if: runner.os == 'macOS' && inputs.brew
+      name: brew
+      run: |-
+        read -a packages -r <<< "$INPUT_BREW"
+        brew update
+        brew install "${packages[@]}"
+        for pkg in "${packages[@]}"; do
+          case "$pkg" in
+            coreutils | make | gnu-*)
+              gnubin="$(brew --prefix)/opt/$pkg/libexec/gnubin"
+              echo "$gnubin" >> "$GITHUB_PATH"
+              ;;
+          esac
+        done
+      shell: bash
+      env:
+        INPUT_BREW: ${{ inputs.brew }}
+    - if: runner.os == 'Windows' && inputs.choco
+      name: choco
+      run: |-
+        read -a packages -r <<< "$INPUT_CHOCO"
+        choco install "${packages[@]}"
+      shell: bash
+      env:
+        INPUT_CHOCO: ${{ inputs.choco }}

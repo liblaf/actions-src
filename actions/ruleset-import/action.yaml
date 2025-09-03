@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Ruleset Import
+
+author: liblaf
+
+description: Ruleset import
+
+inputs:
+  name:
+    description: source repository ruleset ID
+    required: false
+    default: main
+  source-repository:
+    description: source repository
+    required: false
+    default: ${{ github.repository_owner }}/.github
+  target-repository:
+    description: target repository
+    required: false
+    default: ${{ github.repository }}
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node24
+  main: dist/index.js
