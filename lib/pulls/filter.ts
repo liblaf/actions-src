@@ -41,7 +41,7 @@ export type Repository = {
 function getPullNumber(): number | undefined {
   const input: string = core.getInput("pull-number");
   if (input === "all") return undefined;
-  if (input) return parseInt(input);
+  if (input) return Number.parseInt(input, 10);
   return github.context.payload.pull_request?.number;
 }
 

@@ -45,7 +45,7 @@
     "@actions/glob": "^0.5",
     "@biomejs/biome": "^2",
     "@github/local-action": "^5",
-    "@liblaf/config": "^0.1.0",
+    "@liblaf/config": "^0.1",
     "@octokit/app": "^16",
     "@octokit/core": "^7",
     "@octokit/graphql": "^9",

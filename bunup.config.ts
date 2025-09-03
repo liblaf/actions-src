@@ -7,10 +7,19 @@ import { copy, shims, unused } from "bunup/plugins";
 const entry: string[] = [];
 const plugins: BunupPlugin[] = [];
 
+async function exists(path: string): Promise<boolean> {
+  try {
+    await fs.access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 const actions: string[] = await fs.readdir("actions");
 for (const action of actions) {
   const file: string = path.join("actions", action, "src", "index.ts");
-  if (await fs.exists(file)) entry.push(file);
+  if (await exists(file)) entry.push(file);
 }
 for (const action of actions) {
   const sources: string[] = [];
@@ -32,7 +41,7 @@ export default defineConfig({
   sourcemap: "inline",
   async onSuccess(_options: Partial<BuildOptions>): Promise<void> {
     for (const action of actions) {
-      if (await fs.exists(path.join("dist", action, "src"))) {
+      if (await exists(path.join("dist", action, "src"))) {
         await fs.rename(
           path.join("dist", action, "src"),
           path.join("dist", action, "dist"),

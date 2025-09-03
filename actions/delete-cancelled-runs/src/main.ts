@@ -16,6 +16,7 @@ export async function run(): Promise<void> {
   const octokit = new Octokit({ auth: token });
   const maxDeletions: number = Number.parseInt(
     core.getInput("max-deletions", { required: true }),
+    10,
   );
   const workflow_id: string = getWorkflowId();
 

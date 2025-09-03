@@ -5,6 +5,15 @@
 *.log.*
 playground/
 
-# Node.js
-dist/
+# Dependency directories
 node_modules/
+
+# Output of 'npm pack'
+*.tgz
+
+# Nuxt.js build / generate output
+dist/
+
+# Cloudflare
+.dev.vars
+.wrangler/
