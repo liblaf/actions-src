@@ -7,9 +7,9 @@
     "dist"
   ],
   "keywords": [],
-  "homepage": "https://github.com/liblaf/actions-ts",
+  "homepage": "https://github.com/liblaf/actions",
   "bugs": {
-    "url": "https://github.com/liblaf/actions-ts/issues"
+    "url": "https://github.com/liblaf/actions/issues"
   },
   "license": "MIT",
   "author": {
@@ -20,10 +20,10 @@
   "bin": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liblaf/actions-ts.git"
+    "url": "git+https://github.com/liblaf/actions.git"
   },
   "funding": {
-    "url": "https://github.com/liblaf/actions-ts?sponsor=1",
+    "url": "https://github.com/liblaf/actions?sponsor=1",
     "type": "github"
   },
   "scripts": {

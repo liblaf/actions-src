@@ -82,7 +82,7 @@ runs:
 
     - id: delete-cancelled-runs
       name: Delete Cancelled Runs
-      uses: liblaf/actions-ts/delete-cancelled-runs@dist
+      uses: liblaf/actions/delete-cancelled-runs@dist
       with:
         max-deletions: ${{ inputs.max-deletions }}
         token: ${{ inputs.token }}

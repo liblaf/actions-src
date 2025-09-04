@@ -5,7 +5,7 @@ _commit: cfddac2
 _src_path: gh:liblaf/copier-shared
 author_email: 30631553+liblaf@users.noreply.github.com
 author_name: liblaf
-github_repo: actions-ts
+github_repo: actions
 github_user: liblaf
 license: MIT
 project_name: Actions
