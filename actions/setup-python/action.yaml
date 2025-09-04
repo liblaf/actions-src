@@ -46,7 +46,7 @@ runs:
     - id: python
       if: steps.manager.outputs.uv == 'true'
       name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version-file: pyproject.toml
     - if: steps.manager.outputs.uv == 'true'
