@@ -1,5 +1,6 @@
 import path from "node:path";
 import * as core from "@actions/core";
+import consola from "consola";
 import { Octokit, RequestError } from "octokit";
 import { getOwnerRepo } from "../../../lib";
 
@@ -42,9 +43,14 @@ export async function run(): Promise<void> {
         run_id: run.id,
       });
     } catch (err) {
-      if (!(err instanceof RequestError && err.status === 404)) {
+      if (err instanceof RequestError) {
+        if (err.status === 404) {
+          consola.error(`${err}`);
+        } else {
+          core.error(`${err}`);
+        }
+      } else {
         core.error(`${err}`);
-        throw err;
       }
     }
   }
