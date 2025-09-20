@@ -1,5 +1,6 @@
 import * as core from "@actions/core";
-import { Octokit, RequestError } from "octokit";
+import consola from "consola";
+import { Octokit } from "octokit";
 import { getOwnerRepo } from "../../../lib";
 
 async function hasPages(
@@ -11,10 +12,13 @@ async function hasPages(
     await octokit.rest.repos.getPages({ owner, repo });
     return true;
   } catch (error) {
-    if (error instanceof RequestError) {
-      if (error.status === 404) return false;
-    }
-    throw error;
+    // TODO: enable this when error instance check works
+    // if (error instanceof RequestError) {
+    //   if (error.status === 404) return false;
+    // }
+    // throw error;
+    consola.error(`${error}`);
+    return false;
   }
 }
 
