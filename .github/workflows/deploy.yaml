@@ -7,25 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  skip-duplicate:
-    name: Skip Duplicate
-    permissions:
-      actions: write
-    runs-on: ubuntu-latest
-    outputs:
-      should-skip: ${{ steps.skip-duplicate.outputs.should-skip }}
-    steps:
-      - id: skip-duplicate
-        name: Skip Duplicate
-        uses: liblaf/actions/skip-duplicate@dist
-        with:
-          cancel-others: true
-
   build:
     name: Build
-    needs:
-      - skip-duplicate
-    if: needs.skip-duplicate.outputs.should-skip != 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
