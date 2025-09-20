@@ -27,8 +27,7 @@ for (const action of actions) {
     if (child === "src") continue;
     sources.push(path.join("actions", action, child));
   }
-  if (sources.length > 0)
-    plugins.push(copy(sources, path.join("dist", action)));
+  if (sources.length > 0) plugins.push(copy(sources).to(action));
 }
 
 export default defineConfig({
