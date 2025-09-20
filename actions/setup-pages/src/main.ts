@@ -1,11 +1,9 @@
 import * as core from "@actions/core";
-import * as github from "@actions/github";
-import type { GitHub } from "@actions/github/lib/utils";
-import { RequestError } from "octokit";
+import { Octokit, RequestError } from "octokit";
 import { getOwnerRepo } from "../../../lib";
 
 async function hasPages(
-  octokit: InstanceType<typeof GitHub>,
+  octokit: Octokit,
   owner: string,
   repo: string,
 ): Promise<boolean> {
@@ -23,7 +21,7 @@ async function hasPages(
 export async function run(): Promise<void> {
   const token: string = core.getInput("token", { required: true });
   const [owner, repo] = getOwnerRepo("repository", { required: true });
-  const octokit = github.getOctokit(token);
+  const octokit = new Octokit({ auth: token });
   if (await hasPages(octokit, owner, repo)) {
     await octokit.rest.repos.updateInformationAboutPagesSite({
       owner,
