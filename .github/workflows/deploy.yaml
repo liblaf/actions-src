@@ -6,13 +6,9 @@ on:
       - main
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.workflow }} @ ${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   skip-duplicate:
-    name: Pre
+    name: Skip Duplicate
     permissions:
       actions: write
     runs-on: ubuntu-latest
