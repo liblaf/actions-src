@@ -36,4 +36,4 @@ jobs:
           bun install
           bun pm bin >> "$GITHUB_PATH"
       - name: TypeScript Check
-        run: bun run tsc
+        run: bun run tsc --pretty
