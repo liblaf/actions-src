@@ -51,7 +51,7 @@
     "@octokit/plugin-paginate-rest": "^13",
     "@octokit/plugin-rest-endpoint-methods": "^16",
     "@types/node": "^24",
-    "bunup": "^0.11",
+    "bunup": "^0.14.0",
     "consola": "^3",
     "octokit": "^5"
   },
