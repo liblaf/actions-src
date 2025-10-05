@@ -12,7 +12,7 @@ async function approvePullRequest(
   pull: PullRequest,
 ): Promise<void> {
   const reviewDecision: PullRequestReviewDecision =
-    await getPullRequestReviewDecision(octokit.graphql, {
+    await getPullRequestReviewDecision(octokit, {
       owner: pull.base.repo.owner.login,
       repo: pull.base.repo.name,
       pull_number: pull.number,

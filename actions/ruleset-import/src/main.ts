@@ -1,10 +1,8 @@
 import * as core from "@actions/core";
-import * as github from "@actions/github";
-import type { GitHub } from "@actions/github/lib/utils";
 import type { components } from "@octokit/openapi-types";
+import { Octokit } from "octokit";
 import { splitOwnerRepo } from "../../../lib";
 
-type Octokit = InstanceType<typeof GitHub>;
 type Ruleset = components["schemas"]["repository-ruleset"];
 
 async function getRuleset(
@@ -33,7 +31,7 @@ export async function run(): Promise<void> {
   const targetRepository: string = core.getInput("target-repository", {
     required: true,
   });
-  const octokit = github.getOctokit(token);
+  const octokit = new Octokit({ auth: token });
 
   const sourceRulesetSimple: Ruleset | undefined = await getRuleset(
     octokit,

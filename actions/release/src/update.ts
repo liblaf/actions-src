@@ -1,6 +1,7 @@
 import consola from "consola";
+import type { Octokit } from "octokit";
 import { splitOwnerRepo } from "../../../lib";
-import type { Octokit, Release, ReleaseOptions } from "./types";
+import type { Release, ReleaseOptions } from "./types";
 import { uploadReleaseAssets } from "./upload-assets";
 
 export async function updateRelease(

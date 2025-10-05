@@ -18,10 +18,7 @@
     "email": "30631553+liblaf@users.noreply.github.com"
   },
   "bin": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/liblaf/actions.git"
-  },
+  "repository": "github:liblaf/actions",
   "funding": {
     "url": "https://github.com/liblaf/actions?sponsor=1",
     "type": "github"
@@ -46,12 +43,9 @@
     "@biomejs/biome": "^2",
     "@github/local-action": "^6",
     "@liblaf/config": "^0.1",
-    "@octokit/graphql": "^9",
-    "@octokit/openapi-types": "^26",
-    "@octokit/plugin-paginate-rest": "^13",
-    "@octokit/plugin-rest-endpoint-methods": "^16",
+    "@octokit/openapi-types": "^25",
     "@types/node": "^24",
-    "bunup": "^0.11",
+    "bunup": "^0.14",
     "consola": "^3",
     "octokit": "^5"
   },

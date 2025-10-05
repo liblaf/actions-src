@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import type { BuildOptions, BunupPlugin } from "bunup";
+import type { BunupPlugin } from "bunup";
 import { defineConfig } from "bunup";
-import { copy, shims, unused } from "bunup/plugins";
+import { copy } from "bunup/plugins";
 
 const entry: string[] = [];
 const plugins: BunupPlugin[] = [];
@@ -38,15 +38,7 @@ export default defineConfig({
   dts: false,
   target: "node",
   sourcemap: "inline",
-  async onSuccess(_options: Partial<BuildOptions>): Promise<void> {
-    for (const action of actions) {
-      if (await exists(path.join("dist", action, "src"))) {
-        await fs.rename(
-          path.join("dist", action, "src"),
-          path.join("dist", action, "dist"),
-        );
-      }
-    }
-  },
-  plugins: [shims(), ...plugins, unused()],
+  plugins: [...plugins],
+  exports: false,
+  unused: true,
 });

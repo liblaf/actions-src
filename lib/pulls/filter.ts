@@ -1,9 +1,7 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import type { graphql } from "@octokit/graphql/types";
-import type { PaginateInterface } from "@octokit/plugin-paginate-rest";
-import type { Api } from "@octokit/plugin-rest-endpoint-methods";
 import consola from "consola";
+import type { Octokit } from "octokit";
 import { splitOwnerRepo } from "../inputs";
 
 export type PullRequest = {
@@ -61,10 +59,7 @@ export class PullRequestFilter {
   readonly labels: string[];
 
   constructor(
-    public readonly octokit: Api & {
-      graphql: graphql;
-      paginate: PaginateInterface;
-    },
+    public readonly octokit: Octokit,
     options?: FilterOptions,
   ) {
     if (options === undefined) {

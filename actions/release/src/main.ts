@@ -1,12 +1,13 @@
 import fs from "node:fs";
 import * as core from "@actions/core";
-import * as github from "@actions/github";
 import * as glob from "@actions/glob";
+import consola from "consola";
+import { Octokit } from "octokit";
 import { createRelease } from "./create";
 import { deleteRelease } from "./delete";
 import { getReleaseByTag } from "./get";
 import { matchReleaseAssets } from "./match-assets";
-import type { Octokit, Release, ReleaseOptions } from "./types";
+import type { Release, ReleaseOptions } from "./types";
 import { updateRelease } from "./update";
 
 async function getFiles(): Promise<string[]> {
@@ -23,7 +24,7 @@ async function getFiles(): Promise<string[]> {
   ).flat();
   const filtered: string[] = [];
   for (const file of files) {
-    const size: number = await (await fs.promises.stat(file)).size;
+    const size: number = (await fs.promises.stat(file)).size;
     if (size > 0) {
       filtered.push(file);
     } else {
@@ -33,7 +34,7 @@ async function getFiles(): Promise<string[]> {
   return filtered;
 }
 
-export async function run(): Promise<void> {
+export async function runUnsafe(): Promise<void> {
   const changelogFile: string = core.getInput("changelog-file", {
     required: false,
   });
@@ -52,7 +53,7 @@ export async function run(): Promise<void> {
   const changelog: string | undefined = fs.existsSync(changelogFile)
     ? await fs.promises.readFile(changelogFile, "utf-8")
     : undefined;
-  const octokit: Octokit = github.getOctokit(token);
+  const octokit: Octokit = new Octokit({ auth: token });
   const options: ReleaseOptions = { changelog, files, prerelease, title };
 
   const release: Release | undefined = await getReleaseByTag(
@@ -79,4 +80,15 @@ export async function run(): Promise<void> {
   }
   await createRelease(octokit, repository, tag, options);
   core.notice(`Create release: ${tag} in ${repository}`);
+}
+
+export async function run(): Promise<void> {
+  try {
+    await runUnsafe();
+  } catch (err) {
+    if (err instanceof Error) {
+      consola.error(err);
+      core.setFailed(err);
+    }
+  }
 }

@@ -1,7 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import consola from "consola";
-import type { Octokit, Release } from "./types";
+import type { Octokit } from "octokit";
+import type { Release } from "./types";
 
 async function upload(
   octokit: Octokit,

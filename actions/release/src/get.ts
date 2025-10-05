@@ -1,6 +1,8 @@
+import consola from "consola";
+import type { Octokit } from "octokit";
 import { RequestError } from "octokit";
 import { splitOwnerRepo } from "../../../lib";
-import type { Octokit, Release } from "./types";
+import type { Release } from "./types";
 
 export async function getReleaseByTag(
   octokit: Octokit,
@@ -16,9 +18,11 @@ export async function getReleaseByTag(
     });
     return release;
   } catch (error) {
-    if (error instanceof RequestError) {
-      if (error.status === 404) return undefined;
+    if (error instanceof RequestError && error.status === 404) {
+      consola.info(`Release not found: ${tag} in ${repository}`);
+      return undefined;
+    } else {
+      throw error;
     }
-    throw error;
   }
 }

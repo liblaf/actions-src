@@ -1,6 +1,7 @@
 import consola from "consola";
+import { type Octokit, RequestError } from "octokit";
 import { splitOwnerRepo } from "../../../lib";
-import type { Octokit, Release } from "./types";
+import type { Release } from "./types";
 import { waitForReleaseDeletion } from "./wait";
 
 export async function deleteRelease(
@@ -16,7 +17,11 @@ export async function deleteRelease(
       release_id: release.id,
     });
   } catch (err) {
-    consola.error(err);
+    if (err instanceof RequestError && err.status === 404) {
+      consola.warn(`Release not found: ${release.tag_name} in ${repository}.`);
+    } else {
+      throw err;
+    }
   }
   try {
     await octokit.rest.git.deleteRef({
@@ -25,7 +30,11 @@ export async function deleteRelease(
       ref: `tags/${release.tag_name}`,
     });
   } catch (err) {
-    consola.error(err);
+    if (err instanceof RequestError && err.status === 404) {
+      consola.warn(`Tag not found: ${release.tag_name} in ${repository}.`);
+    } else {
+      throw err;
+    }
   }
   // workaround for: <https://github.com/cli/cli/issues/5024#issuecomment-1028018586>
   await waitForReleaseDeletion(octokit, repository, release.tag_name);

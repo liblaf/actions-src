@@ -1,6 +1,7 @@
+import type { Octokit } from "octokit";
 import { sleep } from "../../../lib";
 import { getReleaseByTag } from "./get";
-import type { Octokit, Release } from "./types";
+import type { Release } from "./types";
 
 export async function waitForReleaseCreation(
   octokit: Octokit,

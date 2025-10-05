@@ -1,6 +1,5 @@
 import * as core from "@actions/core";
-import * as github from "@actions/github";
-import type { Octokit } from "octokit";
+import { Octokit } from "octokit";
 import type { PullRequest } from "../../../lib";
 import { PullRequestFilter, prettyPullRequest } from "../../../lib";
 
@@ -23,7 +22,7 @@ export async function run(): Promise<void> {
     required: true,
   });
   const token: string = core.getInput("token", { required: true });
-  const octokit = github.getOctokit(token) as unknown as Octokit;
+  const octokit = new Octokit({ auth: token });
   const filter = new PullRequestFilter(octokit);
   const futures: Promise<void>[] = [];
   for (const pull of await filter.filter()) {

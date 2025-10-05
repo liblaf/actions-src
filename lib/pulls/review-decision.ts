@@ -1,4 +1,4 @@
-import type { graphql } from "@octokit/graphql/types";
+import type { Octokit } from "octokit";
 
 export type PullRequestReviewDecision =
   | "APPROVED"
@@ -20,10 +20,10 @@ type ReviewDecisionResponse = {
 };
 
 export async function getPullRequestReviewDecision(
-  graphql: graphql,
+  octokit: Octokit,
   params: ReviewDecisionParams,
 ): Promise<PullRequestReviewDecision> {
-  const response: ReviewDecisionResponse = await graphql(
+  const response: ReviewDecisionResponse = await octokit.graphql(
     `
       query ($owner: String!, $repo: String!, $pull_number: Int!) {
         repository(owner: $owner, name: $repo) {
