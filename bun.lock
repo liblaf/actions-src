@@ -12,7 +12,7 @@
         "@liblaf/config": "^0.1",
         "@octokit/openapi-types": "^25",
         "@types/node": "^24",
-        "bunup": "^0.14",
+        "bunup": "^0.15.0",
         "consola": "^3",
         "octokit": "^5",
       },
@@ -99,9 +99,9 @@
 
     "@bufbuild/protoplugin": ["@bufbuild/protoplugin@2.6.2", "https://mirrors.huaweicloud.com/repository/npm/@bufbuild/protoplugin/-/protoplugin-2.6.2.tgz", { "dependencies": { "@bufbuild/protobuf": "2.6.2", "@typescript/vfs": "^1.5.2", "typescript": "5.4.5" } }, "sha512-EYVPnRXOkWuqBDqRYhLsquOnk5SGU2Ce3lAOBDEZyntHwu0xcjcIZeTI+as+HnArtcJwrXK0u6x3Rtmt2IcHlA=="],
 
-    "@bunup/dts": ["@bunup/dts@0.14.16", "https://registry.npmmirror.com/@bunup/dts/-/dts-0.14.16.tgz", { "dependencies": { "@babel/parser": "^7.28.4", "coffi": "^0.1.37", "oxc-minify": "^0.93.0", "oxc-resolver": "^11.9.0", "oxc-transform": "^0.93.0", "picocolors": "^1.1.1", "std-env": "^3.9.0", "ts-import-resolver": "^0.1.23" }, "peerDependencies": { "typescript": "latest" }, "optionalPeers": ["typescript"] }, "sha512-Z+CX/8XUC9TNvMJ0N9FJz8LkCCkuSK1AXMHiR7M5YM4J0irqCZEeictcBp/hJJkB+ghw6h+GiyHSV0e0ZtbqBw=="],
+    "@bunup/dts": ["@bunup/dts@0.14.29", "", { "dependencies": { "@babel/parser": "^7.28.4", "@typescript/native-preview": "^7.0.0-dev.20251016.1", "coffi": "^0.1.37", "oxc-minify": "^0.93.0", "oxc-resolver": "^11.9.0", "oxc-transform": "^0.93.0", "picocolors": "^1.1.1", "std-env": "^3.9.0", "ts-import-resolver": "^0.1.23" }, "peerDependencies": { "typescript": ">=4.5.0" }, "optionalPeers": ["typescript"] }, "sha512-AhnV2k9EcF8KGXNfu3JVEeCcLWFH7LuPHaLl+rG79BFvag75uzTjwnCWEyi4hWNZJh/V97uS9XyI39sRkLkijg=="],
 
-    "@bunup/shared": ["@bunup/shared@0.14.16", "https://registry.npmmirror.com/@bunup/shared/-/shared-0.14.16.tgz", { "peerDependencies": { "typescript": ">=4.5.0" }, "optionalPeers": ["typescript"] }, "sha512-ZFBeex2Y2uTxO1nnObzU4Frapm5v4ztfUqSBexFj3GOBs+w+htoQy+qRENMK/guyg32zNDByNmTS0slqNH5mRg=="],
+    "@bunup/shared": ["@bunup/shared@0.15.2", "", { "peerDependencies": { "typescript": ">=4.5.0" }, "optionalPeers": ["typescript"] }, "sha512-WRmwTWghyIYpOLk0G/47A/jBCTn6ZEBdwvpnXVHDVF5XpAI/OveS7Ss81b8f0u3K9zvckEJNm2DhuwQl0idKxA=="],
 
     "@emnapi/core": ["@emnapi/core@1.5.0", "https://registry.npmmirror.com/@emnapi/core/-/core-1.5.0.tgz", { "dependencies": { "@emnapi/wasi-threads": "1.1.0", "tslib": "^2.4.0" } }, "sha512-sbP8GzB1WDzacS8fgNPpHlp6C9VZe+SJP3F90W9rLemaQj2PzIuTEl1qDOYQf58YIpyjViI24y9aPWCjEzY2cg=="],
 
@@ -341,6 +341,22 @@
 
     "@types/node": ["@types/node@24.5.0", "https://registry.npmmirror.com/@types/node/-/node-24.5.0.tgz", { "dependencies": { "undici-types": "~7.12.0" } }, "sha512-y1dMvuvJspJiPSDZUQ+WMBvF7dpnEqN4x9DDC9ie5Fs/HUZJA3wFp7EhHoVaKX/iI0cRoECV8X2jL8zi0xrHCg=="],
 
+    "@typescript/native-preview": ["@typescript/native-preview@7.0.0-dev.20251017.1", "", { "optionalDependencies": { "@typescript/native-preview-darwin-arm64": "7.0.0-dev.20251017.1", "@typescript/native-preview-darwin-x64": "7.0.0-dev.20251017.1", "@typescript/native-preview-linux-arm": "7.0.0-dev.20251017.1", "@typescript/native-preview-linux-arm64": "7.0.0-dev.20251017.1", "@typescript/native-preview-linux-x64": "7.0.0-dev.20251017.1", "@typescript/native-preview-win32-arm64": "7.0.0-dev.20251017.1", "@typescript/native-preview-win32-x64": "7.0.0-dev.20251017.1" }, "bin": { "tsgo": "bin/tsgo.js" } }, "sha512-awfunrvMGHxKdkqTRbcsrLQMaVkAAZWR0BrlOOJiy+JRnE/I/uhGBQ9oLvvUr1bGt4QnkXz3mybCdn2pFgSy5g=="],
+
+    "@typescript/native-preview-darwin-arm64": ["@typescript/native-preview-darwin-arm64@7.0.0-dev.20251017.1", "", { "os": "darwin", "cpu": "arm64" }, "sha512-P2Anvpgb1TOxP1jsPuJlde+ipkETWMfn0UGiydP8332ctq7dS/3cfUzM52PFiH5kx9zoa6vqv+IW1gaSUBPtmw=="],
+
+    "@typescript/native-preview-darwin-x64": ["@typescript/native-preview-darwin-x64@7.0.0-dev.20251017.1", "", { "os": "darwin", "cpu": "x64" }, "sha512-9KW10N8eZZTvj2+egam0JxMo5ajO/QB8uuotiiepihl1q4Xi4ExNukWyg4+FhA56x4yMpABaIuvykKd099ubmA=="],
+
+    "@typescript/native-preview-linux-arm": ["@typescript/native-preview-linux-arm@7.0.0-dev.20251017.1", "", { "os": "linux", "cpu": "arm" }, "sha512-Qed6PFwq9KxDydS+5Ov3YnuDzLO88HWyQtt7bnE2e7VJ6aW06pVNxjxgLLgZQpAlQV8TMAg2NtfonEDt+NPSBQ=="],
+
+    "@typescript/native-preview-linux-arm64": ["@typescript/native-preview-linux-arm64@7.0.0-dev.20251017.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-0DOI/Fae+VP2otbmWpx0gxeTQABxDgZnDJbyptea43CCHGNnXttMufwegiHjs1Uv79fLX16jdhtBdTiROOZg0A=="],
+
+    "@typescript/native-preview-linux-x64": ["@typescript/native-preview-linux-x64@7.0.0-dev.20251017.1", "", { "os": "linux", "cpu": "x64" }, "sha512-wN2T28rwlGLgfIPqG4e3cy2wPO4VuVTpBH127P8UsBRQYaAIiGAv1BM7gsRjlnXBmVUGOXQ8LsxFpI4Un/YB1A=="],
+
+    "@typescript/native-preview-win32-arm64": ["@typescript/native-preview-win32-arm64@7.0.0-dev.20251017.1", "", { "os": "win32", "cpu": "arm64" }, "sha512-6phF6+qXp7im/ymFCsOPSkH83o0uL2wUUpAdg44YluuLmfh7DbT1D6UTg4uZYMYY25nElZ27fZIgFjzCSmJbbQ=="],
+
+    "@typescript/native-preview-win32-x64": ["@typescript/native-preview-win32-x64@7.0.0-dev.20251017.1", "", { "os": "win32", "cpu": "x64" }, "sha512-xvSSet89ZLiz+Z3nU227xQ/9/H7REukqSSPpaPBdu/+oUv07MQ993JwO69CG1katDMMEABfoJJ7D7EzQAi8iMw=="],
+
     "@typescript/vfs": ["@typescript/vfs@1.6.1", "https://mirrors.huaweicloud.com/repository/npm/@typescript/vfs/-/vfs-1.6.1.tgz", { "dependencies": { "debug": "^4.1.1" }, "peerDependencies": { "typescript": "*" } }, "sha512-JwoxboBh7Oz1v38tPbkrZ62ZXNHAk9bJ7c9x0eI5zBfBnBYGhURdbnh7Z4smN/MV48Y5OCcZb58n972UtbazsA=="],
 
     "@typespec/ts-http-runtime": ["@typespec/ts-http-runtime@0.3.0", "https://mirrors.huaweicloud.com/repository/npm/@typespec/ts-http-runtime/-/ts-http-runtime-0.3.0.tgz", { "dependencies": { "http-proxy-agent": "^7.0.0", "https-proxy-agent": "^7.0.0", "tslib": "^2.6.2" } }, "sha512-sOx1PKSuFwnIl7z4RN0Ls7N9AQawmR9r66eI5rFCzLDIs8HTIYrIpH9QjYWoX0lkgGrkLxXhi4QnK7MizPRrIg=="],
@@ -385,7 +401,7 @@
 
     "buffers": ["buffers@0.1.1", "https://mirrors.huaweicloud.com/repository/npm/buffers/-/buffers-0.1.1.tgz", {}, "sha512-9q/rDEGSb/Qsvv2qvzIzdluL5k7AaJOTrw23z9reQthrbF7is4CtlT0DXyO1oei2DCp4uojjzQ7igaSHp1kAEQ=="],
 
-    "bunup": ["bunup@0.14.16", "https://registry.npmmirror.com/bunup/-/bunup-0.14.16.tgz", { "dependencies": { "@bunup/dts": "0.14.16", "@bunup/shared": "0.14.16", "chokidar": "^4.0.3", "coffi": "^0.1.37", "lightningcss": "^1.30.2", "picocolors": "^1.1.1", "tinyexec": "^1.0.1", "tree-kill": "^1.2.2", "zlye": "^0.4.4" }, "peerDependencies": { "typescript": "latest" }, "optionalPeers": ["typescript"], "bin": { "bunup": "dist/cli/index.js" } }, "sha512-VJjhwHkGB734j3DGh2nqRLW2XggjrsQPoKBM/be++riW1nUmM61z1erNn/LIYl/HzpNcjTOjt9G3efAuT1gNPQ=="],
+    "bunup": ["bunup@0.15.3", "", { "dependencies": { "@bunup/dts": "^0.14.29", "@bunup/shared": "0.15.2", "chokidar": "^4.0.3", "coffi": "^0.1.37", "lightningcss": "^1.30.2", "picocolors": "^1.1.1", "tinyexec": "^1.0.1", "tree-kill": "^1.2.2", "zlye": "^0.4.4" }, "peerDependencies": { "typescript": "latest" }, "optionalPeers": ["typescript"], "bin": { "bunup": "dist/cli/index.js" } }, "sha512-+b56aS9S98uAqeFm22waCJwc6bwYXKvefQNGZMeav/Ku7HbBlzZlwzQCrknpBPzDUzQUP+YvJw/GJ7FZWK6gQQ=="],
 
     "call-bind-apply-helpers": ["call-bind-apply-helpers@1.0.2", "", { "dependencies": { "es-errors": "^1.3.0", "function-bind": "^1.1.2" } }, "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ=="],
 
