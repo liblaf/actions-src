@@ -10,7 +10,7 @@
         "@biomejs/biome": "^2",
         "@github/local-action": "^6",
         "@liblaf/config": "^0.1",
-        "@octokit/openapi-types": "^25",
+        "@octokit/openapi-types": "^26.0.0",
         "@types/node": "^24",
         "bunup": "^0.15.0",
         "consola": "^3",
@@ -199,7 +199,7 @@
 
     "@octokit/oauth-methods": ["@octokit/oauth-methods@6.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/oauth-methods/-/oauth-methods-6.0.0.tgz", { "dependencies": { "@octokit/oauth-authorization-url": "^8.0.0", "@octokit/request": "^10.0.2", "@octokit/request-error": "^7.0.0", "@octokit/types": "^14.0.0" } }, "sha512-Q8nFIagNLIZgM2odAraelMcDssapc+lF+y3OlcIPxyAU+knefO8KmozGqfnma1xegRDP4z5M73ABsamn72bOcA=="],
 
-    "@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+    "@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
 
     "@octokit/openapi-webhooks-types": ["@octokit/openapi-webhooks-types@12.0.3", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-webhooks-types/-/openapi-webhooks-types-12.0.3.tgz", {}, "sha512-90MF5LVHjBedwoHyJsgmaFhEN1uzXyBDRLEBe7jlTYx/fEhPAk3P3DAJsfZwC54m8hAIryosJOL+UuZHB3K3yA=="],
 
@@ -817,6 +817,8 @@
 
     "@octokit/rest/@octokit/plugin-rest-endpoint-methods": ["@octokit/plugin-rest-endpoint-methods@16.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-16.0.0.tgz", { "dependencies": { "@octokit/types": "^14.1.0" }, "peerDependencies": { "@octokit/core": ">=6" } }, "sha512-kJVUQk6/dx/gRNLWUnAWKFs1kVPn5O5CYZyssyEoNYaFedqZxsfYs7DwI3d67hGz4qOwaJ1dpm07hOAD1BXx6g=="],
 
+    "@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
     "@octokit/webhooks/@octokit/request-error": ["@octokit/request-error@7.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/request-error/-/request-error-7.0.0.tgz", { "dependencies": { "@octokit/types": "^14.0.0" } }, "sha512-KRA7VTGdVyJlh0cP5Tf94hTiYVVqmt2f3I6mnimmaVz4UG3gQV/k4mDJlJv3X67iX6rmN7gSHCF8ssqeMnmhZg=="],
 
     "@protobuf-ts/plugin/typescript": ["typescript@3.9.10", "https://mirrors.huaweicloud.com/repository/npm/typescript/-/typescript-3.9.10.tgz", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q=="],
@@ -1047,8 +1049,6 @@
 
     "@octokit/plugin-paginate-graphql/@octokit/core/@octokit/request-error/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
-    "@octokit/plugin-paginate-graphql/@octokit/core/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
-
     "@octokit/plugin-request-log/@octokit/core/@octokit/graphql/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
     "@octokit/plugin-request-log/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/endpoint/-/endpoint-11.0.0.tgz", { "dependencies": { "@octokit/types": "^14.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-hoYicJZaqISMAI3JfaDr1qMNi48OctWuOih1m80bkYow/ayPw6Jj52tqWJ6GEoFTk1gBqfanSoI1iY99Z5+ekQ=="],
@@ -1056,8 +1056,6 @@
     "@octokit/plugin-request-log/@octokit/core/@octokit/request/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
     "@octokit/plugin-request-log/@octokit/core/@octokit/request-error/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
-
-    "@octokit/plugin-request-log/@octokit/core/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
 
     "@octokit/plugin-retry/@octokit/core/@octokit/graphql/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
@@ -1067,8 +1065,6 @@
 
     "@octokit/plugin-retry/@octokit/core/@octokit/request-error/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
-    "@octokit/plugin-retry/@octokit/core/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
-
     "@octokit/plugin-throttling/@octokit/core/@octokit/graphql/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
     "@octokit/plugin-throttling/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/endpoint/-/endpoint-11.0.0.tgz", { "dependencies": { "@octokit/types": "^14.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-hoYicJZaqISMAI3JfaDr1qMNi48OctWuOih1m80bkYow/ayPw6Jj52tqWJ6GEoFTk1gBqfanSoI1iY99Z5+ekQ=="],
@@ -1077,8 +1073,6 @@
 
     "@octokit/plugin-throttling/@octokit/core/@octokit/request-error/@octokit/types": ["@octokit/types@14.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/types/-/types-14.1.0.tgz", { "dependencies": { "@octokit/openapi-types": "^25.1.0" } }, "sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g=="],
 
-    "@octokit/plugin-throttling/@octokit/core/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
-
     "@octokit/rest/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/endpoint/-/endpoint-11.0.0.tgz", { "dependencies": { "@octokit/types": "^14.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-hoYicJZaqISMAI3JfaDr1qMNi48OctWuOih1m80bkYow/ayPw6Jj52tqWJ6GEoFTk1gBqfanSoI1iY99Z5+ekQ=="],
 
     "octokit/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/endpoint/-/endpoint-11.0.0.tgz", { "dependencies": { "@octokit/types": "^14.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-hoYicJZaqISMAI3JfaDr1qMNi48OctWuOih1m80bkYow/ayPw6Jj52tqWJ6GEoFTk1gBqfanSoI1iY99Z5+ekQ=="],
@@ -1086,5 +1080,29 @@
     "@actions/artifact/@actions/github/@octokit/plugin-paginate-rest/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@12.11.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-12.11.0.tgz", {}, "sha512-VsXyi8peyRq9PqIz/tpqiL2w3w80OgVMwBHltTml3LmVvXiphgeqmY9mvBw9Wu7e0QWk/fqD37ux8yP5uVekyQ=="],
 
     "@actions/artifact/@actions/github/@octokit/plugin-rest-endpoint-methods/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@12.11.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-12.11.0.tgz", {}, "sha512-VsXyi8peyRq9PqIz/tpqiL2w3w80OgVMwBHltTml3LmVvXiphgeqmY9mvBw9Wu7e0QWk/fqD37ux8yP5uVekyQ=="],
+
+    "@octokit/plugin-paginate-graphql/@octokit/core/@octokit/graphql/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-paginate-graphql/@octokit/core/@octokit/request-error/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-paginate-graphql/@octokit/core/@octokit/request/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-request-log/@octokit/core/@octokit/graphql/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-request-log/@octokit/core/@octokit/request-error/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-request-log/@octokit/core/@octokit/request/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-retry/@octokit/core/@octokit/graphql/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-retry/@octokit/core/@octokit/request-error/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-retry/@octokit/core/@octokit/request/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-throttling/@octokit/core/@octokit/graphql/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-throttling/@octokit/core/@octokit/request-error/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
+
+    "@octokit/plugin-throttling/@octokit/core/@octokit/request/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@25.1.0", "https://mirrors.huaweicloud.com/repository/npm/@octokit/openapi-types/-/openapi-types-25.1.0.tgz", {}, "sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA=="],
   }
 }
