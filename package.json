@@ -45,7 +45,7 @@
     "@liblaf/config": "^0.1",
     "@octokit/openapi-types": "^26",
     "@types/node": "^24",
-    "bunup": "0.15.4",
+    "bunup": "0.14.19",
     "consola": "^3",
     "octokit": "^5"
   },
