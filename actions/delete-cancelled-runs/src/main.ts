@@ -11,7 +11,7 @@ function getWorkflowId(): string {
   return workflow;
 }
 
-export async function run(): Promise<void> {
+export async function runUnsafe(): Promise<void> {
   const [owner, repo] = getOwnerRepo();
   const token: string = core.getInput("token", { required: true });
   const octokit = new Octokit({ auth: token });
@@ -55,5 +55,14 @@ export async function run(): Promise<void> {
       // }
       consola.error(`${err}`);
     }
+  }
+}
+
+export async function run(): Promise<void> {
+  try {
+    await runUnsafe();
+  } catch (err) {
+    consola.error(err);
+    if (err instanceof Error) core.setFailed(err.message);
   }
 }

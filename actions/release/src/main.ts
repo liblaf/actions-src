@@ -86,9 +86,7 @@ export async function run(): Promise<void> {
   try {
     await runUnsafe();
   } catch (err) {
-    if (err instanceof Error) {
-      consola.error(err);
-      core.setFailed(err);
-    }
+    consola.error(err);
+    if (err instanceof Error) core.setFailed(err.message);
   }
 }

@@ -22,7 +22,7 @@ async function hasPages(
   }
 }
 
-export async function run(): Promise<void> {
+export async function runUnsafe(): Promise<void> {
   const token: string = core.getInput("token", { required: true });
   const [owner, repo] = getOwnerRepo("repository", { required: true });
   const octokit = new Octokit({ auth: token });
@@ -40,5 +40,14 @@ export async function run(): Promise<void> {
       build_type: "legacy",
       source: { branch: "gh-pages", path: "/" },
     });
+  }
+}
+
+export async function run(): Promise<void> {
+  try {
+    await runUnsafe();
+  } catch (err) {
+    consola.error(err);
+    if (err instanceof Error) core.setFailed(err.message);
   }
 }

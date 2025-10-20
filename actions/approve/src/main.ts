@@ -1,4 +1,5 @@
 import * as core from "@actions/core";
+import consola from "consola";
 import { Octokit } from "octokit";
 import type { PullRequest, PullRequestReviewDecision } from "../../../lib";
 import {
@@ -27,7 +28,7 @@ async function approvePullRequest(
   core.notice(`Approved ${prettyPullRequest(pull)}`);
 }
 
-export async function run(): Promise<void> {
+export async function runUnsafe(): Promise<void> {
   const token: string = core.getInput("token", { required: true });
   const octokit = new Octokit({ auth: token });
   const filter = new PullRequestFilter(octokit);
@@ -36,4 +37,13 @@ export async function run(): Promise<void> {
     futures.push(approvePullRequest(octokit, pull));
   }
   await Promise.all(futures);
+}
+
+export async function run(): Promise<void> {
+  try {
+    await runUnsafe();
+  } catch (err) {
+    consola.error(err);
+    if (err instanceof Error) core.setFailed(err.message);
+  }
 }

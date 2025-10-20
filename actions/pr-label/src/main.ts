@@ -1,4 +1,5 @@
 import * as core from "@actions/core";
+import consola from "consola";
 import { Octokit } from "octokit";
 import type { PullRequest } from "../../../lib";
 import { PullRequestFilter, prettyPullRequest } from "../../../lib";
@@ -17,7 +18,7 @@ async function addLabelsToPullRequest(
   core.notice(`Added labels ${addLabels} to ${prettyPullRequest(pull)}`);
 }
 
-export async function run(): Promise<void> {
+export async function runUnsafe(): Promise<void> {
   const addLabels: string[] = core.getMultilineInput("add-labels", {
     required: true,
   });
@@ -29,4 +30,13 @@ export async function run(): Promise<void> {
     futures.push(addLabelsToPullRequest(octokit, pull, addLabels));
   }
   await Promise.all(futures);
+}
+
+export async function run(): Promise<void> {
+  try {
+    await runUnsafe();
+  } catch (err) {
+    consola.error(err);
+    if (err instanceof Error) core.setFailed(err.message);
+  }
 }

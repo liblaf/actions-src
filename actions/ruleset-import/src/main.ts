@@ -1,5 +1,6 @@
 import * as core from "@actions/core";
 import type { components } from "@octokit/openapi-types";
+import consola from "consola";
 import { Octokit } from "octokit";
 import { splitOwnerRepo } from "../../../lib";
 
@@ -22,7 +23,7 @@ async function getRuleset(
   }
 }
 
-export async function run(): Promise<void> {
+export async function runUnsafe(): Promise<void> {
   const name: string = core.getInput("name", { required: true });
   const token: string = core.getInput("token", { required: true });
   const sourceRepository: string = core.getInput("source-repository", {
@@ -81,5 +82,14 @@ export async function run(): Promise<void> {
       rules: sourceRuleset.rules as any,
     });
     core.notice(`Create ruleset "${name}" in repository "${targetRepository}"`);
+  }
+}
+
+export async function run(): Promise<void> {
+  try {
+    await runUnsafe();
+  } catch (err) {
+    consola.error(err);
+    if (err instanceof Error) core.setFailed(err.message);
   }
 }
