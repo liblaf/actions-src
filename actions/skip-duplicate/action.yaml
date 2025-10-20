@@ -79,6 +79,7 @@ runs:
         skip_after_successful_duplicate: ${{ inputs.skip-after-successful-duplicate }}
         do_not_skip: ${{ inputs.do-not-skip }}
         concurrent_skipping: ${{ inputs.concurrent-skipping }}
+      continue-on-error: true
 
     - id: delete-cancelled-runs
       name: Delete Cancelled Runs
@@ -87,3 +88,4 @@ runs:
         max-deletions: ${{ inputs.max-deletions }}
         token: ${{ inputs.token }}
         workflow: ${{ inputs.workflow }}
+      continue-on-error: true
