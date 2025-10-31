@@ -1,0 +1,111 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Pre
+
+author: liblaf
+
+description: Pre
+
+inputs:
+  # shared:
+  token:
+    description: Your GitHub Access Token
+    required: true
+    default: ${{ github.token }}
+  # delete-cancelled-runs
+  workflow-file:
+    description: The basename of the workflow file
+    required: true
+    default: ${{ github.workflow_ref }}
+  max-deletions:
+    description: The maximum number of cancelled runs to delete
+    required: false
+    default: "3"
+  # skip-duplicate-actions
+  paths-ignore:
+    description: A JSON-array with ignored path patterns
+    required: false
+    default: "[]"
+  paths:
+    description: A JSON-array with path patterns
+    required: false
+    default: "[]"
+  paths-filter:
+    description: A YAML-string with named paths_ignore/paths patterns
+    required: false
+  cancel-others:
+    description: If true, then workflow runs from outdated commits will be cancelled
+    required: false
+    default: "false"
+  skip-after-successful-duplicate:
+    description: If true, skip if an already finished duplicate run can be found
+    required: false
+    default: "true"
+  do-not-skip:
+    description: A JSON-array with triggers that should never be skipped
+    required: false
+    default: |-
+      [
+        "merge_group",
+        "schedule",
+        "workflow_dispatch"
+      ]
+  concurrent-skipping:
+    description: One of never, same_content, same_content_newer, outdated_runs, always
+    required: true
+    default: same_content_newer
+  skip-summary:
+    description: If true, make the workflow logs shorter
+    required: false
+    default: "false"
+
+outputs:
+  # skip-duplicate-actions
+  should-skip:
+    description: Returns true if the current run should be skipped according to your configured rules
+    value: ${{ steps.skip-duplicate-actions.outputs.should_skip }}
+  reason:
+    description: The reason why the current run is considered skippable or unskippable
+    value: ${{ steps.skip-duplicate-actions.outputs.reason }}
+  skipped-by:
+    description: Returns information about the workflow run which caused the current run to be skipped
+    value: ${{ steps.skip-duplicate-actions.outputs.skipped_by }}
+  changed-files:
+    description: A two-dimensional array, with a list of changed files for each commit that was traced back
+    value: ${{ steps.skip-duplicate-actions.outputs.changed_files }}
+  paths-result:
+    description: Returns information for each configured filter in paths_filter
+    value: ${{ steps.skip-duplicate-actions.outputs.paths_result }}
+
+runs:
+  using: composite
+  steps:
+    - id: workflow
+      name: Get Workflow File
+      run: |-
+        workflow='${{ inputs.workflow-file }}'
+        workflow="${workflow%'@'*}"
+        workflow="${workflow##*'/'}"
+        printf 'workflow-file=%s\n' "$workflow" >> "$GITHUB_OUTPUT"
+      shell: bash
+
+    - id: skip-duplicate-actions
+      name: Skip Duplicate Actions
+      uses: fkirc/skip-duplicate-actions@v5
+      with:
+        github_token: ${{ inputs.token }}
+        paths_ignore: ${{ inputs.paths-ignore }}
+        paths: ${{ inputs.paths }}
+        paths_filter: ${{ inputs.paths-filter }}
+        cancel_others: ${{ inputs.cancel-others }}
+        skip_after_successful_duplicate: ${{ inputs.skip-after-successful-duplicate }}
+        do_not_skip: ${{ inputs.do-not-skip }}
+        concurrent_skipping: ${{ inputs.concurrent-skipping }}
+
+    - id: delete-cancelled-runs
+      name: Delete Cancelled Runs
+      uses: MercuryTechnologies/delete-cancelled-runs@1.0.0
+      with:
+        workflow-file: ${{ steps.workflow.outputs.workflow-file }}
+        max-deletions: ${{ inputs.max-deletions }}
+        github-token: ${{ github.token }}
