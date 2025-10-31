@@ -10,7 +10,7 @@
         "@biomejs/biome": "^2",
         "@github/local-action": "^6",
         "@liblaf/config": "^0.1",
-        "@octokit/openapi-types": "^26",
+        "@octokit/openapi-types": "^27.0.0",
         "@types/node": "^24",
         "bunup": "0.15.12",
         "consola": "^3",
@@ -201,7 +201,7 @@
 
     "@octokit/oauth-methods": ["@octokit/oauth-methods@6.0.1", "https://registry.npmmirror.com/@octokit/oauth-methods/-/oauth-methods-6.0.1.tgz", { "dependencies": { "@octokit/oauth-authorization-url": "^8.0.0", "@octokit/request": "^10.0.5", "@octokit/request-error": "^7.0.1", "@octokit/types": "^15.0.0" } }, "sha512-xi6Iut3izMCFzXBJtxxJehxJmAKjE8iwj6L5+raPRwlTNKAbOOBJX7/Z8AF5apD4aXvc2skwIdOnC+CQ4QuA8Q=="],
 
-    "@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
+    "@octokit/openapi-types": ["@octokit/openapi-types@27.0.0", "", {}, "sha512-whrdktVs1h6gtR+09+QsNk2+FO+49j6ga1c55YZudfEG+oKJVvJLQi3zkOm5JjiUXAagWK2tI2kTGKJ2Ys7MGA=="],
 
     "@octokit/openapi-webhooks-types": ["@octokit/openapi-webhooks-types@12.0.3", "https://registry.npmmirror.com/@octokit/openapi-webhooks-types/-/openapi-webhooks-types-12.0.3.tgz", {}, "sha512-90MF5LVHjBedwoHyJsgmaFhEN1uzXyBDRLEBe7jlTYx/fEhPAk3P3DAJsfZwC54m8hAIryosJOL+UuZHB3K3yA=="],
 
@@ -805,6 +805,8 @@
 
     "@octokit/rest/@octokit/plugin-rest-endpoint-methods": ["@octokit/plugin-rest-endpoint-methods@16.1.0", "https://registry.npmmirror.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-16.1.0.tgz", { "dependencies": { "@octokit/types": "^15.0.0" }, "peerDependencies": { "@octokit/core": ">=6" } }, "sha512-nCsyiKoGRnhH5LkH8hJEZb9swpqOcsW+VXv1QoyUNQXJeVODG4+xM6UICEqyqe9XFr6LkL8BIiFCPev8zMDXPw=="],
 
+    "@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
+
     "@octokit/webhooks/@octokit/request-error": ["@octokit/request-error@7.0.1", "https://registry.npmmirror.com/@octokit/request-error/-/request-error-7.0.1.tgz", { "dependencies": { "@octokit/types": "^15.0.0" } }, "sha512-CZpFwV4+1uBrxu7Cw8E5NCXDWFNf18MSY23TdxCBgjw1tXXHvTrZVsXlW8hgFTOLw8RQR1BBrMvYRtuyaijHMA=="],
 
     "@protobuf-ts/plugin/typescript": ["typescript@3.9.10", "https://registry.npmmirror.com/typescript/-/typescript-3.9.10.tgz", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q=="],
@@ -1028,6 +1030,8 @@
     "@octokit/plugin-request-log/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.1", "https://registry.npmmirror.com/@octokit/endpoint/-/endpoint-11.0.1.tgz", { "dependencies": { "@octokit/types": "^15.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-7P1dRAZxuWAOPI7kXfio88trNi/MegQ0IJD3vfgC3b+LZo1Qe6gRJc2v0mz2USWWJOKrB2h5spXCzGbw+fAdqA=="],
 
     "@octokit/plugin-retry/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.1", "https://registry.npmmirror.com/@octokit/endpoint/-/endpoint-11.0.1.tgz", { "dependencies": { "@octokit/types": "^15.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-7P1dRAZxuWAOPI7kXfio88trNi/MegQ0IJD3vfgC3b+LZo1Qe6gRJc2v0mz2USWWJOKrB2h5spXCzGbw+fAdqA=="],
+
+    "@octokit/plugin-retry/@octokit/core/@octokit/types/@octokit/openapi-types": ["@octokit/openapi-types@26.0.0", "https://registry.npmmirror.com/@octokit/openapi-types/-/openapi-types-26.0.0.tgz", {}, "sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA=="],
 
     "@octokit/plugin-throttling/@octokit/core/@octokit/request/@octokit/endpoint": ["@octokit/endpoint@11.0.1", "https://registry.npmmirror.com/@octokit/endpoint/-/endpoint-11.0.1.tgz", { "dependencies": { "@octokit/types": "^15.0.0", "universal-user-agent": "^7.0.2" } }, "sha512-7P1dRAZxuWAOPI7kXfio88trNi/MegQ0IJD3vfgC3b+LZo1Qe6gRJc2v0mz2USWWJOKrB2h5spXCzGbw+fAdqA=="],
 
