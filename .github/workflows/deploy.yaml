@@ -98,7 +98,8 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - name: Tag
         run: |-
-          readarray -d '.' -t parts <<< '${{ github.ref_name }}'
+          # `<<<` will append an extra newline, so we use `printf`
+          readarray -d '.' -t parts < <(printf '%s' '${{ github.ref }}')
           tag=''
           for part in "${parts[@]}"; do
             tag="${tag:+"$tag."}$part"

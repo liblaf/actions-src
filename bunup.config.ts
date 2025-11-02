@@ -5,7 +5,7 @@ import { defineConfig } from "bunup";
 import { copy } from "bunup/plugins";
 
 const entry: string[] = [];
-const plugins: BunupPlugin[] = [];
+const plugins: BunupPlugin[] = [copy("README.md")];
 
 async function exists(path: string): Promise<boolean> {
   try {
