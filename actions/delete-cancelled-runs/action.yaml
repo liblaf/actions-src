@@ -19,5 +19,5 @@ inputs:
     default: ${{ github.workflow_ref }}
 
 runs:
-  using: node24
+  using: node20
   main: src/index.js
