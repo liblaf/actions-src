@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.4](https://github.com/liblaf/actions-src/compare/v0.3.3...v0.3.4) (2025-11-02)
+
+
+### 🐛 Bug Fixes
+
+* **pulls:** Make `getPullNumber` robust to missing pull request context ([5e9c1ef](https://github.com/liblaf/actions-src/commit/5e9c1efed053ce4b1b9d6dd72a056f60b0ca3169))
+
+
+### ⚙️ Continuous Integration
+
+* **deploy:** Use `github.ref_name` for release tagging ([03a9dae](https://github.com/liblaf/actions-src/commit/03a9dae42102264ab744406dc472099043e95101))
+
 ## [0.3.3](https://github.com/liblaf/actions-src/compare/v0.3.2..v0.3.3) - 2025-11-02
 
 ### 🐛 Bug Fixes
