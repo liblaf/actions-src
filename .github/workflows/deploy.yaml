@@ -2,6 +2,8 @@ name: Deploy
 
 on:
   push:
+    branches:
+      - main
   release:
     types:
       - published
@@ -47,9 +49,6 @@ jobs:
       # JamesIves/github-pages-deploy-action requires checkout
       - name: Checkout
         uses: actions/checkout@v5
-        with:
-          repository: ${{ env.TARGET_REPOSITORY }}
-          token: ${{ secrets.GH_PAT }}
       - name: Download Artifacts
         uses: actions/download-artifact@v6
         with:
