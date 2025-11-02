@@ -10,19 +10,24 @@ inputs:
   app-id:
     description: GitHub App ID
     required: false
+    deprecationMessage: Use 'liblaf/actions/auth' instead.
   private-key:
     description: GitHub App private key
     required: false
+    deprecationMessage: Use 'liblaf/actions/auth' instead.
   owner:
     description: The owner of the GitHub App installation (defaults to current repository owner)
     required: false
+    deprecationMessage: Use 'liblaf/actions/auth' instead.
   repositories:
     description: Comma or newline-separated list of repositories to install the GitHub App on (defaults to current repository if owner is unset)
     required: false
+    deprecationMessage: Use 'liblaf/actions/auth' instead.
   skip-token-revoke:
     description: If true, the token will not be revoked when the current job is complete
     required: false
     default: "false"
+    deprecationMessage: Use 'liblaf/actions/auth' instead.
 
 outputs:
   author:
