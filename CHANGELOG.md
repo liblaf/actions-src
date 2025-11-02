@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.3](https://github.com/liblaf/actions-src/compare/v0.3.2..v0.3.3) - 2025-11-02
+
+### 🐛 Bug Fixes
+
+- trigger release - ([b4144f0](https://github.com/liblaf/actions-src/commit/b4144f061f46ebe8faf03cb6a4e07e1616f63245))
+
+### ♻ Code Refactoring
+
+- **pulls:** Use async generators in PullRequestFilter - ([dea733f](https://github.com/liblaf/actions-src/commit/dea733fdbadb027ca2c0cbd25d3e6ce7eb157640))
+
+### 🔧 Continuous Integration
+
+- add main branch trigger and simplify checkout step - ([63ee2d9](https://github.com/liblaf/actions-src/commit/63ee2d9e05eafdbbc7cb363a22bf27823c10f134))
+- improve tag creation and include README in build - ([34103bd](https://github.com/liblaf/actions-src/commit/34103bddc2c474b2d8689cad9474eac2281cab42))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [0.3.2](https://github.com/liblaf/actions-src/compare/v0.3.1..v0.3.2) - 2025-11-02
 
 ### 🐛 Bug Fixes
@@ -12,10 +31,6 @@
 - **deploy:** add checkout step before downloading artifacts - ([97f0906](https://github.com/liblaf/actions-src/commit/97f09069d8e3bc69af024ab87219702d59f57888))
 - fix checkout step in deploy workflow - ([740d416](https://github.com/liblaf/actions-src/commit/740d416ce5d4e7666e3a72b9169aeb6cac04506a))
 - enhance deployment workflow with conditional logic and tagging - ([fb250e6](https://github.com/liblaf/actions-src/commit/fb250e66f585eccef5df66d12dd6730ce4bc2e7c))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.3.1](https://github.com/liblaf/actions-src/compare/v0.3.0..v0.3.1) - 2025-11-02
 
