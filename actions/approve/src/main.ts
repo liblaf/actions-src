@@ -29,14 +29,15 @@ async function approvePullRequest(
 }
 
 export async function runUnsafe(): Promise<void> {
-  const token: string = core.getInput("token", { required: true });
-  const octokit = new Octokit({ auth: token });
-  const filter = new PullRequestFilter(octokit);
-  const futures: Promise<void>[] = [];
-  for (const pull of await filter.filter()) {
-    futures.push(approvePullRequest(octokit, pull));
-  }
-  await Promise.all(futures);
+  const approveToken: string = core.getInput("approve-token", {
+    required: true,
+  });
+  const listToken: string = core.getInput("list-token", { required: true });
+  const approveOctokit = new Octokit({ auth: approveToken });
+  const listOctokit = new Octokit({ auth: listToken });
+  const filter = new PullRequestFilter(listOctokit);
+  for await (const pull of filter.filter())
+    await approvePullRequest(approveOctokit, pull);
 }
 
 export async function run(): Promise<void> {

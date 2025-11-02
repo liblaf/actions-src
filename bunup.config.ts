@@ -5,7 +5,7 @@ import { defineConfig } from "bunup";
 import { copy } from "bunup/plugins";
 
 const entry: string[] = [];
-const plugins: BunupPlugin[] = [copy("README.md")];
+const plugins: BunupPlugin[] = [copy("./README.md")];
 
 async function exists(path: string): Promise<boolean> {
   try {
@@ -31,14 +31,16 @@ for (const action of actions) {
 }
 
 export default defineConfig({
-  entry: entry,
+  entry,
   format: ["esm"],
   minify: true,
   splitting: false,
   dts: false,
   target: "node",
   sourcemap: "inline",
-  plugins: [...plugins],
+  sourceBase: "actions",
+  plugins,
+  shims: true,
   exports: false,
   unused: true,
 });

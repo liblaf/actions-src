@@ -3,49 +3,7 @@ import * as github from "@actions/github";
 import consola from "consola";
 import type { Octokit } from "octokit";
 import { splitOwnerRepo } from "../inputs";
-
-export type PullRequest = {
-  base: {
-    repo: {
-      full_name: string;
-      name: string;
-      owner: {
-        login: string;
-      };
-    };
-  };
-  labels: {
-    name: string;
-  }[];
-  number: number;
-  state: string;
-  title: string;
-  user: {
-    login: string;
-    type: string;
-  } | null;
-};
-
-export type Repository = {
-  archived?: boolean;
-  fork: boolean;
-  full_name: string;
-  name: string;
-  owner: {
-    login: string;
-  };
-};
-
-function getPullNumber(): number | undefined {
-  const input: string = core.getInput("pull-number");
-  if (input === "all") return undefined;
-  if (input) return Number.parseInt(input, 10);
-  return github.context.payload.pull_request?.number;
-}
-
-export function prettyPullRequest(pull: PullRequest): string {
-  return `${pull.base.repo.full_name}#${pull.number} by ${pull.user!.login} - ${pull.title}`;
-}
+import type { PullRequest, Repository } from "./types";
 
 export type FilterOptions = {
   authors?: string[];
@@ -74,27 +32,24 @@ export class PullRequestFilter {
     this.labels = options.labels ?? [];
   }
 
-  async filterPullRequest(pull: PullRequest): Promise<PullRequest[]> {
+  async *filterPullRequest(pull: PullRequest): AsyncGenerator<PullRequest> {
     if (pull.state !== "open") {
       consola.info(
         { state: pull.state },
         `State: ${pull.state}. Skip ${prettyPullRequest(pull)}`,
       );
-      return [];
     }
     if (this.authors.length > 0 && !this.authors.includes(pull.user!.login)) {
       consola.info(
         { author: pull.user!.login },
         `Skip ${prettyPullRequest(pull)}`,
       );
-      return [];
     }
     if (this.bot && pull.user!.type !== "Bot") {
       consola.info(
         { "user.type": pull.user!.type },
         `Skip ${prettyPullRequest(pull)}`,
       );
-      return [];
     }
     if (this.labels.length > 0) {
       const labels: string[] = pull.labels.map(
@@ -104,70 +59,76 @@ export class PullRequestFilter {
         !this.labels.some((label: string): boolean => labels.includes(label))
       ) {
         consola.info({ labels }, `Skip ${prettyPullRequest(pull)}`);
-        return [];
       }
     }
-    return [pull];
+    yield pull;
   }
 
-  async filterRepository(repository: Repository): Promise<PullRequest[]> {
+  async *filterRepository(repository: Repository): AsyncGenerator<PullRequest> {
     if (repository.archived) {
       consola.info(
         { archived: repository.archived },
         `Skip ${repository.full_name}`,
       );
-      return [];
+      return;
     }
     if (repository.fork) {
       consola.info({ fork: repository.fork }, `Skip ${repository.full_name}`);
-      return [];
+      return;
     }
     consola.start(`Inspecting repository: ${repository.full_name} ...`);
-    const futures: Promise<PullRequest[]>[] = [];
     for await (const { data: pulls } of this.octokit.paginate.iterator(
       this.octokit.rest.pulls.list,
       { owner: repository.owner.login, repo: repository.name, state: "open" },
     )) {
-      for (const pull of pulls) futures.push(this.filterPullRequest(pull));
+      for (const pull of pulls) yield* this.filterPullRequest(pull);
     }
-    return (await Promise.all(futures)).flat();
   }
 
-  async filterOwner(owner: string): Promise<PullRequest[]> {
-    const futures: Promise<PullRequest[]>[] = [];
+  async *filterOwner(owner: string): AsyncGenerator<PullRequest> {
     for await (const { data: repositories } of this.octokit.paginate.iterator(
       this.octokit.rest.repos.listForUser,
       { username: owner, type: "owner" },
     )) {
       for (const repository of repositories) {
-        futures.push(this.filterRepository(repository));
+        yield* this.filterRepository(repository);
       }
     }
-    return (await Promise.all(futures)).flat();
   }
 
-  async filter(): Promise<PullRequest[]> {
-    const pull_number: number | undefined = getPullNumber();
+  async *filter(): AsyncGenerator<PullRequest> {
+    const pull_number: number | "all" = getPullNumber();
     const repository: string = core.getInput("repository", { required: true });
-    if (pull_number) {
-      const [owner, repo] = splitOwnerRepo(repository);
-      const { data: pull } = await this.octokit.rest.pulls.get({
-        owner,
-        repo,
-        pull_number,
-      });
-      return await this.filterPullRequest(pull);
-    } else {
+    if (pull_number === "all") {
       const [owner, repo] = repository.split("/");
       if (owner && repo) {
         const { data: repository } = await this.octokit.rest.repos.get({
           owner,
           repo,
         });
-        return await this.filterRepository(repository);
+        yield* this.filterRepository(repository);
       } else {
-        return await this.filterOwner(owner!);
+        yield* this.filterOwner(owner!);
       }
+    } else {
+      const [owner, repo] = splitOwnerRepo(repository);
+      const { data: pull } = await this.octokit.rest.pulls.get({
+        owner,
+        repo,
+        pull_number,
+      });
+      yield* this.filterPullRequest(pull);
     }
   }
+}
+
+function getPullNumber(): number | "all" {
+  const input: string = core.getInput("pull-number");
+  if (input === "all") return "all";
+  if (input) return Number.parseInt(input, 10);
+  return github.context.payload.pull_request!.number;
+}
+
+export function prettyPullRequest(pull: PullRequest): string {
+  return `${pull.base.repo.full_name}#${pull.number} by ${pull.user!.login} - ${pull.title}`;
 }

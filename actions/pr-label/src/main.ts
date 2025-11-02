@@ -26,7 +26,7 @@ export async function runUnsafe(): Promise<void> {
   const octokit = new Octokit({ auth: token });
   const filter = new PullRequestFilter(octokit);
   const futures: Promise<void>[] = [];
-  for (const pull of await filter.filter()) {
+  for await (const pull of filter.filter()) {
     futures.push(addLabelsToPullRequest(octokit, pull, addLabels));
   }
   await Promise.all(futures);

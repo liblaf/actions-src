@@ -7,6 +7,10 @@ author: liblaf
 description: Approve
 
 inputs:
+  approve-token:
+    description: approve token
+    required: false
+    default: ${{ github.token }}
   authors:
     description: authors
     required: false
@@ -17,6 +21,10 @@ inputs:
   labels:
     description: labels
     required: false
+  list-token:
+    description: token
+    required: false
+    default: ${{ github.token }}
   pull-number:
     description: The pull request number to approve.
     required: false
@@ -29,6 +37,7 @@ inputs:
     description: token
     required: false
     default: ${{ github.token }}
+    deprecationMessage: Use `approve-token` and `list-token` instead.
 
 runs:
   using: node24
