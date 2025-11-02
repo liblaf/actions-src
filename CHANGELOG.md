@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.4](https://github.com/liblaf/actions-src/compare/v0.3.3..v0.3.4) - 2025-11-02
+
+### 🐛 Bug Fixes
+
+- **pulls:** Make `getPullNumber` robust to missing pull request context - ([5e9c1ef](https://github.com/liblaf/actions-src/commit/5e9c1efed053ce4b1b9d6dd72a056f60b0ca3169))
+
+### 🔧 Continuous Integration
+
+- **deploy:** Use `github.ref_name` for release tagging - ([03a9dae](https://github.com/liblaf/actions-src/commit/03a9dae42102264ab744406dc472099043e95101))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [0.3.3](https://github.com/liblaf/actions-src/compare/v0.3.2..v0.3.3) - 2025-11-02
 
 ### 🐛 Bug Fixes
@@ -14,10 +28,6 @@
 
 - add main branch trigger and simplify checkout step - ([63ee2d9](https://github.com/liblaf/actions-src/commit/63ee2d9e05eafdbbc7cb363a22bf27823c10f134))
 - improve tag creation and include README in build - ([34103bd](https://github.com/liblaf/actions-src/commit/34103bddc2c474b2d8689cad9474eac2281cab42))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.3.2](https://github.com/liblaf/actions-src/compare/v0.3.1..v0.3.2) - 2025-11-02
 
