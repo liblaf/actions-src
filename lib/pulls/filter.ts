@@ -38,18 +38,21 @@ export class PullRequestFilter {
         { state: pull.state },
         `State: ${pull.state}. Skip ${prettyPullRequest(pull)}`,
       );
+      return;
     }
     if (this.authors.length > 0 && !this.authors.includes(pull.user!.login)) {
       consola.info(
         { author: pull.user!.login },
         `Skip ${prettyPullRequest(pull)}`,
       );
+      return;
     }
     if (this.bot && pull.user!.type !== "Bot") {
       consola.info(
         { "user.type": pull.user!.type },
         `Skip ${prettyPullRequest(pull)}`,
       );
+      return;
     }
     if (this.labels.length > 0) {
       const labels: string[] = pull.labels.map(
@@ -59,6 +62,7 @@ export class PullRequestFilter {
         !this.labels.some((label: string): boolean => labels.includes(label))
       ) {
         consola.info({ labels }, `Skip ${prettyPullRequest(pull)}`);
+        return;
       }
     }
     yield pull;
