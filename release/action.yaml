@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Release
+
+author: liblaf
+
+description: The `release` action automates the process of creating a release on GitHub, including generating a changelog, formatting it, and uploading specified assets.
+
+inputs:
+  clobber:
+    description: Recreate the release if it already exists
+    required: false
+    default: "false"
+  files:
+    description: Newline-delimited list of path globs for asset files to upload
+    required: false
+  prerelease:
+    description: Mark the release as a prerelease
+    required: false
+    default: "false"
+  repository:
+    description: Repository name with owner
+    required: false
+    default: ${{ github.repository }}
+  tag:
+    description: Tag name
+    required: true
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node24
+  main: src/index.js

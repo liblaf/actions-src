@@ -1,0 +1,23 @@
+name: Delete Cancelled Runs
+
+author: liblaf
+
+description: Deletes cancelled runs for a given workflow
+
+inputs:
+  max-deletions:
+    description: The maximum number of cancelled runs to delete
+    default: "3"
+  repository:
+    description: The owner and repository name. For example, `octocat/Hello-World`.
+    default: ${{ github.repository }}
+  token:
+    description: GitHub access token
+    default: ${{ github.token }}
+  workflow:
+    description: The ID of the workflow. You can also pass the workflow file name as a string.
+    default: ${{ github.workflow_ref }}
+
+runs:
+  using: node24
+  main: src/index.js

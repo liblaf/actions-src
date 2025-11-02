@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+
+name: Setup Pages
+
+author: liblaf
+
+description: Setup Pages
+
+inputs:
+  repository:
+    description: Repository name with owner
+    required: false
+    default: ${{ github.repository }}
+  token:
+    description: GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node24
+  main: src/index.js
