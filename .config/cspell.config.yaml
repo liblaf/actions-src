@@ -14,6 +14,7 @@ ignorePaths:
 ignoreRandomStrings: true
 useGitignore: true
 words:
+  - asyncio
   - bunup
   - choco
   - coreutils
@@ -24,12 +25,15 @@ words:
   - gitmoji
   - globber
   - liblaf
+  - mkdocs
   - nuxt
   - octocat
   - orhun
   - pipx
   - pixi
   - pyproject
+  - sarif
   - topo
   - unskippable
+  - uuidgen
   - venv

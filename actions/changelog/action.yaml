@@ -7,6 +7,19 @@ author: liblaf
 description: Changelog
 
 inputs:
+  # ref: <https://github.com/orhun/git-cliff-action>
+  config:
+    description: Path of the configuration file.
+    required: false
+  args:
+    description: Arguments to pass to git-cliff.
+    required: false
+    default: --verbose
+  token:
+    description: The GitHub API token used to get git-cliff release information via the GitHub API to avoid rate limits.
+    required: false
+    default: ${{ github.token }}
+
   output:
     description: Output file.
     required: false
@@ -15,19 +28,6 @@ inputs:
     description: The owner and repository name. For example, `octocat/Hello-World`.
     required: false
     default: ${{ github.repository }}
-
-  # orhun/git-cliff-action
-  config:
-    description: config file location
-    required: false
-  args:
-    description: git-cliff arguments
-    required: false
-    default: --verbose
-  token:
-    description: GitHub API token
-    required: false
-    default: ${{ github.token }}
 
 outputs:
   changelog:
@@ -60,6 +60,7 @@ runs:
         args: ${{ inputs.args }}
         github_token: ${{ inputs.token }}
       env:
+        DEBUG: ${{ runner.debug }}
         GITHUB_REPO: ${{ inputs.repository }}
         GITHUB_TOKEN: ${{ inputs.token }}
         OUTPUT: ${{ inputs.output }}
@@ -75,7 +76,7 @@ runs:
     - id: output
       name: Set Output
       run: |-
-        delimiter="$(openssl rand -hex 8)"
+        delimiter="$(uuidgen)"
         {
           printf 'content<<%s\n' "$delimiter"
           cat '${{ inputs.output }}'
