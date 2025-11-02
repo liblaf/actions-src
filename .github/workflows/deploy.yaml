@@ -1,10 +1,9 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  release:
+    types:
+      - published
 
 jobs:
   build:
@@ -47,5 +46,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: dist
+          branch: dist/${{ github.ref_name }}
           single-commit: true
+          tag: ${{ github.ref_name }}
