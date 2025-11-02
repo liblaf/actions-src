@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.1](https://github.com/liblaf/actions/compare/v0.3.0..v0.3.1) - 2025-11-02
+
+### 🐛 Bug Fixes
+
+- trigger release - ([1b3bbdb](https://github.com/liblaf/actions/commit/1b3bbdbace43ad6f35facc230e8e9cf6091139c4))
+
+### 🔧 Continuous Integration
+
+- enable manual trigger for deploy workflow - ([95ae943](https://github.com/liblaf/actions/commit/95ae94379e9dbada2f6a4a51d52199191bd3ca8e))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [0.3.0](https://github.com/liblaf/actions/compare/v0.2.0..v0.3.0) - 2025-11-02
 
 ### 💥 BREAKING CHANGES
@@ -53,10 +67,7 @@
 
 ### ❤️ New Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
-- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#57](https://github.com/liblaf/actions/pull/57)
 - [@copier-update[bot]](https://github.com/apps/copier-update) made their first contribution in [#53](https://github.com/liblaf/actions/pull/53)
-- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#51](https://github.com/liblaf/actions/pull/51)
 
 ## [0.2.0](https://github.com/liblaf/actions/compare/v0.1.8..v0.2.0) - 2025-08-04
 
