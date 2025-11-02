@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.0](https://github.com/liblaf/actions-src/compare/v0.3.4..v1.0.0) - 2025-11-02
+
+### ✨ Features
+
+- **pulls, approve:** Add reviewer filter to PullRequestFilter - ([70ae1fc](https://github.com/liblaf/actions-src/commit/70ae1fcaaae639fbed39cca9346b4db3590b04f4))
+
+### 🐛 Bug Fixes
+
+- **pulls:** Ensure pull requests are correctly filtered - ([501b4cd](https://github.com/liblaf/actions-src/commit/501b4cd9188d04d8d45dc2370626a0711bd85253))
+
+### 📝 Documentation
+
+- **authenticate:** Add deprecation messages to inputs - ([70ebde7](https://github.com/liblaf/actions-src/commit/70ebde7048a85dc2c2adb9ccc392a14006fbb073))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [0.3.4](https://github.com/liblaf/actions-src/compare/v0.3.3..v0.3.4) - 2025-11-02
 
 ### 🐛 Bug Fixes
@@ -9,10 +27,6 @@
 ### 🔧 Continuous Integration
 
 - **deploy:** Use `github.ref_name` for release tagging - ([03a9dae](https://github.com/liblaf/actions-src/commit/03a9dae42102264ab744406dc472099043e95101))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.3.3](https://github.com/liblaf/actions-src/compare/v0.3.2..v0.3.3) - 2025-11-02
 
