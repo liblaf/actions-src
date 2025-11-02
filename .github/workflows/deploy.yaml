@@ -98,7 +98,7 @@ jobs:
       - name: Tag
         run: |-
           # `<<<` will append an extra newline, so we use `printf`
-          readarray -d '.' -t parts < <(printf '%s' '${{ github.ref }}')
+          readarray -d '.' -t parts < <(printf '%s' '${{ github.ref_name }}')
           tag=''
           for part in "${parts[@]}"; do
             tag="${tag:+"$tag."}$part"
