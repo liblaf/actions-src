@@ -126,7 +126,7 @@ function getPullNumber(): number | "all" {
   const input: string = core.getInput("pull-number");
   if (input === "all") return "all";
   if (input) return Number.parseInt(input, 10);
-  return github.context.payload.pull_request!.number;
+  return github.context.payload.pull_request?.number ?? "all";
 }
 
 export function prettyPullRequest(pull: PullRequest): string {
