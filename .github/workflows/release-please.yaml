@@ -41,8 +41,8 @@ jobs:
           config-file: .config/release-please/config.json
           manifest-file: .config/release-please/.manifest.json
 
-  changelog-pr:
-    name: Changelog (PR)
+  post-pr:
+    name: Post PR
     permissions:
       contents: write
       pull-requests: write
@@ -76,16 +76,30 @@ jobs:
         with:
           output: CHANGELOG.md
           args: --tag '${{ steps.tag.outputs.tag }}'
+      - id: message
+        name: Get Commit Message
+        run: |-
+          delimiter="$(uuidgen)"
+          message="$(git show --format='%B' --no-patch)"
+          printf 'message<<%s\n%s\n%s\n' "$delimiter" "$message" "$delimiter" >> "$GITHUB_OUTPUT"
+      - name: Undo Last Commit
+        run: git reset --soft HEAD~1
       - name: Commit
         uses: liblaf/actions/commit@dist
         with:
           add-options: --verbose 'CHANGELOG.md'
-          message: "chore(docs): update CHANGELOG.md"
+          force: true
+          message: ${{ steps.message.outputs.message }}
           ref: ${{ fromJson(needs.release-please.outputs.pr).headBranchName }}
           token: ${{ steps.auth.outputs.token }}
+      - name: Add Label
+        run: |-
+          gh pr edit '${{ fromJson(needs.release-please.outputs.pr).number }}' --add-label 'automerge'
+        env:
+          GH_TOKEN: ${{ steps.auth.outputs.token }}
 
-  changelog-release:
-    name: Changelog (Release)
+  post-release:
+    name: Post Release
     permissions:
       contents: write
     needs:
