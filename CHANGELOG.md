@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.0](https://github.com/liblaf/actions-src/compare/v1.0.0..v1.1.0) - 2025-11-02
+
+### 💥 BREAKING CHANGES
+
+- **changelog:** Enhance changelog generation with improved formatting and configuration - ([d92c64e](https://github.com/liblaf/actions-src/commit/d92c64eb1c5d7987e2f093da1ea6aa0bfcf94079))
+
+### ❤️ New Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#65](https://github.com/liblaf/actions-src/pull/65)
+
 ## [1.0.0](https://github.com/liblaf/actions-src/compare/v0.3.4..v1.0.0) - 2025-11-02
 
 ### ✨ Features
@@ -13,10 +24,6 @@
 ### 📝 Documentation
 
 - **authenticate:** Add deprecation messages to inputs - ([70ebde7](https://github.com/liblaf/actions-src/commit/70ebde7048a85dc2c2adb9ccc392a14006fbb073))
-
-### ❤️ New Contributors
-
-- [@liblaf](https://github.com/liblaf) made their first contribution
 
 ## [0.3.4](https://github.com/liblaf/actions-src/compare/v0.3.3..v0.3.4) - 2025-11-02
 
