@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.2](https://github.com/liblaf/actions-src/compare/v0.3.1...v0.3.2) (2025-11-02)
+
+
+### 🐛 Bug Fixes
+
+* trigger release ([f5bb424](https://github.com/liblaf/actions-src/commit/f5bb424d6b43cfa7ed436a42fe85956c9d23fb3f))
+
+
+### ⚙️ Continuous Integration
+
+* **deploy:** add checkout step before downloading artifacts ([97f0906](https://github.com/liblaf/actions-src/commit/97f09069d8e3bc69af024ab87219702d59f57888))
+* **deploy:** Make deploy job step names more descriptive ([a273d9f](https://github.com/liblaf/actions-src/commit/a273d9f3106f96c9870aaf99f391467ff4b09d00))
+* enhance deployment workflow with conditional logic and tagging ([fb250e6](https://github.com/liblaf/actions-src/commit/fb250e66f585eccef5df66d12dd6730ce4bc2e7c))
+* fix checkout step in deploy workflow ([740d416](https://github.com/liblaf/actions-src/commit/740d416ce5d4e7666e3a72b9169aeb6cac04506a))
+
 ## [0.3.1](https://github.com/liblaf/actions/compare/v0.3.0..v0.3.1) - 2025-11-02
 
 ### 🐛 Bug Fixes
