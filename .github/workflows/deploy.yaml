@@ -102,6 +102,6 @@ jobs:
           tag=''
           for part in "${parts[@]}"; do
             tag="${tag:+"$tag."}$part"
-            git tag "$tag"
-            git push origin tag "$tag"
+            git tag --force "$tag"
+            git push --force origin tag "$tag"
           done
