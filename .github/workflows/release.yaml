@@ -13,9 +13,19 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.metadata.outputs.name }}
+      version: ${{ steps.metadata.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+      - id: metadata
+        name: Get Package Metadata
+        run: |-
+          name="$(jq --raw-output '.name' 'package.json')"
+          version="$(jq --raw-output '.version' 'package.json')"
+          printf 'name=%s\n' "$name" >> "$GITHUB_OUTPUT"
+          printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
       - name: Install Dependencies
@@ -37,6 +47,9 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/${{ needs.build.outputs.name }}/v/${{ needs.build.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -52,11 +65,7 @@ jobs:
           bun pm bin >> "$GITHUB_PATH"
       - name: Publish
         # TODO: switch to `bun publish` when <https://github.com/oven-sh/bun/issues/15601> is resolved
-        run: npm publish
-        env:
-          # TODO: migrate to [Trusted publishing with OIDC](https://docs.npmjs.com/trusted-publishers)
-          # ref: <https://github.com/npm/cli/issues/1637#issuecomment-1888709776>
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance
 
   release:
     name: Release
@@ -66,17 +75,12 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
       - name: Download Artifacts
         uses: actions/download-artifact@v6
         with:
           name: pack
           path: pack
       - name: Upload Release Assets
-        uses: liblaf/actions/release@dist
+        uses: softprops/action-gh-release@v2
         with:
           files: pack/*
-          tag: ${{ github.ref_name }}
