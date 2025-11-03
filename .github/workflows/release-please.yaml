@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  FORCE_COLOR: 1
+
 jobs:
   release-please:
     name: Release Please
@@ -25,7 +28,7 @@ jobs:
     steps:
       - id: auth
         name: Auth
-        uses: liblaf/actions/auth@dist
+        uses: liblaf/actions/auth@v1
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
@@ -55,7 +58,7 @@ jobs:
     steps:
       - id: auth
         name: Auth
-        uses: liblaf/actions/auth@dist
+        uses: liblaf/actions/auth@v1
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
@@ -72,7 +75,7 @@ jobs:
           version="$(awk '{ print $NF }' <<< "$title")"
           printf 'tag=%s\n' "v$version" >> "$GITHUB_OUTPUT"
       - name: Changelog
-        uses: liblaf/actions/changelog@dist
+        uses: liblaf/actions/changelog@v1
         with:
           output: CHANGELOG.md
           args: --tag '${{ steps.tag.outputs.tag }}'
@@ -85,7 +88,7 @@ jobs:
       - name: Undo Last Commit
         run: git reset --soft HEAD~1
       - name: Commit
-        uses: liblaf/actions/commit@dist
+        uses: liblaf/actions/commit@v1
         with:
           add-options: --verbose 'CHANGELOG.md'
           force: true
@@ -111,7 +114,7 @@ jobs:
     steps:
       - id: auth
         name: Auth
-        uses: liblaf/actions/auth@dist
+        uses: liblaf/actions/auth@v1
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
@@ -123,7 +126,7 @@ jobs:
           fetch-depth: 0
       - id: changelog
         name: Changelog
-        uses: liblaf/actions/changelog@dist
+        uses: liblaf/actions/changelog@v1
         with:
           args: --current --strip all
       - name: Update Release Notes
