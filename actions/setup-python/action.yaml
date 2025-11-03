@@ -6,10 +6,18 @@ author: liblaf
 
 description: Setup Python
 
+inputs:
+  python-version:
+    description: python-version
+    required: false
+
 outputs:
   pixi:
     description: pixi
     value: ${{ steps.manager.outputs.pixi }}
+  python-version:
+    description: python-version
+    value: ${{ steps.python.outputs.python-version }}
   uv:
     description: uv
     value: ${{ steps.manager.outputs.uv }}
@@ -32,6 +40,8 @@ runs:
         detect-manager 'uv' 'uv.lock'
         detect-manager 'pixi' 'pixi.lock'
       shell: bash
+
+    # TODO: handle `python-version` input for pixi
     - if: steps.manager.outputs.pixi == 'true'
       name: Setup Pixi
       uses: prefix-dev/setup-pixi@v0
@@ -43,25 +53,21 @@ runs:
       name: Install Dependencies
       run: hatch build --hooks-only
       shell: bash
+
     - id: python
       if: steps.manager.outputs.uv == 'true'
       name: Setup Python
       uses: actions/setup-python@v6
       with:
+        python-version: ${{ inputs.python-version }}
         python-version-file: pyproject.toml
     - if: steps.manager.outputs.uv == 'true'
       name: Setup uv
       uses: astral-sh/setup-uv@v7
       with:
         python-version: ${{ steps.python.outputs.python-version }}
+        activate-environment: true
     - if: steps.manager.outputs.uv == 'true'
       name: Install Dependencies
-      run: uv sync --all-extras --all-groups
-      shell: bash
-    - if: steps.manager.outputs.uv == 'true'
-      name: Activate venv
-      run: |-
-        source '.venv/bin/activate'
-        echo "$VIRTUAL_ENV/bin" >> "$GITHUB_PATH"
-        printf 'VIRTUAL_ENV=%s\n' "$VIRTUAL_ENV" >> "$GITHUB_OUTPUT"
+      run: uv sync --all-extras --all-groups --active --frozen --all-packages
       shell: bash
