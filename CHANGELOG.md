@@ -7,6 +7,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1](https://github.com/liblaf/actions-src/releases/tag/v1.2.1) - 2025-11-03
+
+### 🐛 Bug Fixes
+
+- **(deploy)** Add `--force` to git tag and push commands - [341c0b4](https://github.com/liblaf/actions-src/commit/341c0b4e84b930fc090e1a2be2ef9ca08420becf) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [1.2.0](https://github.com/liblaf/actions-src/releases/tag/v1.2.0) - 2025-11-03
 
 ### ✨ Features
@@ -15,7 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
 
 ## [1.1.0](https://github.com/liblaf/actions-src/releases/tag/v1.1.0) - 2025-11-02
 
