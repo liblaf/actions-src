@@ -40,6 +40,20 @@ runs:
         detect-manager 'uv' 'uv.lock'
         detect-manager 'pixi' 'pixi.lock'
       shell: bash
+    - id: python-version-file
+      name: Detect Python Version File
+      run: |-
+        FILES=(
+          '.python-version'
+          'pyproject.toml'
+        )
+        for file in "${FILES[@]}"; do
+          if [[ -f $file ]]; then
+            printf 'python-version-file=%s\n' "$file" >> "$GITHUB_OUTPUT"
+            break
+          fi
+        done
+      shell: bash
 
     # TODO: handle `python-version` input for pixi
     - if: steps.manager.outputs.pixi == 'true'
@@ -60,7 +74,7 @@ runs:
       uses: actions/setup-python@v6
       with:
         python-version: ${{ inputs.python-version }}
-        python-version-file: pyproject.toml
+        python-version-file: ${{ steps.python-version-file.outputs.python-version-file }}
     - if: steps.manager.outputs.uv == 'true'
       name: Setup uv
       uses: astral-sh/setup-uv@v7
