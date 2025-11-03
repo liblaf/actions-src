@@ -41,6 +41,7 @@ runs:
         detect-manager 'pixi' 'pixi.lock'
       shell: bash
     - id: python-version-file
+      if: ${{ !inputs.python-version }}
       name: Detect Python Version File
       run: |-
         FILES=(
