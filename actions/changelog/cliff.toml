@@ -37,11 +37,11 @@ body = """
 {%- endmacro user -%}
 
 {%- macro print_commit(c) -%}
-  - {% if c.scope %}**({{ c.scope }})** {% endif -%}\
+  - {% if c.scope %}**{{ c.scope }}:** {% endif -%}\
       {{ c.message }} - \
-      [{{ c.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ c.id }})\
-      {%- if c.remote.username %} by {{ self::user(u=c.remote.username) }}{% endif -%}\
-      {%- if c.remote.pr_number %} in {{ self::pull(p=c.remote.pr_number) }}{% endif -%}
+        [{{ c.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ c.id }})
+        {%- if c.remote.username %} by {{ self::user(u=c.remote.username) }}{% endif -%}
+        {%- if c.remote.pr_number %} in {{ self::pull(p=c.remote.pr_number) }}{% endif -%}
 {%- endmacro -%}
 
 {%- macro print_breaking(c) -%}
