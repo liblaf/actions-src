@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import consola from "consola";
-import { Octokit } from "octokit";
+import { Octokit, RequestError } from "octokit";
 import { getOwnerRepo } from "../../../lib";
 
 async function hasPages(
@@ -12,33 +12,41 @@ async function hasPages(
     await octokit.rest.repos.getPages({ owner, repo });
     return true;
   } catch (error) {
-    // TODO: enable this when error instance check works
-    // if (error instanceof RequestError) {
-    //   if (error.status === 404) return false;
-    // }
-    // throw error;
+    if (error instanceof RequestError) {
+      if (error.status === 404) return false;
+    }
     consola.error(`${error}`);
-    return false;
+    throw error;
   }
 }
 
 export async function runUnsafe(): Promise<void> {
-  const token: string = core.getInput("token", { required: true });
   const [owner, repo] = getOwnerRepo("repository", { required: true });
+  const branch: string = core.getInput("branch", { required: true });
+  const build_type: "legacy" | "workflow" = core.getInput("build-type", {
+    required: true,
+  }) as any;
+  const force: boolean = core.getBooleanInput("force", { required: true });
+  const path: "/" | "/docs" = core.getInput("path", { required: true }) as any;
+  const token: string = core.getInput("token", { required: true });
   const octokit = new Octokit({ auth: token });
   if (await hasPages(octokit, owner, repo)) {
-    await octokit.rest.repos.updateInformationAboutPagesSite({
-      owner,
-      repo,
-      build_type: "legacy",
-      source: { branch: "gh-pages", path: "/" },
-    });
+    if (force) {
+      await octokit.rest.repos.updateInformationAboutPagesSite({
+        owner,
+        repo,
+        build_type,
+        source: { branch, path },
+      });
+    } else {
+      consola.info(`GitHub Pages is already enabled.`);
+    }
   } else {
     await octokit.rest.repos.createPagesSite({
       owner,
       repo,
-      build_type: "legacy",
-      source: { branch: "gh-pages", path: "/" },
+      build_type,
+      source: { branch, path },
     });
   }
 }

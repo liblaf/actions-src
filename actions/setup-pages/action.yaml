@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+# yaml-language-server: $schema=https://www.schemastore.org/github-action.json
 
 name: Setup Pages
 
@@ -7,6 +7,28 @@ author: liblaf
 description: Setup Pages
 
 inputs:
+  branch:
+    description: The repository branch used to publish your site's source files.
+    required: false
+    default: gh-pages
+  build-type:
+    description: |-
+      The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
+
+      Can be one of: `legacy`, `workflow`
+    required: false
+    default: workflow
+  force:
+    description: Whether to force the creation of the GitHub Pages site. If `true`, any existing site will be replaced.
+    required: false
+    default: "false"
+  path:
+    description: |-
+      The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
+
+      Can be one of: `/`, `/docs`
+    required: false
+    default: /
   repository:
     description: Repository name with owner
     required: false
