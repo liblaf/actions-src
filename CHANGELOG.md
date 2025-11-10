@@ -7,7 +7,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.3](https://github.com/liblaf/actions-src/releases/tag/v1.2.3) - 2025-11-03
+## [1.2.4](https://github.com/liblaf/actions-src/releases/tag/v1.2.4) - 2025-11-10
+
+### ✨ Features
+
+- **(setup-pages)** enhance GitHub Pages configuration - [0dd51e7](https://github.com/liblaf/actions-src/commit/0dd51e75998a5c16d56f04add82d1631b5e2080a) by [@liblaf](https://github.com/liblaf)
+
+### 🐛 Bug Fixes
+
+- **(changelog)** correct commit message formatting in changelog template - [418e1ad](https://github.com/liblaf/actions-src/commit/418e1ad86f5407a1e9089779f76c18bb97bd7f62) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
+## [1.2.3](https://github.com/liblaf/actions-src/releases/tag/v1.2.3) - 2025-11-04
 
 ### 🐛 Bug Fixes
 
@@ -15,8 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
-- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#71](https://github.com/liblaf/actions-src/pull/71)
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
 
 ## [1.2.2](https://github.com/liblaf/actions-src/releases/tag/v1.2.2) - 2025-11-03
 
