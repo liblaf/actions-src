@@ -24,13 +24,13 @@ jobs:
         run: |-
           name="$(jq --raw-output '.name' 'package.json')"
           version="$(jq --raw-output '.version' 'package.json')"
-          printf 'name=%s\n' "$name" >> "$GITHUB_OUTPUT"
-          printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
       - name: Install Dependencies
         run: |-
-          bun install
+          bun ci
           bun pm bin >> "$GITHUB_PATH"
       - name: Build
         run: bun pm pack --destination 'pack'
@@ -61,11 +61,15 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install Dependencies
         run: |-
-          bun install
+          bun ci
           bun pm bin >> "$GITHUB_PATH"
       - name: Publish
         # TODO: switch to `bun publish` when <https://github.com/oven-sh/bun/issues/15601> is resolved
-        run: npm publish --provenance
+        # ref: <https://docs.npmjs.com/trusted-publishers>
+        # ref: <https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md>
+        # * Trusted publishing requires npm CLI version 11.5.1 or later.
+        # * Ubuntu 24.04 image comes with npm 10.x by default.
+        run: npx -- npm@latest publish --provenance
 
   release:
     name: Release
