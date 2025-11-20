@@ -33,7 +33,7 @@ runs:
   using: composite
   steps:
     - name: Checkout Linter Rules
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         repository: ${{ github.repository_owner }}/.github
         token: ${{ inputs.token }}
