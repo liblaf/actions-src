@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1](https://github.com/liblaf/actions-src/compare/v1.3.0...v1.3.1) (2025-11-24)
+
+
+### 🐛 Bug Fixes
+
+* **mega-linter:** Handle .ruff.toml when checking for missing linter files ([35fbb63](https://github.com/liblaf/actions-src/commit/35fbb631782268deed6110d378b7a5aeb75c58ed))
+
 ## [1.2.4](https://github.com/liblaf/actions-src/releases/tag/v1.2.4) - 2025-11-10
 
 ### ✨ Features
