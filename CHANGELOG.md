@@ -7,32 +7,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.1](https://github.com/liblaf/actions-src/compare/v1.3.0...v1.3.1) (2025-11-24)
-
-
-### 🐛 Bug Fixes
-
-* **mega-linter:** Handle .ruff.toml when checking for missing linter files ([35fbb63](https://github.com/liblaf/actions-src/commit/35fbb631782268deed6110d378b7a5aeb75c58ed))
-
-## [1.2.4](https://github.com/liblaf/actions-src/releases/tag/v1.2.4) - 2025-11-10
-
-### ✨ Features
-
-- **(setup-pages)** enhance GitHub Pages configuration - [0dd51e7](https://github.com/liblaf/actions-src/commit/0dd51e75998a5c16d56f04add82d1631b5e2080a) by [@liblaf](https://github.com/liblaf)
+## [1.3.2](https://github.com/liblaf/actions-src/releases/tag/v1.3.2) - 2025-12-02
 
 ### 🐛 Bug Fixes
 
-- **(changelog)** correct commit message formatting in changelog template - [418e1ad](https://github.com/liblaf/actions-src/commit/418e1ad86f5407a1e9089779f76c18bb97bd7f62) by [@liblaf](https://github.com/liblaf)
+- **mega-linter:** Remove `.cspellcache` during post-linting cleanup - [076e00c](https://github.com/liblaf/actions-src/commit/076e00c3801211a79f12188e9d4dfb6a00deecf8) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
 - [@liblaf](https://github.com/liblaf) made their first contribution
 
+## [1.3.1](https://github.com/liblaf/actions-src/releases/tag/v1.3.1) - 2025-11-25
+
+### 🐛 Bug Fixes
+
+- **mega-linter:** Handle .ruff.toml when checking for missing linter files - [35fbb63](https://github.com/liblaf/actions-src/commit/35fbb631782268deed6110d378b7a5aeb75c58ed) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
+- [@renovate[bot]](https://github.com/apps/renovate)
+
+## [1.3.0](https://github.com/liblaf/actions-src/releases/tag/v1.3.0) - 2025-11-10
+
+### ✨ Features
+
+- **setup-pages:** enhance GitHub Pages configuration - [0dd51e7](https://github.com/liblaf/actions-src/commit/0dd51e75998a5c16d56f04add82d1631b5e2080a) by [@liblaf](https://github.com/liblaf)
+
+### 🐛 Bug Fixes
+
+- **changelog:** correct commit message formatting in changelog template - [418e1ad](https://github.com/liblaf/actions-src/commit/418e1ad86f5407a1e9089779f76c18bb97bd7f62) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
+
 ## [1.2.3](https://github.com/liblaf/actions-src/releases/tag/v1.2.3) - 2025-11-04
 
 ### 🐛 Bug Fixes
 
-- **(setup-python)** only detect python version file when input not provided - [d751f89](https://github.com/liblaf/actions-src/commit/d751f89b6cdcccc3a3eef6db81e22cc04f7b83a0) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** only detect python version file when input not provided - [d751f89](https://github.com/liblaf/actions-src/commit/d751f89b6cdcccc3a3eef6db81e22cc04f7b83a0) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -43,7 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(setup-python)** Dynamically detect Python version file - [306a838](https://github.com/liblaf/actions-src/commit/306a8386ad7676e0eb976da86751f1b4961f6ce0) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** Dynamically detect Python version file - [306a838](https://github.com/liblaf/actions-src/commit/306a8386ad7676e0eb976da86751f1b4961f6ce0) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -54,7 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deploy)** Add `--force` to git tag and push commands - [341c0b4](https://github.com/liblaf/actions-src/commit/341c0b4e84b930fc090e1a2be2ef9ca08420becf) by [@liblaf](https://github.com/liblaf)
+- **deploy:** Add `--force` to git tag and push commands - [341c0b4](https://github.com/liblaf/actions-src/commit/341c0b4e84b930fc090e1a2be2ef9ca08420becf) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -65,7 +81,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(setup-python)** Add `python-version` input and enhance `uv` setup - [878e46c](https://github.com/liblaf/actions-src/commit/878e46c4507a8732f57a86eb636be1f76a6df0fd) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** Add `python-version` input and enhance `uv` setup - [878e46c](https://github.com/liblaf/actions-src/commit/878e46c4507a8732f57a86eb636be1f76a6df0fd) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -76,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(changelog)** Enhance changelog generation with improved formatting and configuration - [d92c64e](https://github.com/liblaf/actions-src/commit/d92c64eb1c5d7987e2f093da1ea6aa0bfcf94079) by [@liblaf](https://github.com/liblaf)
+- **changelog:** Enhance changelog generation with improved formatting and configuration - [d92c64e](https://github.com/liblaf/actions-src/commit/d92c64eb1c5d7987e2f093da1ea6aa0bfcf94079) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -87,15 +103,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(pulls, approve)** Add reviewer filter to PullRequestFilter - [70ae1fc](https://github.com/liblaf/actions-src/commit/70ae1fcaaae639fbed39cca9346b4db3590b04f4) by [@liblaf](https://github.com/liblaf)
+- **pulls, approve:** Add reviewer filter to PullRequestFilter - [70ae1fc](https://github.com/liblaf/actions-src/commit/70ae1fcaaae639fbed39cca9346b4db3590b04f4) by [@liblaf](https://github.com/liblaf)
 
 ### 🐛 Bug Fixes
 
-- **(pulls)** Ensure pull requests are correctly filtered - [501b4cd](https://github.com/liblaf/actions-src/commit/501b4cd9188d04d8d45dc2370626a0711bd85253) by [@liblaf](https://github.com/liblaf)
+- **pulls:** Ensure pull requests are correctly filtered - [501b4cd](https://github.com/liblaf/actions-src/commit/501b4cd9188d04d8d45dc2370626a0711bd85253) by [@liblaf](https://github.com/liblaf)
 
 ### 📝 Documentation
 
-- **(authenticate)** Add deprecation messages to inputs - [70ebde7](https://github.com/liblaf/actions-src/commit/70ebde7048a85dc2c2adb9ccc392a14006fbb073) by [@liblaf](https://github.com/liblaf)
+- **authenticate:** Add deprecation messages to inputs - [70ebde7](https://github.com/liblaf/actions-src/commit/70ebde7048a85dc2c2adb9ccc392a14006fbb073) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -106,11 +122,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(pulls)** Make `getPullNumber` robust to missing pull request context - [5e9c1ef](https://github.com/liblaf/actions-src/commit/5e9c1efed053ce4b1b9d6dd72a056f60b0ca3169) by [@liblaf](https://github.com/liblaf)
+- **pulls:** Make `getPullNumber` robust to missing pull request context - [5e9c1ef](https://github.com/liblaf/actions-src/commit/5e9c1efed053ce4b1b9d6dd72a056f60b0ca3169) by [@liblaf](https://github.com/liblaf)
 
 ### ⚙️ Continuous Integration
 
-- **(deploy)** Use `github.ref_name` for release tagging - [03a9dae](https://github.com/liblaf/actions-src/commit/03a9dae42102264ab744406dc472099043e95101) by [@liblaf](https://github.com/liblaf)
+- **deploy:** Use `github.ref_name` for release tagging - [03a9dae](https://github.com/liblaf/actions-src/commit/03a9dae42102264ab744406dc472099043e95101) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -125,7 +141,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ♻ Code Refactoring
 
-- **(pulls)** Use async generators in PullRequestFilter - [dea733f](https://github.com/liblaf/actions-src/commit/dea733fdbadb027ca2c0cbd25d3e6ce7eb157640) by [@liblaf](https://github.com/liblaf)
+- **pulls:** Use async generators in PullRequestFilter - [dea733f](https://github.com/liblaf/actions-src/commit/dea733fdbadb027ca2c0cbd25d3e6ce7eb157640) by [@liblaf](https://github.com/liblaf)
 
 ### ⚙️ Continuous Integration
 
@@ -145,8 +161,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ⚙️ Continuous Integration
 
-- **(deploy)** add checkout step before downloading artifacts - [97f0906](https://github.com/liblaf/actions-src/commit/97f09069d8e3bc69af024ab87219702d59f57888) by [@liblaf](https://github.com/liblaf)
-- **(deploy)** Make deploy job step names more descriptive - [a273d9f](https://github.com/liblaf/actions-src/commit/a273d9f3106f96c9870aaf99f391467ff4b09d00) by [@liblaf](https://github.com/liblaf)
+- **deploy:** add checkout step before downloading artifacts - [97f0906](https://github.com/liblaf/actions-src/commit/97f09069d8e3bc69af024ab87219702d59f57888) by [@liblaf](https://github.com/liblaf)
+- **deploy:** Make deploy job step names more descriptive - [a273d9f](https://github.com/liblaf/actions-src/commit/a273d9f3106f96c9870aaf99f391467ff4b09d00) by [@liblaf](https://github.com/liblaf)
 - enhance deployment workflow with conditional logic and tagging - [fb250e6](https://github.com/liblaf/actions-src/commit/fb250e66f585eccef5df66d12dd6730ce4bc2e7c) by [@liblaf](https://github.com/liblaf)
 - fix checkout step in deploy workflow - [740d416](https://github.com/liblaf/actions-src/commit/740d416ce5d4e7666e3a72b9169aeb6cac04506a) by [@liblaf](https://github.com/liblaf)
 
@@ -178,21 +194,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(auth)** add GitHub App authentication action - [1df313f](https://github.com/liblaf/actions-src/commit/1df313f0ef1bfbea444449383d9ca90c7c47814e) by [@liblaf](https://github.com/liblaf)
-- **(release-please)** configure release-please for automated releases - [5b1211a](https://github.com/liblaf/actions-src/commit/5b1211af1c346169dd2082196a4f6b691b943874) by [@liblaf](https://github.com/liblaf)
-- **(release-please)** add GitHub Actions workflow for automated releases - [f7e8d52](https://github.com/liblaf/actions-src/commit/f7e8d526635af251f89035dc58c57796960dba64) by [@liblaf](https://github.com/liblaf)
+- **auth:** add GitHub App authentication action - [1df313f](https://github.com/liblaf/actions-src/commit/1df313f0ef1bfbea444449383d9ca90c7c47814e) by [@liblaf](https://github.com/liblaf)
+- **release-please:** configure release-please for automated releases - [5b1211a](https://github.com/liblaf/actions-src/commit/5b1211af1c346169dd2082196a4f6b691b943874) by [@liblaf](https://github.com/liblaf)
+- **release-please:** add GitHub Actions workflow for automated releases - [f7e8d52](https://github.com/liblaf/actions-src/commit/f7e8d526635af251f89035dc58c57796960dba64) by [@liblaf](https://github.com/liblaf)
 
 ### 🐛 Bug Fixes
 
-- **(build)** pin bunup version to 0.14.19 - [f930764](https://github.com/liblaf/actions-src/commit/f93076403c9bba03b7d0f480a03b72b1bcfa4f5b) by [@liblaf](https://github.com/liblaf)
-- **(build)** Downgrade bunup to 0.14.19 - [3f294a9](https://github.com/liblaf/actions-src/commit/3f294a9c8c2c4875a3e87b6de55e865d911786b3) by [@liblaf](https://github.com/liblaf)
-- **(delete-cancelled-runs)** handle 404 errors when deleting runs - [9b273c2](https://github.com/liblaf/actions-src/commit/9b273c2d21d4544ab282e2dd05ef5cc032a95a5b) by [@liblaf](https://github.com/liblaf)
-- **(delete-cancelled-runs)** improve error handling for non-404 errors - [62a7bef](https://github.com/liblaf/actions-src/commit/62a7befd9325559e2bdd6a38039fdfca278f4ead) by [@liblaf](https://github.com/liblaf)
-- **(deps)** update @octokit/openapi-types to ^26 - [4dccc8a](https://github.com/liblaf/actions-src/commit/4dccc8a41c1a5fc6fb675dcd85bcdc26d729f668) by [@liblaf](https://github.com/liblaf)
-- **(octokit)** temporarily disable RequestError instance checks - [e0cd5f5](https://github.com/liblaf/actions-src/commit/e0cd5f518c9b907b62964dbec0dc6a225c046eb0) by [@liblaf](https://github.com/liblaf)
-- **(release)** gracefully handle errors during release deletion - [2e2f534](https://github.com/liblaf/actions-src/commit/2e2f53430146020c432b44dc659766a459cc767a) by [@liblaf](https://github.com/liblaf)
-- **(setup-pages)** use Octokit constructor directly - [fe19027](https://github.com/liblaf/actions-src/commit/fe19027510a9fd9ede01fb36b3a0757ed793cbf5) by [@liblaf](https://github.com/liblaf)
-- **(skip-duplicate)** Make skip-duplicate and delete-cancelled-runs steps non-blocking - [996912f](https://github.com/liblaf/actions-src/commit/996912fb578e6faaa0d7d6c8868af997eca13f9b) by [@liblaf](https://github.com/liblaf)
+- **build:** pin bunup version to 0.14.19 - [f930764](https://github.com/liblaf/actions-src/commit/f93076403c9bba03b7d0f480a03b72b1bcfa4f5b) by [@liblaf](https://github.com/liblaf)
+- **build:** Downgrade bunup to 0.14.19 - [3f294a9](https://github.com/liblaf/actions-src/commit/3f294a9c8c2c4875a3e87b6de55e865d911786b3) by [@liblaf](https://github.com/liblaf)
+- **delete-cancelled-runs:** handle 404 errors when deleting runs - [9b273c2](https://github.com/liblaf/actions-src/commit/9b273c2d21d4544ab282e2dd05ef5cc032a95a5b) by [@liblaf](https://github.com/liblaf)
+- **delete-cancelled-runs:** improve error handling for non-404 errors - [62a7bef](https://github.com/liblaf/actions-src/commit/62a7befd9325559e2bdd6a38039fdfca278f4ead) by [@liblaf](https://github.com/liblaf)
+- **deps:** update @octokit/openapi-types to ^26 - [4dccc8a](https://github.com/liblaf/actions-src/commit/4dccc8a41c1a5fc6fb675dcd85bcdc26d729f668) by [@liblaf](https://github.com/liblaf)
+- **octokit:** temporarily disable RequestError instance checks - [e0cd5f5](https://github.com/liblaf/actions-src/commit/e0cd5f518c9b907b62964dbec0dc6a225c046eb0) by [@liblaf](https://github.com/liblaf)
+- **release:** gracefully handle errors during release deletion - [2e2f534](https://github.com/liblaf/actions-src/commit/2e2f53430146020c432b44dc659766a459cc767a) by [@liblaf](https://github.com/liblaf)
+- **setup-pages:** use Octokit constructor directly - [fe19027](https://github.com/liblaf/actions-src/commit/fe19027510a9fd9ede01fb36b3a0757ed793cbf5) by [@liblaf](https://github.com/liblaf)
+- **skip-duplicate:** Make skip-duplicate and delete-cancelled-runs steps non-blocking - [996912f](https://github.com/liblaf/actions-src/commit/996912fb578e6faaa0d7d6c8868af997eca13f9b) by [@liblaf](https://github.com/liblaf)
 - update repository references from actions-ts to actions - [1468568](https://github.com/liblaf/actions-src/commit/1468568b50812f50eb583c5f33c6dcfaf4a454bb) by [@liblaf](https://github.com/liblaf)
 
 ### 📝 Documentation
@@ -202,22 +218,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ♻ Code Refactoring
 
-- **(actions)** Wrap action entrypoints with error handling - [77a969a](https://github.com/liblaf/actions-src/commit/77a969abb462f5e76cfb2f873eada64b6b9f8850) by [@liblaf](https://github.com/liblaf)
-- **(build)** use fluent API for copy plugin in bunup config - [47f28bc](https://github.com/liblaf/actions-src/commit/47f28bcf82e34f95068afc17c5f4a46371a8b991) by [@liblaf](https://github.com/liblaf)
-- **(octokit)** standardize on octokit package and remove build step - [c03644b](https://github.com/liblaf/actions-src/commit/c03644b1f2b79f7d06f1b1cf5e26accd54b70df5) by [@liblaf](https://github.com/liblaf)
+- **actions:** Wrap action entrypoints with error handling - [77a969a](https://github.com/liblaf/actions-src/commit/77a969abb462f5e76cfb2f873eada64b6b9f8850) by [@liblaf](https://github.com/liblaf)
+- **build:** use fluent API for copy plugin in bunup config - [47f28bc](https://github.com/liblaf/actions-src/commit/47f28bcf82e34f95068afc17c5f4a46371a8b991) by [@liblaf](https://github.com/liblaf)
+- **octokit:** standardize on octokit package and remove build step - [c03644b](https://github.com/liblaf/actions-src/commit/c03644b1f2b79f7d06f1b1cf5e26accd54b70df5) by [@liblaf](https://github.com/liblaf)
 
 ### 🛠 Builds
 
-- **(deps)** update @octokit/openapi-types and bunup dependencies - [0190df1](https://github.com/liblaf/actions-src/commit/0190df16f62b7b78a92fd8d70600a695966c9528) by [@liblaf](https://github.com/liblaf)
+- **deps:** update @octokit/openapi-types and bunup dependencies - [0190df1](https://github.com/liblaf/actions-src/commit/0190df16f62b7b78a92fd8d70600a695966c9528) by [@liblaf](https://github.com/liblaf)
 - convert project to TypeScript GitHub Actions - [ef94fc8](https://github.com/liblaf/actions-src/commit/ef94fc8c90fcd8620579eb3a5e5bda006be4dcf5) by [@liblaf](https://github.com/liblaf)
 
 ### ⚙️ Continuous Integration
 
-- **(deploy)** remove concurrency group and rename skip job - [c9b3bb2](https://github.com/liblaf/actions-src/commit/c9b3bb26cd8fe46dd3f045b3942247578f0ce6f4) by [@liblaf](https://github.com/liblaf)
-- **(deploy)** remove skip-duplicate job and condition from build job - [38efaad](https://github.com/liblaf/actions-src/commit/38efaadc0dfd992247297a41c9d1d797d2ec9f37) by [@liblaf](https://github.com/liblaf)
-- **(deploy)** Trigger deployment on published releases - [212e095](https://github.com/liblaf/actions-src/commit/212e09530da5856beda254f6082c39f21bda4cb6) by [@liblaf](https://github.com/liblaf)
-- **(tsc)** Add TypeScript check workflow - [7649850](https://github.com/liblaf/actions-src/commit/76498508fb24437b3212ab434e7353639aa76fc7) by [@liblaf](https://github.com/liblaf)
-- **(tsc)** enable pretty output for TypeScript check - [4b70d53](https://github.com/liblaf/actions-src/commit/4b70d5303b2602acb50679c28b13a7df0adbede7) by [@liblaf](https://github.com/liblaf)
+- **deploy:** remove concurrency group and rename skip job - [c9b3bb2](https://github.com/liblaf/actions-src/commit/c9b3bb26cd8fe46dd3f045b3942247578f0ce6f4) by [@liblaf](https://github.com/liblaf)
+- **deploy:** remove skip-duplicate job and condition from build job - [38efaad](https://github.com/liblaf/actions-src/commit/38efaadc0dfd992247297a41c9d1d797d2ec9f37) by [@liblaf](https://github.com/liblaf)
+- **deploy:** Trigger deployment on published releases - [212e095](https://github.com/liblaf/actions-src/commit/212e09530da5856beda254f6082c39f21bda4cb6) by [@liblaf](https://github.com/liblaf)
+- **tsc:** Add TypeScript check workflow - [7649850](https://github.com/liblaf/actions-src/commit/76498508fb24437b3212ab434e7353639aa76fc7) by [@liblaf](https://github.com/liblaf)
+- **tsc:** enable pretty output for TypeScript check - [4b70d53](https://github.com/liblaf/actions-src/commit/4b70d5303b2602acb50679c28b13a7df0adbede7) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -235,16 +251,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(actions)** add delete-cancelled-runs action - [9f1f1c2](https://github.com/liblaf/actions-src/commit/9f1f1c28ebd2692ea20b405366b67dab37fedcd4) by [@liblaf](https://github.com/liblaf)
+- **actions:** add delete-cancelled-runs action - [9f1f1c2](https://github.com/liblaf/actions-src/commit/9f1f1c28ebd2692ea20b405366b67dab37fedcd4) by [@liblaf](https://github.com/liblaf)
 
 ### 🐛 Bug Fixes
 
-- **(ruleset-import)** remove explicit Python version from pipx command - [4b963cf](https://github.com/liblaf/actions-src/commit/4b963cfc3c662e7fd82a785b399ba578913bc389) by [@liblaf](https://github.com/liblaf)
+- **ruleset-import:** remove explicit Python version from pipx command - [4b963cf](https://github.com/liblaf/actions-src/commit/4b963cfc3c662e7fd82a785b399ba578913bc389) by [@liblaf](https://github.com/liblaf)
 
 ### ♻ Code Refactoring
 
-- **(approve)** rename from pr-review and improve functionality - [87105ee](https://github.com/liblaf/actions-src/commit/87105eefc13f43b8cd7d83341733982305e3a097) by [@liblaf](https://github.com/liblaf)
-- **(pr-review)** migrate to shell script implementation - [99cb933](https://github.com/liblaf/actions-src/commit/99cb9331aca97776d8f325012974fa053d46e769) by [@liblaf](https://github.com/liblaf)
+- **approve:** rename from pr-review and improve functionality - [87105ee](https://github.com/liblaf/actions-src/commit/87105eefc13f43b8cd7d83341733982305e3a097) by [@liblaf](https://github.com/liblaf)
+- **pr-review:** migrate to shell script implementation - [99cb933](https://github.com/liblaf/actions-src/commit/99cb9331aca97776d8f325012974fa053d46e769) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -255,13 +271,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(commit)** improve branch reference handling - [1026cca](https://github.com/liblaf/actions-src/commit/1026cca96cfc055956c16faf1197eb3722bc68f0) by [@liblaf](https://github.com/liblaf)
-- **(commit)** correct conditional expression syntax - [2b394af](https://github.com/liblaf/actions-src/commit/2b394af580b48145675b72534881b97392a57bd7) by [@liblaf](https://github.com/liblaf)
-- **(commit)** properly handle branch ref format - [8f26d0c](https://github.com/liblaf/actions-src/commit/8f26d0c0b70e26d59043150aebb3ffc740fb64eb) by [@liblaf](https://github.com/liblaf)
+- **commit:** improve branch reference handling - [1026cca](https://github.com/liblaf/actions-src/commit/1026cca96cfc055956c16faf1197eb3722bc68f0) by [@liblaf](https://github.com/liblaf)
+- **commit:** correct conditional expression syntax - [2b394af](https://github.com/liblaf/actions-src/commit/2b394af580b48145675b72534881b97392a57bd7) by [@liblaf](https://github.com/liblaf)
+- **commit:** properly handle branch ref format - [8f26d0c](https://github.com/liblaf/actions-src/commit/8f26d0c0b70e26d59043150aebb3ffc740fb64eb) by [@liblaf](https://github.com/liblaf)
 
 ### ♻ Code Refactoring
 
-- **(commit)** simplify branch handling logic - [26f76e1](https://github.com/liblaf/actions-src/commit/26f76e15b202f646c0f2feb87c0a3336c9639975) by [@liblaf](https://github.com/liblaf)
+- **commit:** simplify branch handling logic - [26f76e1](https://github.com/liblaf/actions-src/commit/26f76e15b202f646c0f2feb87c0a3336c9639975) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -272,7 +288,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deps)** update dependency liblaf-grapes to >=0.2,<0.3 (#19) - [79a6f87](https://github.com/liblaf/actions-src/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326) by [@renovate[bot]](https://github.com/apps/renovate) in [#19](https://github.com/liblaf/actions-src/pull/19)
+- **deps:** update dependency liblaf-grapes to >=0.2,<0.3 (#19) - [79a6f87](https://github.com/liblaf/actions-src/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326) by [@renovate[bot]](https://github.com/apps/renovate) in [#19](https://github.com/liblaf/actions-src/pull/19)
 
 ### ❤️ Contributors
 
@@ -287,8 +303,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(commit)** change default fail-on-no-changes to false - [bb87604](https://github.com/liblaf/actions-src/commit/bb87604037f384c0314e69503f27b78ca6deb017) by [@liblaf](https://github.com/liblaf)
-- **(commit)** ensure force input is properly evaluated as boolean - [1c8bb5f](https://github.com/liblaf/actions-src/commit/1c8bb5f88706e198eec05fea936f49b939d8a21d) by [@liblaf](https://github.com/liblaf)
+- **commit:** change default fail-on-no-changes to false - [bb87604](https://github.com/liblaf/actions-src/commit/bb87604037f384c0314e69503f27b78ca6deb017) by [@liblaf](https://github.com/liblaf)
+- **commit:** ensure force input is properly evaluated as boolean - [1c8bb5f](https://github.com/liblaf/actions-src/commit/1c8bb5f88706e198eec05fea936f49b939d8a21d) by [@liblaf](https://github.com/liblaf)
 - migrate from mike to mkdocs gh-deploy - [05b5b80](https://github.com/liblaf/actions-src/commit/05b5b80268bffe3f477ce50889fb4edee92f2546) by [@liblaf](https://github.com/liblaf)
 - rename mise config file from 99-custom.toml to config.dev.toml - [b2b6443](https://github.com/liblaf/actions-src/commit/b2b64432058f2c23dccc7a415ec006dbb9e39931) by [@liblaf](https://github.com/liblaf)
 
@@ -301,8 +317,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(auth-app)** add new input options and improve git config - [980bf8c](https://github.com/liblaf/actions-src/commit/980bf8ca4a45e563c8cec8474332d50de2b0520c) by [@liblaf](https://github.com/liblaf)
-- **(setup-python)** activate virtual environment when using uv - [8054e02](https://github.com/liblaf/actions-src/commit/8054e021fb0c17f1ea3441f54d85dc495a849f15) by [@liblaf](https://github.com/liblaf)
+- **auth-app:** add new input options and improve git config - [980bf8c](https://github.com/liblaf/actions-src/commit/980bf8ca4a45e563c8cec8474332d50de2b0520c) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** activate virtual environment when using uv - [8054e02](https://github.com/liblaf/actions-src/commit/8054e021fb0c17f1ea3441f54d85dc495a849f15) by [@liblaf](https://github.com/liblaf)
 
 ### 📝 Documentation
 
@@ -327,7 +343,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deps)** update dependency rich to v14 (#13) - [0baa503](https://github.com/liblaf/actions-src/commit/0baa503acd4b79af35b8defa03e17f5ee41e48a7) by [@renovate[bot]](https://github.com/apps/renovate) in [#13](https://github.com/liblaf/actions-src/pull/13)
+- **deps:** update dependency rich to v14 (#13) - [0baa503](https://github.com/liblaf/actions-src/commit/0baa503acd4b79af35b8defa03e17f5ee41e48a7) by [@renovate[bot]](https://github.com/apps/renovate) in [#13](https://github.com/liblaf/actions-src/pull/13)
 
 ### ❤️ Contributors
 
@@ -339,13 +355,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(setup-python)** deprecate python-version input in favor of pyproject.toml - [d6c60f3](https://github.com/liblaf/actions-src/commit/d6c60f31bedef4b2c8f362854dbf307eec098cf0) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** deprecate python-version input in favor of pyproject.toml - [d6c60f3](https://github.com/liblaf/actions-src/commit/d6c60f31bedef4b2c8f362854dbf307eec098cf0) by [@liblaf](https://github.com/liblaf)
 
 ### 🐛 Bug Fixes
 
-- **(semver-parse)** strip 'v' prefix from version string - [27eacdb](https://github.com/liblaf/actions-src/commit/27eacdb02cc0e1e7048ae205d48237936a001918) by [@liblaf](https://github.com/liblaf)
-- **(setup-pages)** correctly parse repository owner and name - [1860a58](https://github.com/liblaf/actions-src/commit/1860a582f255cfa3125cf801672a2b5f85254766) by [@liblaf](https://github.com/liblaf)
-- **(setup-python)** ensure correct Python version is passed to uv - [c942476](https://github.com/liblaf/actions-src/commit/c942476c75c228a047cdddbb23c5a6ec87b62695) by [@liblaf](https://github.com/liblaf)
+- **semver-parse:** strip 'v' prefix from version string - [27eacdb](https://github.com/liblaf/actions-src/commit/27eacdb02cc0e1e7048ae205d48237936a001918) by [@liblaf](https://github.com/liblaf)
+- **setup-pages:** correctly parse repository owner and name - [1860a58](https://github.com/liblaf/actions-src/commit/1860a582f255cfa3125cf801672a2b5f85254766) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** ensure correct Python version is passed to uv - [c942476](https://github.com/liblaf/actions-src/commit/c942476c75c228a047cdddbb23c5a6ec87b62695) by [@liblaf](https://github.com/liblaf)
 - standardize FORCE_COLOR environment variable format - [c15d23e](https://github.com/liblaf/actions-src/commit/c15d23e0916a70eb5a420ba110d127040131a1f1) by [@liblaf](https://github.com/liblaf)
 - correct linter config paths and step conditions - [c00fca9](https://github.com/liblaf/actions-src/commit/c00fca91da11865a9e9752a7f5753bb5e1e9365e) by [@liblaf](https://github.com/liblaf)
 
@@ -372,7 +388,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(setup-pages)** add GitHub token input to action - [37bf1f7](https://github.com/liblaf/actions-src/commit/37bf1f7600b4db1314097917bd2242a2b84727e0) by [@liblaf](https://github.com/liblaf)
+- **setup-pages:** add GitHub token input to action - [37bf1f7](https://github.com/liblaf/actions-src/commit/37bf1f7600b4db1314097917bd2242a2b84727e0) by [@liblaf](https://github.com/liblaf)
 - add SemVer parse and GitHub Pages setup actions - [01a6e39](https://github.com/liblaf/actions-src/commit/01a6e391b4586c1dd2852f1197c88019573a3072) by [@liblaf](https://github.com/liblaf)
 
 ### ♻ Code Refactoring
@@ -388,7 +404,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(release)** re-enable checksum calculation for assets - [4b3ca45](https://github.com/liblaf/actions-src/commit/4b3ca458244739ab8e98a09e37660f92721960fb) by [@liblaf](https://github.com/liblaf)
+- **release:** re-enable checksum calculation for assets - [4b3ca45](https://github.com/liblaf/actions-src/commit/4b3ca458244739ab8e98a09e37660f92721960fb) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
 
@@ -399,16 +415,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✨ Features
 
-- **(app-list-repos)** implement GitHub App repository listing feature - [333a829](https://github.com/liblaf/actions-src/commit/333a829e68e256eb75904448a7d40c427d0948cf) by [@liblaf](https://github.com/liblaf)
-- **(auth-app)** add GitHub App authentication workflow - [d0d2fd3](https://github.com/liblaf/actions-src/commit/d0d2fd38d9c0eb7f888f0480924e3305591a1d89) by [@liblaf](https://github.com/liblaf)
-- **(auto-merge)** add GitHub Action to automate merging of Release Please PRs - [911e0a5](https://github.com/liblaf/actions-src/commit/911e0a5415ed4c451f8f8bda858ec8502994f921) by [@liblaf](https://github.com/liblaf)
-- **(changelog)** add GitHub action for generating changelog using git-cliff - [7d061db](https://github.com/liblaf/actions-src/commit/7d061db30b3a128532bbfe440f8d33f5d7a2e159) by [@liblaf](https://github.com/liblaf)
-- **(copier-update)** automate template updates across repositories - [60cc90b](https://github.com/liblaf/actions-src/commit/60cc90b0ce80b080f61b52a81d64d9e7b269c3d1) by [@liblaf](https://github.com/liblaf)
-- **(install)** add GitHub Actions workflow for multi-platform package installation - [402f1fa](https://github.com/liblaf/actions-src/commit/402f1fa809d8cabc096464e0dcba2ce5a520067d) by [@liblaf](https://github.com/liblaf)
-- **(schedule)** automate release and sync workflows with GitHub Actions - [b50251e](https://github.com/liblaf/actions-src/commit/b50251ecac3c5286b94f91ce9faf962d6f077e5e) by [@liblaf](https://github.com/liblaf)
-- **(schedule)** add workflow dispatch for sync.yaml - [a125fbf](https://github.com/liblaf/actions-src/commit/a125fbf0a4a7a3ad94f869db1c65f8b3c2adc64b) by [@liblaf](https://github.com/liblaf)
-- **(scripts)** add Python-based secret management script - [be4ca5d](https://github.com/liblaf/actions-src/commit/be4ca5dee700919e33516492ff787a7f62980251) by [@liblaf](https://github.com/liblaf)
-- **(setup-python)** add optional python-version input for uv setup - [4a19421](https://github.com/liblaf/actions-src/commit/4a1942101bdb14c393676435eac33baa0fce44aa) by [@liblaf](https://github.com/liblaf)
+- **app-list-repos:** implement GitHub App repository listing feature - [333a829](https://github.com/liblaf/actions-src/commit/333a829e68e256eb75904448a7d40c427d0948cf) by [@liblaf](https://github.com/liblaf)
+- **auth-app:** add GitHub App authentication workflow - [d0d2fd3](https://github.com/liblaf/actions-src/commit/d0d2fd38d9c0eb7f888f0480924e3305591a1d89) by [@liblaf](https://github.com/liblaf)
+- **auto-merge:** add GitHub Action to automate merging of Release Please PRs - [911e0a5](https://github.com/liblaf/actions-src/commit/911e0a5415ed4c451f8f8bda858ec8502994f921) by [@liblaf](https://github.com/liblaf)
+- **changelog:** add GitHub action for generating changelog using git-cliff - [7d061db](https://github.com/liblaf/actions-src/commit/7d061db30b3a128532bbfe440f8d33f5d7a2e159) by [@liblaf](https://github.com/liblaf)
+- **copier-update:** automate template updates across repositories - [60cc90b](https://github.com/liblaf/actions-src/commit/60cc90b0ce80b080f61b52a81d64d9e7b269c3d1) by [@liblaf](https://github.com/liblaf)
+- **install:** add GitHub Actions workflow for multi-platform package installation - [402f1fa](https://github.com/liblaf/actions-src/commit/402f1fa809d8cabc096464e0dcba2ce5a520067d) by [@liblaf](https://github.com/liblaf)
+- **schedule:** automate release and sync workflows with GitHub Actions - [b50251e](https://github.com/liblaf/actions-src/commit/b50251ecac3c5286b94f91ce9faf962d6f077e5e) by [@liblaf](https://github.com/liblaf)
+- **schedule:** add workflow dispatch for sync.yaml - [a125fbf](https://github.com/liblaf/actions-src/commit/a125fbf0a4a7a3ad94f869db1c65f8b3c2adc64b) by [@liblaf](https://github.com/liblaf)
+- **scripts:** add Python-based secret management script - [be4ca5d](https://github.com/liblaf/actions-src/commit/be4ca5dee700919e33516492ff787a7f62980251) by [@liblaf](https://github.com/liblaf)
+- **setup-python:** add optional python-version input for uv setup - [4a19421](https://github.com/liblaf/actions-src/commit/4a1942101bdb14c393676435eac33baa0fce44aa) by [@liblaf](https://github.com/liblaf)
 - initialize project structure and configuration - [116aa7a](https://github.com/liblaf/actions-src/commit/116aa7a3196822f06addf3dd91fecd591947926d) by [@liblaf](https://github.com/liblaf)
 - add auto-review action for automated pull request approvals - [4e73649](https://github.com/liblaf/actions-src/commit/4e7364911ce5998777d6d8d68f1b6003f4b6a4d8) by [@liblaf](https://github.com/liblaf)
 - add GitHub Action for labeling pull requests - [55cb2b1](https://github.com/liblaf/actions-src/commit/55cb2b1cb1426939566f4bf398eebe1a7ca3958c) by [@liblaf](https://github.com/liblaf)
@@ -416,22 +432,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(app-list-repos)** add missing environment variables for repository listing - [d7eff9c](https://github.com/liblaf/actions-src/commit/d7eff9cc8ab800915a0ca4484ae4c4012da38a8c) by [@liblaf](https://github.com/liblaf)
-- **(auto-merge)** prevent script from continuing when no PR is found - [7939206](https://github.com/liblaf/actions-src/commit/7939206c970490badcdea326a434fdb808859a84) by [@liblaf](https://github.com/liblaf)
-- **(bot/schedule)** refactor workflow dispatch and update environment variable names - [d64b3b1](https://github.com/liblaf/actions-src/commit/d64b3b1f139fb38b0eb7f2b9da2b9b31ab095729) by [@liblaf](https://github.com/liblaf)
-- **(copier-update)** simplify copier command invocation - [60790f7](https://github.com/liblaf/actions-src/commit/60790f7bd2d9aa65881a449e23ba5f1ed2be3192) by [@liblaf](https://github.com/liblaf)
-- **(logging)** set default value for RUNNER_DEBUG env var - [c464586](https://github.com/liblaf/actions-src/commit/c464586b56b8c8d063cef53d0ccaac55af89426e) by [@liblaf](https://github.com/liblaf)
-- **(release)** correct pipx command to use `run` instead of direct execution - [e6ddb90](https://github.com/liblaf/actions-src/commit/e6ddb9080e8f75183d9cf588a6656c11e1c92c9a) by [@liblaf](https://github.com/liblaf)
-- **(release)** correct environment variable name for GitHub token - [2dd10da](https://github.com/liblaf/actions-src/commit/2dd10da3baae115716fae3c2c4e262e0eab3ac69) by [@liblaf](https://github.com/liblaf)
-- **(release)** correct section titles and add missing types in changelog configuration - [cae0f89](https://github.com/liblaf/actions-src/commit/cae0f892db29ecd64469f456db475f454e8deac7) by [@liblaf](https://github.com/liblaf)
-- **(release)** correct retrieval of remote checksum for existing releases - [6efda78](https://github.com/liblaf/actions-src/commit/6efda7807d6ce9b5902efc5b18fb9cf9359d4a28) by [@liblaf](https://github.com/liblaf)
-- **(release)** include algorithm in release upload and creation - [fcff72c](https://github.com/liblaf/actions-src/commit/fcff72c3239f318887b7649816f1099e9d7377de) by [@liblaf](https://github.com/liblaf)
-- **(release)** rename hash algorithm input to avoid confusion - [6c96743](https://github.com/liblaf/actions-src/commit/6c96743f6c88487a2549df285e9fd9a5fa740857) by [@liblaf](https://github.com/liblaf)
-- **(release)** correct temporary directory path and add cleanup step - [afba739](https://github.com/liblaf/actions-src/commit/afba73927db2ef4f5e7262b23d5e6cb6cef53e44) by [@liblaf](https://github.com/liblaf)
-- **(release)** correct conditional logic for changelog generation - [bba81a0](https://github.com/liblaf/actions-src/commit/bba81a0126f72610b5a164f09bab6cf78ea98ea4) by [@liblaf](https://github.com/liblaf)
-- **(release)** ensure release exists before upload - [39570bd](https://github.com/liblaf/actions-src/commit/39570bdee9068200131fe9d3875c8964da51c8d4) by [@liblaf](https://github.com/liblaf)
-- **(schedule)** exclude special repository from scheduled actions - [89d6085](https://github.com/liblaf/actions-src/commit/89d6085f5e56417139fab3d9c716d603fa69c722) by [@liblaf](https://github.com/liblaf)
-- **(toolkit)** correct base URL for release asset downloads - [9fe47ae](https://github.com/liblaf/actions-src/commit/9fe47aebb1418be6bccbf9c8966137dff25f454f) by [@liblaf](https://github.com/liblaf)
+- **app-list-repos:** add missing environment variables for repository listing - [d7eff9c](https://github.com/liblaf/actions-src/commit/d7eff9cc8ab800915a0ca4484ae4c4012da38a8c) by [@liblaf](https://github.com/liblaf)
+- **auto-merge:** prevent script from continuing when no PR is found - [7939206](https://github.com/liblaf/actions-src/commit/7939206c970490badcdea326a434fdb808859a84) by [@liblaf](https://github.com/liblaf)
+- **bot/schedule:** refactor workflow dispatch and update environment variable names - [d64b3b1](https://github.com/liblaf/actions-src/commit/d64b3b1f139fb38b0eb7f2b9da2b9b31ab095729) by [@liblaf](https://github.com/liblaf)
+- **copier-update:** simplify copier command invocation - [60790f7](https://github.com/liblaf/actions-src/commit/60790f7bd2d9aa65881a449e23ba5f1ed2be3192) by [@liblaf](https://github.com/liblaf)
+- **logging:** set default value for RUNNER_DEBUG env var - [c464586](https://github.com/liblaf/actions-src/commit/c464586b56b8c8d063cef53d0ccaac55af89426e) by [@liblaf](https://github.com/liblaf)
+- **release:** correct pipx command to use `run` instead of direct execution - [e6ddb90](https://github.com/liblaf/actions-src/commit/e6ddb9080e8f75183d9cf588a6656c11e1c92c9a) by [@liblaf](https://github.com/liblaf)
+- **release:** correct environment variable name for GitHub token - [2dd10da](https://github.com/liblaf/actions-src/commit/2dd10da3baae115716fae3c2c4e262e0eab3ac69) by [@liblaf](https://github.com/liblaf)
+- **release:** correct section titles and add missing types in changelog configuration - [cae0f89](https://github.com/liblaf/actions-src/commit/cae0f892db29ecd64469f456db475f454e8deac7) by [@liblaf](https://github.com/liblaf)
+- **release:** correct retrieval of remote checksum for existing releases - [6efda78](https://github.com/liblaf/actions-src/commit/6efda7807d6ce9b5902efc5b18fb9cf9359d4a28) by [@liblaf](https://github.com/liblaf)
+- **release:** include algorithm in release upload and creation - [fcff72c](https://github.com/liblaf/actions-src/commit/fcff72c3239f318887b7649816f1099e9d7377de) by [@liblaf](https://github.com/liblaf)
+- **release:** rename hash algorithm input to avoid confusion - [6c96743](https://github.com/liblaf/actions-src/commit/6c96743f6c88487a2549df285e9fd9a5fa740857) by [@liblaf](https://github.com/liblaf)
+- **release:** correct temporary directory path and add cleanup step - [afba739](https://github.com/liblaf/actions-src/commit/afba73927db2ef4f5e7262b23d5e6cb6cef53e44) by [@liblaf](https://github.com/liblaf)
+- **release:** correct conditional logic for changelog generation - [bba81a0](https://github.com/liblaf/actions-src/commit/bba81a0126f72610b5a164f09bab6cf78ea98ea4) by [@liblaf](https://github.com/liblaf)
+- **release:** ensure release exists before upload - [39570bd](https://github.com/liblaf/actions-src/commit/39570bdee9068200131fe9d3875c8964da51c8d4) by [@liblaf](https://github.com/liblaf)
+- **schedule:** exclude special repository from scheduled actions - [89d6085](https://github.com/liblaf/actions-src/commit/89d6085f5e56417139fab3d9c716d603fa69c722) by [@liblaf](https://github.com/liblaf)
+- **toolkit:** correct base URL for release asset downloads - [9fe47ae](https://github.com/liblaf/actions-src/commit/9fe47aebb1418be6bccbf9c8966137dff25f454f) by [@liblaf](https://github.com/liblaf)
 - ensure release command is included in arguments - [8317e30](https://github.com/liblaf/actions-src/commit/8317e30eeff25a1d9dff461de4fde2cfbcc5cec8) by [@liblaf](https://github.com/liblaf)
 - enable colored output in release action - [804cb18](https://github.com/liblaf/actions-src/commit/804cb18bbe3ec5702936115d91e4456784ed81c3) by [@liblaf](https://github.com/liblaf)
 - handle download failures in remote hashsum retrieval - [19497d7](https://github.com/liblaf/actions-src/commit/19497d7ced1bfa82ecd2e4d0c83ce4f9536bb7f4) by [@liblaf](https://github.com/liblaf)
@@ -461,9 +477,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ♻ Code Refactoring
 
-- **(changelog)** improve config handling in action.yaml - [2aa8113](https://github.com/liblaf/actions-src/commit/2aa8113c3efe44a4f4d2e61bf7f7ab17362cdec2) by [@liblaf](https://github.com/liblaf)
-- **(release)** simplify changelog argument logic - [fc4ad52](https://github.com/liblaf/actions-src/commit/fc4ad52c8feee4f659b1aecad9135fb4518b2304) by [@liblaf](https://github.com/liblaf)
-- **(release)** simplify client initialization and error handling - [2b8c0d7](https://github.com/liblaf/actions-src/commit/2b8c0d7dc6e8572698411d817a65b78a807cea1d) by [@liblaf](https://github.com/liblaf)
+- **changelog:** improve config handling in action.yaml - [2aa8113](https://github.com/liblaf/actions-src/commit/2aa8113c3efe44a4f4d2e61bf7f7ab17362cdec2) by [@liblaf](https://github.com/liblaf)
+- **release:** simplify changelog argument logic - [fc4ad52](https://github.com/liblaf/actions-src/commit/fc4ad52c8feee4f659b1aecad9135fb4518b2304) by [@liblaf](https://github.com/liblaf)
+- **release:** simplify client initialization and error handling - [2b8c0d7](https://github.com/liblaf/actions-src/commit/2b8c0d7dc6e8572698411d817a65b78a807cea1d) by [@liblaf](https://github.com/liblaf)
 - streamline changelog configuration and improve commit parsing - [fbdbdc6](https://github.com/liblaf/actions-src/commit/fbdbdc6bb17479d4c887b535900d318833793975) by [@liblaf](https://github.com/liblaf)
 - remove user-specific details from auto-review bot - [b744ee1](https://github.com/liblaf/actions-src/commit/b744ee133f16a0beb07309fe28c2f446c08a5fc6) by [@liblaf](https://github.com/liblaf)
 - simplify author list retrieval in auto-review inputs - [fcef102](https://github.com/liblaf/actions-src/commit/fcef10274736db233122fa4f87edb6e0a3070ccf) by [@liblaf](https://github.com/liblaf)
@@ -474,15 +490,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ✅ Tests
 
-- **(app-list-repos)** enhance matrix configuration for dynamic repo inclusion - [378c0d9](https://github.com/liblaf/actions-src/commit/378c0d9140e4cf1423a7faf80549ede678af6ac4) by [@liblaf](https://github.com/liblaf)
+- **app-list-repos:** enhance matrix configuration for dynamic repo inclusion - [378c0d9](https://github.com/liblaf/actions-src/commit/378c0d9140e4cf1423a7faf80549ede678af6ac4) by [@liblaf](https://github.com/liblaf)
 
 ### 🛠 Builds
 
-- **(pip)** update dependency to include auth-app feature - [de6f43b](https://github.com/liblaf/actions-src/commit/de6f43b124d8761750895acccb3da65b74fd6c4f) by [@liblaf](https://github.com/liblaf)
+- **pip:** update dependency to include auth-app feature - [de6f43b](https://github.com/liblaf/actions-src/commit/de6f43b124d8761750895acccb3da65b74fd6c4f) by [@liblaf](https://github.com/liblaf)
 
 ### ⚙️ Continuous Integration
 
-- **(mega-linter)** refactor configuration and improve script robustness - [0567726](https://github.com/liblaf/actions-src/commit/0567726a3f0f5faed626c9a415c9795705b59a41) by [@liblaf](https://github.com/liblaf)
+- **mega-linter:** refactor configuration and improve script robustness - [0567726](https://github.com/liblaf/actions-src/commit/0567726a3f0f5faed626c9a415c9795705b59a41) by [@liblaf](https://github.com/liblaf)
 - add MegaLinter and JSCPD configurations for CI linting and duplication checks - [050ceba](https://github.com/liblaf/actions-src/commit/050ceba27dcdc0ef4f2179aec30a5260b3dfc5af) by [@liblaf](https://github.com/liblaf)
 - simplify path reference in CI workflow - [5d49a77](https://github.com/liblaf/actions-src/commit/5d49a777aad1369b6bf4ab7ee66868f73fbaa376) by [@liblaf](https://github.com/liblaf)
 - customize run names for GitHub Actions workflows - [b4944ef](https://github.com/liblaf/actions-src/commit/b4944ef08589f63cedc52786acebdd2ca92bb159) by [@liblaf](https://github.com/liblaf)
