@@ -6,3 +6,8 @@ set -o pipefail
 while read -r filename; do
   rm --force --verbose "$filename"
 done < "$RUNNER_TEMP/missing-linter-files.list"
+
+files=('.cspellcache')
+for file in "${files[@]}"; do
+  rm --force --recursive --verbose "$file"
+done
