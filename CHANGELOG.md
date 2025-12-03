@@ -7,6 +7,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.3](https://github.com/liblaf/actions-src/releases/tag/v1.3.3) - 2025-12-03
+
+### 🐛 Bug Fixes
+
+- **setup-python:** Remove `--all-extras` and `--all-groups` from `uv sync` command - [c89363d](https://github.com/liblaf/actions-src/commit/c89363d240c47fe0febd60c3d5a68bca6e67209c) by [@liblaf](https://github.com/liblaf)
+
+### ⚙️ Continuous Integration
+
+- **deploy:** Set persist-credentials to false for deploy job checkout - [621496b](https://github.com/liblaf/actions-src/commit/621496bbab371f1c9f7b54b4f03f9ce56d403829) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [1.3.2](https://github.com/liblaf/actions-src/releases/tag/v1.3.2) - 2025-12-02
 
 ### 🐛 Bug Fixes
@@ -15,7 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
 
 ## [1.3.1](https://github.com/liblaf/actions-src/releases/tag/v1.3.1) - 2025-11-25
 
