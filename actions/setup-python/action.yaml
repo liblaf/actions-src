@@ -84,5 +84,5 @@ runs:
         activate-environment: true
     - if: steps.manager.outputs.uv == 'true'
       name: Install Dependencies
-      run: uv sync --all-extras --all-groups --active --frozen --all-packages
+      run: uv sync --active --frozen --all-packages
       shell: bash
