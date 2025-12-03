@@ -49,6 +49,8 @@ jobs:
       # JamesIves/github-pages-deploy-action requires checkout
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false # try to fix permission issues
       - name: Download Artifacts
         uses: actions/download-artifact@v6
         with:
