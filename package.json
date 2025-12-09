@@ -37,7 +37,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@actions/core": "^1",
+    "@actions/core": "^2.0.0",
     "@actions/github": "^6",
     "@actions/glob": "^0.5",
     "@biomejs/biome": "^2",
