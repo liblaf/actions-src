@@ -44,7 +44,7 @@
     "@github/local-action": "^6",
     "@liblaf/config": "^0.1",
     "@octokit/openapi-types": "^27",
-    "@types/node": "^24",
+    "@types/node": "^25.0.0",
     "bunup": "^0.16.0",
     "consola": "^3",
     "octokit": "^5"
