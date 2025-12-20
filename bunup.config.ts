@@ -36,6 +36,7 @@ export default defineConfig({
   minify: true,
   splitting: false,
   dts: false,
+  packages: "bundle",
   target: "node",
   sourcemap: "inline",
   sourceBase: "actions",

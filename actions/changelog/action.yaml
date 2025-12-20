@@ -71,7 +71,7 @@ runs:
         fi
       shell: bash
     - name: Prettier
-      run: npx prettier --write '${{ inputs.output }}'
+      run: npx prettier --write --no-config '${{ inputs.output }}'
       shell: bash
     - id: output
       name: Set Output
