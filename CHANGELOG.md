@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4](https://github.com/liblaf/actions-src/compare/v1.3.3...v1.3.4) (2025-12-20)
+
+
+### 🐛 Bug Fixes
+
+* **build, changelog:** Ensure proper action bundling and consistent changelog formatting ([d9b979d](https://github.com/liblaf/actions-src/commit/d9b979d19a8f7b8ecdb8811385e52d25c9c8bc43))
+
 ## [1.3.3](https://github.com/liblaf/actions-src/releases/tag/v1.3.3) - 2025-12-03
 
 ### 🐛 Bug Fixes
