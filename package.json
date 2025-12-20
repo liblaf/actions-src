@@ -3,14 +3,14 @@
   "version": "1.3.4",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/liblaf/actions",
+  "homepage": "https://github.com/liblaf/actions-src",
   "bugs": {
-    "url": "https://github.com/liblaf/actions/issues"
+    "url": "https://github.com/liblaf/actions-src/issues"
   },
-  "repository": "github:liblaf/actions",
+  "repository": "github:liblaf/actions-src",
   "funding": {
     "type": "github",
-    "url": "https://github.com/liblaf/actions?sponsor=1"
+    "url": "https://github.com/liblaf/actions-src?sponsor=1"
   },
   "license": "MIT",
   "author": {
@@ -38,7 +38,8 @@
   "prettier": {
     "plugins": [
       "prettier-plugin-packagejson"
-    ]
+    ],
+    "trailingComma": "none"
   },
   "dependencies": {
     "@actions/core": "^2.0.1",
