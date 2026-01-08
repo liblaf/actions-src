@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.6](https://github.com/liblaf/actions-src/releases/tag/v1.3.6) - 2026-01-08
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency @actions/github to v7 (#96) - [dc9f92f](https://github.com/liblaf/actions-src/commit/dc9f92f9d22a3448c3e90e31d4e6698178211c95) by [@renovate[bot]](https://github.com/apps/renovate) in [#96](https://github.com/liblaf/actions-src/pull/96)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#96](https://github.com/liblaf/actions-src/pull/96)
+- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#94](https://github.com/liblaf/actions-src/pull/94)
+
 ## [1.3.5](https://github.com/liblaf/actions-src/releases/tag/v1.3.5) - 2025-12-20
 
 ### 🐛 Bug Fixes
@@ -15,7 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
 
 ## [1.3.4](https://github.com/liblaf/actions-src/releases/tag/v1.3.4) - 2025-12-20
 
