@@ -56,7 +56,7 @@
     "@types/node": "^25.0.3",
     "bunup": "^0.16.11",
     "prettier": "^3.7.4",
-    "prettier-plugin-packagejson": "^2.5.20"
+    "prettier-plugin-packagejson": "^3.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.9.3"
