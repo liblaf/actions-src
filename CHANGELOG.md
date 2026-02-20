@@ -7,7 +7,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.6](https://github.com/liblaf/actions-src/releases/tag/v1.3.6) - 2026-01-08
+## [1.3.7](https://github.com/liblaf/actions-src/releases/tag/v1.3.7) - 2026-02-20
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency @actions/github to v8 (#101) - [c5c6a34](https://github.com/liblaf/actions-src/commit/c5c6a348ecd3f3bc45d53a4a3ec12bc36a0d8630) by [@renovate[bot]](https://github.com/apps/renovate) in [#101](https://github.com/liblaf/actions-src/pull/101)
+- **deps:** update dependency @actions/github to v9 (#103) - [5bf7b6c](https://github.com/liblaf/actions-src/commit/5bf7b6c637c3daa820034b0d2206150c1b2a8120) by [@renovate[bot]](https://github.com/apps/renovate) in [#103](https://github.com/liblaf/actions-src/pull/103)
+- **deps:** update dependency @actions/core to v3 (#104) - [96a11e5](https://github.com/liblaf/actions-src/commit/96a11e5069d7c55416fdeb6a76c5e1f7c79dcc66) by [@renovate[bot]](https://github.com/apps/renovate) in [#104](https://github.com/liblaf/actions-src/pull/104)
+- **deps:** update dependency @actions/glob to ^0.6.0 (#105) - [ea03c51](https://github.com/liblaf/actions-src/commit/ea03c51436a5e0622f4742d444f170df47b55819) by [@renovate[bot]](https://github.com/apps/renovate) in [#105](https://github.com/liblaf/actions-src/pull/105)
+- **mega-linter:** disable problematic git ownership adjustment - [940c043](https://github.com/liblaf/actions-src/commit/940c043176435d34cca11a91ad9fe8058dbd402e) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#105](https://github.com/liblaf/actions-src/pull/105)
+- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#98](https://github.com/liblaf/actions-src/pull/98)
+
+## [1.3.6](https://github.com/liblaf/actions-src/releases/tag/v1.3.6) - 2026-01-11
 
 ### 🐛 Bug Fixes
 
@@ -15,8 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#96](https://github.com/liblaf/actions-src/pull/96)
-- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#94](https://github.com/liblaf/actions-src/pull/94)
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@renovate[bot]](https://github.com/apps/renovate)
 
 ## [1.3.5](https://github.com/liblaf/actions-src/releases/tag/v1.3.5) - 2025-12-20
 
