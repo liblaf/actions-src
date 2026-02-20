@@ -59,7 +59,8 @@ runs:
       name: Clean Linter Rules
       run: sudo rm --force --recursive 'tmp.6NE8UxMvCk'
       shell: bash
-    - if: success() || failure()
-      name: Prepare Commit
-      run: sudo chown --changes --recursive "$UID" '.git/'
-      shell: bash
+    # - if: success() || failure()
+    #   name: Prepare Commit
+    #   run: sudo chown --changes --recursive "$UID" '.git/'
+    #   shell: bash
+    #   continue-on-error: true
