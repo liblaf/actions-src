@@ -44,7 +44,7 @@ runs:
       shell: bash
     - id: lint
       name: MegaLinter
-      uses: liblaf/megalinter-custom-flavor-all@main
+      uses: liblaf/megalinter-custom-flavor-all@v9
       env:
         GITHUB_TOKEN: ${{ inputs.token }}
         # ref: <https://megalinter.io/latest/config-variables/>
