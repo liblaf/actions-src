@@ -7,6 +7,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.8](https://github.com/liblaf/actions-src/releases/tag/v1.3.8) - 2026-02-20
+
+### 🐛 Bug Fixes
+
+- **mega-linter:** pin megalinter-custom-flavor-all to v9 - [17c903b](https://github.com/liblaf/actions-src/commit/17c903b00bfc8ba3d4762ef9ff6e94daafae64b5) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf) made their first contribution
+
 ## [1.3.7](https://github.com/liblaf/actions-src/releases/tag/v1.3.7) - 2026-02-20
 
 ### 🐛 Bug Fixes
@@ -19,9 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
-- [@renovate[bot]](https://github.com/apps/renovate) made their first contribution in [#105](https://github.com/liblaf/actions-src/pull/105)
-- [@liblaf[bot]](https://github.com/apps/liblaf) made their first contribution in [#98](https://github.com/liblaf/actions-src/pull/98)
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
+- [@renovate[bot]](https://github.com/apps/renovate)
 
 ## [1.3.6](https://github.com/liblaf/actions-src/releases/tag/v1.3.6) - 2026-01-11
 
