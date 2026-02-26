@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: bun run build
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist
@@ -52,7 +52,7 @@ jobs:
         with:
           persist-credentials: false # try to fix permission issues
       - name: Download Artifacts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist
