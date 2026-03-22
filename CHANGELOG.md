@@ -7,6 +7,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.9](https://github.com/liblaf/actions-src/releases/tag/v1.3.9) - 2026-03-22
+
+### 🐛 Bug Fixes
+
+- **actions:** handle GitHub API 404 errors consistently across release and pages workflows - [011d355](https://github.com/liblaf/actions-src/commit/011d35509c2077706b7216d9b5b6bf0689d7b172) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf](https://github.com/liblaf)
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+
 ## [1.3.8](https://github.com/liblaf/actions-src/releases/tag/v1.3.8) - 2026-02-20
 
 ### 🐛 Bug Fixes
@@ -15,7 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@liblaf](https://github.com/liblaf) made their first contribution
+- [@liblaf[bot]](https://github.com/apps/liblaf)
+- [@liblaf](https://github.com/liblaf)
 
 ## [1.3.7](https://github.com/liblaf/actions-src/releases/tag/v1.3.7) - 2026-02-20
 
