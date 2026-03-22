@@ -2,7 +2,7 @@ import path from "node:path";
 import * as core from "@actions/core";
 import consola from "consola";
 import { Octokit } from "octokit";
-import { getOwnerRepo } from "../../../lib";
+import { getOwnerRepo, isErrorStatus } from "../../../lib";
 
 function getWorkflowId(): string {
   let workflow: string = core.getInput("workflow", { required: true });
@@ -43,17 +43,11 @@ export async function runUnsafe(): Promise<void> {
         run_id: run.id,
       });
     } catch (err) {
-      // TODO: enable this when error instance check works
-      // if (err instanceof RequestError) {
-      //   if (err.status === 404) {
-      //     consola.error(`${err}`);
-      //   } else {
-      //     throw err;
-      //   }
-      // } else {
-      //   throw err;
-      // }
-      consola.error(`${err}`);
+      if (isErrorStatus(err, 404)) {
+        consola.error(`${err}`);
+      } else {
+        throw err;
+      }
     }
   }
 }
