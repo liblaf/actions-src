@@ -22,13 +22,11 @@ for (const action of actions) {
   if (await exists(file)) entry.push(file);
 }
 for (const action of actions) {
-  const sources: string[] = [];
   for (const child of await fs.readdir(path.join("actions", action))) {
     if (child === "src") continue;
-    sources.push(path.join("actions", action, child));
-    plugins.push(
-      copy(path.join("actions", action, child)).to(path.join(action, child)),
-    );
+    const source: string = path.join("actions", action, child);
+    const target: string = path.join(action, child);
+    plugins.push(copy(source).to(target));
   }
 }
 
