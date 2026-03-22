@@ -46,7 +46,7 @@ runs:
       run: git add ${{ inputs.add-options }}
       shell: bash
     - name: Commit
-      uses: dsanders11/github-app-commit-action@v1
+      uses: dsanders11/github-app-commit-action@v2
       with:
         fail-on-no-changes: ${{ inputs.fail-on-no-changes }}
         force: ${{ inputs.force }}
