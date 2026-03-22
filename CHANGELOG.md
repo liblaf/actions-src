@@ -7,6 +7,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.10](https://github.com/liblaf/actions-src/releases/tag/v1.3.10) - 2026-03-22
+
+### 🐛 Bug Fixes
+
+- copy action assets to their target paths during bundling - [66402a2](https://github.com/liblaf/actions-src/commit/66402a287e48f4c2b60456f776d23c4937ccab2a) by [@liblaf](https://github.com/liblaf)
+
+### 🛠 Builds
+
+- simplify action asset copy path setup in bunup config - [5c8f0b5](https://github.com/liblaf/actions-src/commit/5c8f0b5b922f726ebe6256e03ccbc888f27407af) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+
 ## [1.3.9](https://github.com/liblaf/actions-src/releases/tag/v1.3.9) - 2026-03-22
 
 ### 🐛 Bug Fixes
@@ -15,9 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf[bot]](https://github.com/apps/liblaf)
 - [@renovate[bot]](https://github.com/apps/renovate)
 - [@liblaf](https://github.com/liblaf)
-- [@liblaf[bot]](https://github.com/apps/liblaf)
 
 ## [1.3.8](https://github.com/liblaf/actions-src/releases/tag/v1.3.8) - 2026-02-20
 
