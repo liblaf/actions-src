@@ -26,8 +26,10 @@ for (const action of actions) {
   for (const child of await fs.readdir(path.join("actions", action))) {
     if (child === "src") continue;
     sources.push(path.join("actions", action, child));
+    plugins.push(
+      copy(path.join("actions", action, child)).to(path.join(action, child)),
+    );
   }
-  if (sources.length > 0) plugins.push(copy(sources).to(action));
 }
 
 export default defineConfig({
