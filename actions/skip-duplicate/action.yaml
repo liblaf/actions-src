@@ -69,7 +69,7 @@ runs:
   steps:
     - id: skip-duplicate-actions
       name: Skip Duplicate Actions
-      uses: fkirc/skip-duplicate-actions@v5
+      uses: fkirc/skip-duplicate-actions@f75f66ce1886f00957d99748a42c724f4330bdcf # v5
       with:
         github_token: ${{ inputs.token }}
         paths_ignore: ${{ inputs.paths-ignore }}
@@ -83,7 +83,7 @@ runs:
 
     - id: delete-cancelled-runs
       name: Delete Cancelled Runs
-      uses: liblaf/actions/delete-cancelled-runs@dist
+      uses: liblaf/actions/delete-cancelled-runs@f6cf271d2b7400fb019d0366c1a389ab23239730 # dist
       with:
         max-deletions: ${{ inputs.max-deletions }}
         token: ${{ inputs.token }}
