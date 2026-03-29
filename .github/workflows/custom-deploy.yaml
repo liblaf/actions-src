@@ -1,12 +1,11 @@
-name: Deploy
+name: Custom / Deploy
 
 on:
   push:
     branches:
       - main
-  release:
-    types:
-      - published
+    tags:
+      - "v[0-9]*"
   workflow_dispatch:
 
 env:
@@ -31,7 +30,7 @@ jobs:
           bun pm bin >> "$GITHUB_PATH"
       - name: Build
         run: bun run build
-      - name: Upload Artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v7
         with:
           name: dist
@@ -50,7 +49,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          persist-credentials: false # try to fix permission issues
+          persist-credentials: false
       - name: Download Artifacts
         uses: actions/download-artifact@v8
         with:
@@ -60,17 +59,8 @@ jobs:
         name: Deploy to main
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.DEPLOY_TOKEN }}
           branch: main
-          folder: dist
-          repository-name: ${{ env.TARGET_REPOSITORY }}
-          single-commit: true
-      - if: ${{ github.ref == 'refs/heads/main' }}
-        name: Deploy to dist
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GH_PAT }}
-          branch: dist # for backward compatibility
           folder: dist
           repository-name: ${{ env.TARGET_REPOSITORY }}
           single-commit: true
@@ -78,7 +68,7 @@ jobs:
         name: Deploy to ${{ github.ref_name }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.DEPLOY_TOKEN }}
           branch: release/${{ github.ref_name }}
           folder: dist
           repository-name: ${{ env.TARGET_REPOSITORY }}
@@ -96,11 +86,11 @@ jobs:
         with:
           repository: ${{ env.TARGET_REPOSITORY }}
           ref: release/${{ github.ref_name }}
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.DEPLOY_TOKEN }}
       - name: Tag
         run: |-
-          # `<<<` will append an extra newline, so we use `printf`
-          readarray -d '.' -t parts < <(printf '%s' '${{ github.ref_name }}')
+          # Using `echo -n` to avoid extra newline from process substitution `<<<`
+          readarray -d '.' -t parts < <(echo -n '${{ github.ref_name }}')
           tag=''
           for part in "${parts[@]}"; do
             tag="${tag:+"$tag."}$part"
