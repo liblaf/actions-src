@@ -7,6 +7,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0](https://github.com/liblaf/actions-src/releases/tag/v1.7.0) - 2026-03-29
+
+### ✨ Features
+
+- **publish-drafts:** add action to publish aged draft releases - [94fbf13](https://github.com/liblaf/actions-src/commit/94fbf1335b49bf3706ccfeec4e762d0706ca7ece) by [@liblaf](https://github.com/liblaf)
+
+### 🐛 Bug Fixes
+
+- **next-version:** honor Release-As trailers in git history - [2a3d1d4](https://github.com/liblaf/actions-src/commit/2a3d1d4818cbed0cda90cb19d0b6f8d571da4953) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+
 ## [1.6.0](https://github.com/liblaf/actions-src/releases/tag/v1.6.0) - 2026-03-29
 
 ### ✨ Features
@@ -15,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf](https://github.com/liblaf)
 
 ## [1.5.0](https://github.com/liblaf/actions-src/releases/tag/v1.5.0) - 2026-03-29
