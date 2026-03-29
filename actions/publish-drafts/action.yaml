@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://www.schemastore.org/github-action.json
+
+name: Publish Drafts
+
+author: liblaf
+
+description: Publish draft releases whose tags match a pattern after they are older than a configured duration
+
+inputs:
+  older-than:
+    description: Publish matching draft releases only after they are older than this duration
+    required: false
+    default: 1hr
+  tag-pattern:
+    description: Regular expression used to select release tags that should be published
+    required: false
+    default: 'v\d+\.\d+\.\d+'
+  token:
+    description: GitHub token used to list releases and publish matching drafts
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node24
+  main: ./dist/index.js
