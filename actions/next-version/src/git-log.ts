@@ -6,7 +6,7 @@ export async function getReleaseAs(
 ): Promise<string | undefined> {
   const range: string = previous ? `${previous}..HEAD` : "HEAD";
   const args: string[] = ["log"];
-  args.push("--pretty=$(trailers:key=Release-As,valueonly)");
+  args.push("--pretty=%(trailers:key=Release-As,valueonly)");
   args.push(range);
   const { stdout } = await exec.getExecOutput("git", args);
   const lines: string[] = stdout
