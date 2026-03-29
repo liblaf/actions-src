@@ -4,19 +4,25 @@ name: Review
 
 author: liblaf
 
-description: Approve eligible bot-authored automerge pull requests.
+description: Approve eligible bot-authored pull requests.
 
 inputs:
-  actor:
-    description: GitHub login used to detect existing approvals by this reviewer.
+  app:
+    description: Only review pull requests authored by this GitHub App.
     required: false
-    default: ${{ github.repository_owner }}
+  label:
+    description: Only review pull requests with these labels.
+    required: false
+    default: automerge
   list-token:
-    description: Token used to list and inspect pull requests.
+    description: Token used to list and inspect candidate pull requests.
     required: false
     default: ${{ github.token }}
+  pull:
+    description: Pull request number, URL, or branch to review instead of listing pull requests.
+    required: false
   review-token:
-    description: Token used to submit approving reviews.
+    description: Token used to submit approving reviews for eligible pull requests.
     required: false
     default: ${{ github.token }}
 
