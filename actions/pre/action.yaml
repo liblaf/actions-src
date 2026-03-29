@@ -91,7 +91,7 @@ runs:
 
     - id: skip-duplicate-actions
       name: Skip Duplicate Actions
-      uses: fkirc/skip-duplicate-actions@v5
+      uses: fkirc/skip-duplicate-actions@f75f66ce1886f00957d99748a42c724f4330bdcf # v5
       with:
         github_token: ${{ inputs.token }}
         paths_ignore: ${{ inputs.paths-ignore }}
@@ -104,7 +104,7 @@ runs:
 
     - id: delete-cancelled-runs
       name: Delete Cancelled Runs
-      uses: MercuryTechnologies/delete-cancelled-runs@1.0.0
+      uses: MercuryTechnologies/delete-cancelled-runs@f5c9d322d9c7afbd41f779199818c1ffe381d34b # 1.0.0
       with:
         workflow-file: ${{ steps.workflow.outputs.workflow-file }}
         max-deletions: ${{ inputs.max-deletions }}
