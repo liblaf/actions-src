@@ -7,6 +7,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0](https://github.com/liblaf/actions-src/releases/tag/v1.5.0) - 2026-03-29
+
+### ✨ Features
+
+- **review:** add action to approve eligible automerge PRs - [6a2b5a8](https://github.com/liblaf/actions-src/commit/6a2b5a80684f57340b86a12eace22d17095e6532) by [@liblaf](https://github.com/liblaf)
+
+### ⚙️ Continuous Integration
+
+- update deploy workflow for tag-based releases - [ef1189e](https://github.com/liblaf/actions-src/commit/ef1189e77dcd4a5bbfecc4f1681e625e1939d3ea) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+
 ## [1.4.1](https://github.com/liblaf/actions-src/releases/tag/v1.4.1) - 2026-03-29
 
 ### 🐛 Bug Fixes
@@ -15,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please) made their first contribution in [#119](https://github.com/liblaf/actions-src/pull/119)
 - [@liblaf](https://github.com/liblaf)
 
 ## [1.4.0](https://github.com/liblaf/actions-src/releases/tag/v1.4.0) - 2026-03-28
