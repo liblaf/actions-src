@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://www.schemastore.org/github-action.json
+
+name: Review
+
+author: liblaf
+
+description: Approve eligible bot-authored automerge pull requests.
+
+inputs:
+  actor:
+    description: GitHub login used to detect existing approvals by this reviewer.
+    required: false
+    default: ${{ github.repository_owner }}
+  list-token:
+    description: Token used to list and inspect pull requests.
+    required: false
+    default: ${{ github.token }}
+  review-token:
+    description: Token used to submit approving reviews.
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node24
+  main: ./dist/index.js
