@@ -39,7 +39,7 @@ async function runUnsafe(): Promise<void> {
     version = stripTagPrefix(bumpedVersion);
     core.setOutput("release-as", false);
   }
-  core.setOutput("bumped", tag === release.previous?.version);
+  core.setOutput("bumped", tag !== release.previous?.version);
   core.setOutput("tag", tag);
   core.setOutput("version", version);
 }
