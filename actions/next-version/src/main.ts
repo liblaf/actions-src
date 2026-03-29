@@ -1,20 +1,8 @@
 import * as core from "@actions/core";
 import type { Release, Releases } from "./git-cliff";
 import { cliffBumpedVersion, cliffContext } from "./git-cliff";
-
-function getReleaseAs(release: Release): string | undefined {
-  for (const commit of release.commits) {
-    for (const footer of commit.footers) {
-      if (footer.token === "Release-As") {
-        return footer.value;
-      }
-    }
-  }
-}
-
-function stripTagPrefix(tag: string): string {
-  return tag.replace(/^v/, "");
-}
+import { getReleaseAs } from "./git-log";
+import { stripTagPrefix } from "./utils";
 
 async function runUnsafe(): Promise<void> {
   const context: Releases = await cliffContext();
@@ -27,7 +15,9 @@ async function runUnsafe(): Promise<void> {
     core.setOutput("version", stripTagPrefix(bumpedVersion));
     return;
   }
-  const releaseAs: string | undefined = getReleaseAs(release);
+  const releaseAs: string | undefined = await getReleaseAs(
+    release.previous?.version,
+  );
   let tag: string;
   let version: string;
   if (releaseAs) {

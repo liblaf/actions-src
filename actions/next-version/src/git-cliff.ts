@@ -1,17 +1,7 @@
 import * as exec from "@actions/exec";
 
-export type Footer = {
-  token: string;
-  value: string;
-};
-
-export type Commit = {
-  footers: Footer[];
-};
-
 export type Release = {
   version: string | null;
-  commits: Commit[];
   previous: Release | null;
 };
 

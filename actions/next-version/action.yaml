@@ -1,22 +1,18 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-action.json
 
 name: Next Version
-description: Determine the next release tag and version from git-cliff.
+description: Resolve the release tag and version from git-cliff, honoring `Release-As` trailers.
 author: liblaf
-
-branding:
-  icon: tag
-  color: blue
 
 outputs:
   bumped:
-    description: Whether the resolved tag matches the previous release version.
+    description: Whether the resolved tag differs from the previous release version.
   release-as:
-    description: Whether a `Release-As` footer overrode the computed version.
+    description: Whether a `Release-As` trailer overrode the computed version.
   tag:
-    description: The resolved next release tag, including the leading `v`.
+    description: The resolved release tag, including the leading `v`.
   version:
-    description: The resolved next release version without the leading `v`.
+    description: The resolved release version without the leading `v`.
 
 runs:
   using: node24
