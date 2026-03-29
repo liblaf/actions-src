@@ -7,6 +7,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.1](https://github.com/liblaf/actions-src/releases/tag/v1.7.1) - 2026-03-29
+
+### 🐛 Bug Fixes
+
+- **next-version:** correct git log trailer format - [5755b59](https://github.com/liblaf/actions-src/commit/5755b59f15edbfd2ec15c2082e295702979ebf39) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+
 ## [1.7.0](https://github.com/liblaf/actions-src/releases/tag/v1.7.0) - 2026-03-29
 
 ### ✨ Features
@@ -19,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf](https://github.com/liblaf)
 
 ## [1.6.0](https://github.com/liblaf/actions-src/releases/tag/v1.6.0) - 2026-03-29
