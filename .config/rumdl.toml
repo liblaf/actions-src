@@ -1,0 +1,4 @@
+#:schema https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/rumdl.json
+
+[global]
+disable = ["MD001", "MD013", "MD024", "MD033", "MD041"]
