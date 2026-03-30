@@ -34,7 +34,7 @@ jobs:
     steps:
       - id: auth
         name: Auth
-        uses: liblaf/actions/auth@cadf1f6ac2bed9a0ebc033e74a2c0994813e7f04 # v1
+        uses: liblaf/actions/auth@1f83732587ff97f1babbe9218fdc5436dda1a16f # v1
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
@@ -42,9 +42,10 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - id: lint
         name: MegaLinter
-        uses: liblaf/actions/mega-linter@cadf1f6ac2bed9a0ebc033e74a2c0994813e7f04 # v1
-        with:
-          token: ${{ steps.auth.outputs.token }}
+        uses: liblaf/megalinter-custom-flavor-all@4c245a0bdb312d24c66108433d4d701fb0875746 # main
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MEGALINTER_CONFIG: https://raw.githubusercontent.com/liblaf/megalinter-custom-flavor-all/refs/heads/main/.mega-linter.yml
       - if: success() || failure()
         name: Upload reports
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
@@ -67,6 +68,7 @@ jobs:
           token: ${{ steps.auth.outputs.token }}
           commit-message: ${{ env.GIT_COMMIT_MESSAGE }}
           branch: mega-linter/${{ github.head_ref || github.ref_name }}
+          delete-branch: true
           sign-commits: true
           title: ${{ env.GIT_COMMIT_MESSAGE }}
           body-path: ${{ runner.temp }}/megalinter-report.md
@@ -89,7 +91,7 @@ jobs:
       deployment: false
     steps:
       - name: Review
-        uses: liblaf/actions/review@cadf1f6ac2bed9a0ebc033e74a2c0994813e7f04 # v1
+        uses: liblaf/actions/review@1f83732587ff97f1babbe9218fdc5436dda1a16f # v1
         with:
           pull: ${{ needs.mega-linter.outputs.pull-request-url }}
           review-token: ${{ secrets.REVIEW_TOKEN }}
