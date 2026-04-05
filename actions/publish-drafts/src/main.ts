@@ -48,7 +48,7 @@ async function runUnsafe(): Promise<void> {
           release_id: release.id,
           draft: false,
         });
-        core.info(`Published ${prettyRelease(release)}.`);
+        core.notice(`Published ${prettyRelease(release)}.`);
       } catch (err) {
         core.error(`Failed to publish ${prettyRelease(release)}: ${err}`);
         errors.push(err);

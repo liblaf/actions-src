@@ -10,7 +10,7 @@ inputs:
   older-than:
     description: Publish matching draft releases only after they are older than this duration
     required: false
-    default: 1hr
+    default: 6hr
   tag-pattern:
     description: Regular expression used to select release tags that should be published
     required: false

@@ -33,7 +33,7 @@
     "test": "bun test",
     "test:coverage": "bun test --coverage",
     "test:watch": "bun test --watch",
-    "tsc": "tsc --noEmit"
+    "type-check": "tsc --noEmit"
   },
   "prettier": {
     "plugins": [
@@ -55,7 +55,7 @@
     "@biomejs/biome": "2.4.10",
     "@github/local-action": "7.0.1",
     "@liblaf/config": "0.1.3",
-    "@types/node": "25.5.0",
+    "@types/node": "25.5.2",
     "bunup": "0.16.31",
     "prettier": "3.8.1",
     "prettier-plugin-packagejson": "3.0.2"

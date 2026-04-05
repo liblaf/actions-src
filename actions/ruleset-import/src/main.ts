@@ -2,7 +2,7 @@ import * as core from "@actions/core";
 import type { components } from "@octokit/openapi-types";
 import consola from "consola";
 import { Octokit } from "octokit";
-import { splitOwnerRepo } from "../../../lib";
+import { splitOwnerRepo } from "@/lib";
 
 type Ruleset = components["schemas"]["repository-ruleset"];
 
@@ -65,9 +65,9 @@ export async function runUnsafe(): Promise<void> {
       name: sourceRuleset.name,
       target: sourceRuleset.target as any,
       enforcement: sourceRuleset.enforcement,
-      bypass_actors: sourceRuleset.bypass_actors as any,
+      bypass_actors: sourceRuleset.bypass_actors,
       conditions: sourceRuleset.conditions as any,
-      rules: sourceRuleset.rules as any,
+      rules: sourceRuleset.rules,
     });
     core.notice(`Update ruleset "${name}" in repository "${targetRepository}"`);
   } else {
@@ -77,9 +77,9 @@ export async function runUnsafe(): Promise<void> {
       name: sourceRuleset.name,
       target: sourceRuleset.target as any,
       enforcement: sourceRuleset.enforcement,
-      bypass_actors: sourceRuleset.bypass_actors as any,
+      bypass_actors: sourceRuleset.bypass_actors,
       conditions: sourceRuleset.conditions as any,
-      rules: sourceRuleset.rules as any,
+      rules: sourceRuleset.rules,
     });
     core.notice(`Create ruleset "${name}" in repository "${targetRepository}"`);
   }

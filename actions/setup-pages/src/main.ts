@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
 import consola from "consola";
 import { Octokit } from "octokit";
-import { getOwnerRepo, isErrorStatus } from "../../../lib";
+import { getOwnerRepo, isErrorStatus } from "@/lib";
 
 async function hasPages(
   octokit: Octokit,
