@@ -7,7 +7,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.7.2](https://github.com/liblaf/actions-src/releases/tag/v1.7.2) - 2026-04-02
+## [v1.7.3](https://github.com/liblaf/actions-src/releases/tag/v1.7.3) - 2026-04-05
+
+### ♻️ Code Refactoring
+
+- consolidate pull request review actions - [1701959](https://github.com/liblaf/actions-src/commit/17019598205ee34ddcaf69015cedfcc44f6aa9d9) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+
+## [v1.7.2](https://github.com/liblaf/actions-src/releases/tag/v1.7.2) - 2026-04-05
 
 ### ⚙️ Continuous Integrations
 
@@ -20,9 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
+- [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier) made their first contribution in [#142](https://github.com/liblaf/actions-src/pull/142)
 - [@renovate[bot]](https://github.com/apps/renovate)
 - [@liblaf](https://github.com/liblaf)
-- [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier) made their first contribution in [#133](https://github.com/liblaf/actions-src/pull/133)
 
 ## [v1.7.1](https://github.com/liblaf/actions-src/releases/tag/v1.7.1) - 2026-03-29
 
