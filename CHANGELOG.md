@@ -7,6 +7,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.7.4](https://github.com/liblaf/actions-src/releases/tag/v1.7.4) - 2026-04-24
+
+### 🐛 Bug Fixes
+
+- **(approve)** use approve-token input for reviews - [1aabcc0](https://github.com/liblaf/actions-src/commit/1aabcc07f4079b89e318a0a9bac55718205c74a9) by [@liblaf](https://github.com/liblaf)
+
+### ⚙️ Continuous Integrations
+
+- **(deps)** update actions/upload-artifact digest to 043fb46 (#146) - [3586b74](https://github.com/liblaf/actions-src/commit/3586b74feacec9f864995d0cf9893bf449f985bf) by [@renovate[bot]](https://github.com/apps/renovate) in [#146](https://github.com/liblaf/actions-src/pull/146)
+- **(deps)** update actions/create-github-app-token digest to 7bd0371 (#147) - [3fa0024](https://github.com/liblaf/actions-src/commit/3fa0024d22938919316ff2c2a12f296f3e1c390a) by [@renovate[bot]](https://github.com/apps/renovate) in [#147](https://github.com/liblaf/actions-src/pull/147)
+- **(deps)** update actions/create-github-app-token digest to 1b10c78 (#149) - [08705a8](https://github.com/liblaf/actions-src/commit/08705a8689dcb9eccd440f6364bf020a985b328a) by [@renovate[bot]](https://github.com/apps/renovate) in [#149](https://github.com/liblaf/actions-src/pull/149)
+- **(deps)** update astral-sh/setup-uv action to v8 (#157) - [24e6c05](https://github.com/liblaf/actions-src/commit/24e6c057dd34348f73c6562d76423798462969ad) by [@renovate[bot]](https://github.com/apps/renovate) in [#157](https://github.com/liblaf/actions-src/pull/157)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
+
 ## [v1.7.3](https://github.com/liblaf/actions-src/releases/tag/v1.7.3) - 2026-04-05
 
 ### ♻️ Code Refactoring
@@ -15,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf](https://github.com/liblaf)
 
 ## [v1.7.2](https://github.com/liblaf/actions-src/releases/tag/v1.7.2) - 2026-04-05
