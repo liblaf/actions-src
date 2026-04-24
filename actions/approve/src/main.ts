@@ -7,10 +7,10 @@ import { prettyPr, requireReview } from "./utils";
 
 type Inputs = {
   app: string;
+  approveToken: string;
   label: string[];
   listToken: string;
   pull: string;
-  reviewToken: string;
 };
 
 type Octokit = InstanceType<typeof GitHub>;
@@ -18,10 +18,10 @@ type Octokit = InstanceType<typeof GitHub>;
 async function getInputs(): Promise<Inputs> {
   const inputs: Inputs = {
     app: core.getInput("app", { required: false }),
+    approveToken: core.getInput("approve-token", { required: true }),
     label: core.getMultilineInput("label", { required: true }),
     listToken: core.getInput("list-token", { required: true }),
     pull: core.getInput("pull", { required: false }),
-    reviewToken: core.getInput("review-token", { required: true }),
   };
   return inputs;
 }
@@ -37,7 +37,7 @@ async function runUnsafe(): Promise<void> {
       });
   const { owner, repo } = github.context.repo;
   const errors: unknown[] = [];
-  const octokit: Octokit = github.getOctokit(inputs.reviewToken);
+  const octokit: Octokit = github.getOctokit(inputs.approveToken);
   const reviewer: string = (await octokit.rest.users.getAuthenticated()).data
     .login;
   for await (const pr of prs) {
