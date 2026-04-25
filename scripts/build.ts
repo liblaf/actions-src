@@ -1,5 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+
+import base from "@liblaf/config/bunup";
 import { build } from "bunup";
 
 const DIST_DIR: string = "./dist";
@@ -19,27 +21,23 @@ async function main(): Promise<void> {
     const entry: string = path.join(folder, "src", "index.ts");
     if (await exists(entry)) {
       await build({
+        ...base,
         entry: path.join(folder, "src", "index.ts"),
         outDir: path.join(DIST_DIR, action, "dist"),
-        format: "esm",
-        minify: true,
         splitting: false,
         dts: false,
         packages: "bundle",
-        target: "node",
-        clean: true,
-        sourcemap: true,
+        sourcemap: "inline",
+        onSuccess: undefined,
         exports: false,
         unused: false,
       });
     }
     for (const child of await fs.readdir(folder)) {
       if (child === "src") continue;
-      await fs.cp(
-        path.join(folder, child),
-        path.join(DIST_DIR, action, child),
-        { recursive: true },
-      );
+      await fs.cp(path.join(folder, child), path.join(DIST_DIR, action, child), {
+        recursive: true,
+      });
     }
   }
 }

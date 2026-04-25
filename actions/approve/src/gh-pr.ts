@@ -39,9 +39,7 @@ export type GhPrListOptions = {
   token: string;
 };
 
-export async function ghPrList(
-  options: GhPrListOptions,
-): Promise<PullRequest[]> {
+export async function ghPrList(options: GhPrListOptions): Promise<PullRequest[]> {
   const args: string[] = ["pr", "list"];
   if (options.app) args.push("--app", options.app);
   args.push("--base", "main");
@@ -57,10 +55,7 @@ export async function ghPrList(
   return JSON.parse(stdout);
 }
 
-export async function ghPrView(
-  token: string,
-  pr: number | string,
-): Promise<PullRequest> {
+export async function ghPrView(token: string, pr: number | string): Promise<PullRequest> {
   const args: string[] = ["pr", "view", `${pr}`];
   args.push("--json", JSON_FIELDS.join(","));
   const { owner, repo } = github.context.repo;

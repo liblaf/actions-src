@@ -1,13 +1,10 @@
 import * as core from "@actions/core";
 import consola from "consola";
 import { Octokit } from "octokit";
+
 import { getOwnerRepo, isErrorStatus } from "@/lib";
 
-async function hasPages(
-  octokit: Octokit,
-  owner: string,
-  repo: string,
-): Promise<boolean> {
+async function hasPages(octokit: Octokit, owner: string, repo: string): Promise<boolean> {
   try {
     await octokit.rest.repos.getPages({ owner, repo });
     return true;

@@ -15,23 +15,20 @@ maxFileSize: 500KB
 useGitignore: true
 words:
   - asyncio
+  - bfadeab
   - bunup
   - choco
   - coreutils
-  - direnv
-  - dsanders
   - esac
-  - fkirc
-  - gitmoji
-  - globber
+  - gfaf
   - liblaf
   - mkdocs
   - nuxt
-  - octocat
-  - orhun
+  - oxfmt
+  - oxlint
   - pipx
   - pyproject
+  - rumdl
   - sarif
-  - topo
-  - unskippable
-  - uuidgen
+  - taiki
+  - tsgolint

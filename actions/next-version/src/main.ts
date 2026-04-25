@@ -1,4 +1,5 @@
 import * as core from "@actions/core";
+
 import type { Release, Releases } from "./git-cliff";
 import { cliffBumpedVersion, cliffContext } from "./git-cliff";
 import { getReleaseAs } from "./git-log";
@@ -15,9 +16,7 @@ async function runUnsafe(): Promise<void> {
     core.setOutput("version", stripTagPrefix(bumpedVersion));
     return;
   }
-  const releaseAs: string | undefined = await getReleaseAs(
-    release.previous?.version,
-  );
+  const releaseAs: string | undefined = await getReleaseAs(release.previous?.version);
   let tag: string;
   let version: string;
   if (releaseAs) {

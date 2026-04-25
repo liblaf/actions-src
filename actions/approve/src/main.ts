@@ -1,6 +1,7 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
 import type { GitHub } from "@actions/github/lib/utils";
+
 import type { PullRequest } from "./gh-pr";
 import { ghPrList, ghPrView } from "./gh-pr";
 import { prettyPr, requireReview } from "./utils";
@@ -38,9 +39,8 @@ async function runUnsafe(): Promise<void> {
   const { owner, repo } = github.context.repo;
   const errors: unknown[] = [];
   const octokit: Octokit = github.getOctokit(inputs.approveToken);
-  const reviewer: string = (await octokit.rest.users.getAuthenticated()).data
-    .login;
-  for await (const pr of prs) {
+  const reviewer: string = (await octokit.rest.users.getAuthenticated()).data.login;
+  for (const pr of prs) {
     if (!requireReview(pr, reviewer)) {
       core.info(`Skipped ${prettyPr(pr)}`);
       continue;

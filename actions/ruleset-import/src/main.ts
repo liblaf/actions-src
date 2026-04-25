@@ -2,6 +2,7 @@ import * as core from "@actions/core";
 import type { components } from "@octokit/openapi-types";
 import consola from "consola";
 import { Octokit } from "octokit";
+
 import { splitOwnerRepo } from "@/lib";
 
 type Ruleset = components["schemas"]["repository-ruleset"];
@@ -16,9 +17,7 @@ async function getRuleset(
     octokit.rest.repos.getRepoRulesets,
     { owner, repo },
   )) {
-    const ruleset: Ruleset | undefined = rulesets.find(
-      (r: Ruleset): boolean => r.name === name,
-    );
+    const ruleset: Ruleset | undefined = rulesets.find((r: Ruleset): boolean => r.name === name);
     if (ruleset) return ruleset;
   }
 }
@@ -40,9 +39,7 @@ export async function runUnsafe(): Promise<void> {
     name,
   );
   if (!sourceRulesetSimple) {
-    throw new Error(
-      `Ruleset "${name}" not found in repository "${sourceRepository}".`,
-    );
+    throw new Error(`Ruleset "${name}" not found in repository "${sourceRepository}".`);
   }
   const [sourceOwner, sourceRepo] = splitOwnerRepo(sourceRepository);
   const { data: sourceRuleset } = await octokit.rest.repos.getRepoRuleset({

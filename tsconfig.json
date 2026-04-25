@@ -5,6 +5,5 @@
       "@/*": ["./*"]
     },
     "types": ["node"]
-  },
-  "exclude": ["bunup.config.ts", "dist/", "node_modules/"]
+  }
 }

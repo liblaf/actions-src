@@ -1,4 +1,5 @@
 import * as exec from "@actions/exec";
+
 import { stripTagPrefix } from "./utils";
 
 export async function getReleaseAs(
