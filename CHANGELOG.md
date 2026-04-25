@@ -7,6 +7,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.0](https://github.com/liblaf/actions-src/releases/tag/v2.0.0) - 2026-04-25
+
+### 💥 BREAKING CHANGES
+
+- auth now takes client-id instead of app-id, and the publish-drafts action has been removed. - [dd6c134](https://github.com/liblaf/actions-src/commit/dd6c134f065c0368fde8ae89120683f4dd1177b1) by [@liblaf](https://github.com/liblaf)
+
+### 🐛 Bug Fixes
+
+- **(deps)** update dependency @actions/glob to ^0.7.0 (#158) - [ff7b445](https://github.com/liblaf/actions-src/commit/ff7b44576d5e2548377dc2814ef3de09f3c96ca9) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### 🛠 Builds
+
+- **\[breaking\]** migrate TypeScript tooling to OXC - [dd6c134](https://github.com/liblaf/actions-src/commit/dd6c134f065c0368fde8ae89120683f4dd1177b1) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+- [@renovate[bot]](https://github.com/apps/renovate)
+
 ## [v1.7.4](https://github.com/liblaf/actions-src/releases/tag/v1.7.4) - 2026-04-24
 
 ### 🐛 Bug Fixes
@@ -15,13 +34,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ⚙️ Continuous Integrations
 
-- **(deps)** update actions/upload-artifact digest to 043fb46 (#146) - [3586b74](https://github.com/liblaf/actions-src/commit/3586b74feacec9f864995d0cf9893bf449f985bf) by [@renovate[bot]](https://github.com/apps/renovate) in [#146](https://github.com/liblaf/actions-src/pull/146)
-- **(deps)** update actions/create-github-app-token digest to 7bd0371 (#147) - [3fa0024](https://github.com/liblaf/actions-src/commit/3fa0024d22938919316ff2c2a12f296f3e1c390a) by [@renovate[bot]](https://github.com/apps/renovate) in [#147](https://github.com/liblaf/actions-src/pull/147)
-- **(deps)** update actions/create-github-app-token digest to 1b10c78 (#149) - [08705a8](https://github.com/liblaf/actions-src/commit/08705a8689dcb9eccd440f6364bf020a985b328a) by [@renovate[bot]](https://github.com/apps/renovate) in [#149](https://github.com/liblaf/actions-src/pull/149)
-- **(deps)** update astral-sh/setup-uv action to v8 (#157) - [24e6c05](https://github.com/liblaf/actions-src/commit/24e6c057dd34348f73c6562d76423798462969ad) by [@renovate[bot]](https://github.com/apps/renovate) in [#157](https://github.com/liblaf/actions-src/pull/157)
+- **(deps)** update actions/upload-artifact digest to 043fb46 (#146) - [3586b74](https://github.com/liblaf/actions-src/commit/3586b74feacec9f864995d0cf9893bf449f985bf) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update actions/create-github-app-token digest to 7bd0371 (#147) - [3fa0024](https://github.com/liblaf/actions-src/commit/3fa0024d22938919316ff2c2a12f296f3e1c390a) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update actions/create-github-app-token digest to 1b10c78 (#149) - [08705a8](https://github.com/liblaf/actions-src/commit/08705a8689dcb9eccd440f6364bf020a985b328a) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update astral-sh/setup-uv action to v8 (#157) - [24e6c05](https://github.com/liblaf/actions-src/commit/24e6c057dd34348f73c6562d76423798462969ad) by [@renovate[bot]](https://github.com/apps/renovate)
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf](https://github.com/liblaf)
 - [@renovate[bot]](https://github.com/apps/renovate)
 - [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
@@ -41,12 +61,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ⚙️ Continuous Integrations
 
-- **(deps)** update taiki-e/install-action digest to 6ef672e (#131) - [08ff755](https://github.com/liblaf/actions-src/commit/08ff75544e5d7a63f7bde30c6e0675ecad685fb6) by [@renovate[bot]](https://github.com/apps/renovate) in [#131](https://github.com/liblaf/actions-src/pull/131)
-- **(deps)** update prefix-dev/setup-pixi digest to 1b2de7f (#136) - [133441d](https://github.com/liblaf/actions-src/commit/133441dbc83ad7a79c94820146dab32956572453) by [@renovate[bot]](https://github.com/apps/renovate) in [#136](https://github.com/liblaf/actions-src/pull/136)
-- **(deps)** update taiki-e/install-action digest to bfadeab (#138) - [e3ea8f8](https://github.com/liblaf/actions-src/commit/e3ea8f8027436f29a1a4b593570e458570d50f34) by [@renovate[bot]](https://github.com/apps/renovate) in [#138](https://github.com/liblaf/actions-src/pull/138)
-- **(deps)** update taiki-e/install-action digest to a1df912 (#139) - [f1df07c](https://github.com/liblaf/actions-src/commit/f1df07c37d88bb2b247585a782dac895389a0c48) by [@renovate[bot]](https://github.com/apps/renovate) in [#139](https://github.com/liblaf/actions-src/pull/139)
-- **(deps)** update taiki-e/install-action digest to 0cccd59 (#140) - [166b258](https://github.com/liblaf/actions-src/commit/166b25850473e4d10c3dd8827f961d9123bfa94f) by [@renovate[bot]](https://github.com/apps/renovate) in [#140](https://github.com/liblaf/actions-src/pull/140)
-- **(deps)** update taiki-e/install-action digest to d858f81 (#141) - [6d2ebdd](https://github.com/liblaf/actions-src/commit/6d2ebdd4b2ed27589ecf09294b6f14ae7c806881) by [@renovate[bot]](https://github.com/apps/renovate) in [#141](https://github.com/liblaf/actions-src/pull/141)
+- **(deps)** update taiki-e/install-action digest to 6ef672e (#131) - [08ff755](https://github.com/liblaf/actions-src/commit/08ff75544e5d7a63f7bde30c6e0675ecad685fb6) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update prefix-dev/setup-pixi digest to 1b2de7f (#136) - [133441d](https://github.com/liblaf/actions-src/commit/133441dbc83ad7a79c94820146dab32956572453) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update taiki-e/install-action digest to bfadeab (#138) - [e3ea8f8](https://github.com/liblaf/actions-src/commit/e3ea8f8027436f29a1a4b593570e458570d50f34) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update taiki-e/install-action digest to a1df912 (#139) - [f1df07c](https://github.com/liblaf/actions-src/commit/f1df07c37d88bb2b247585a782dac895389a0c48) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update taiki-e/install-action digest to 0cccd59 (#140) - [166b258](https://github.com/liblaf/actions-src/commit/166b25850473e4d10c3dd8827f961d9123bfa94f) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update taiki-e/install-action digest to d858f81 (#141) - [6d2ebdd](https://github.com/liblaf/actions-src/commit/6d2ebdd4b2ed27589ecf09294b6f14ae7c806881) by [@renovate[bot]](https://github.com/apps/renovate)
 
 ### ❤️ Contributors
 
@@ -172,10 +192,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deps)** update dependency @actions/github to v8 (#101) - [c5c6a34](https://github.com/liblaf/actions-src/commit/c5c6a348ecd3f3bc45d53a4a3ec12bc36a0d8630) by [@renovate[bot]](https://github.com/apps/renovate) in [#101](https://github.com/liblaf/actions-src/pull/101)
-- **(deps)** update dependency @actions/github to v9 (#103) - [5bf7b6c](https://github.com/liblaf/actions-src/commit/5bf7b6c637c3daa820034b0d2206150c1b2a8120) by [@renovate[bot]](https://github.com/apps/renovate) in [#103](https://github.com/liblaf/actions-src/pull/103)
-- **(deps)** update dependency @actions/core to v3 (#104) - [96a11e5](https://github.com/liblaf/actions-src/commit/96a11e5069d7c55416fdeb6a76c5e1f7c79dcc66) by [@renovate[bot]](https://github.com/apps/renovate) in [#104](https://github.com/liblaf/actions-src/pull/104)
-- **(deps)** update dependency @actions/glob to ^0.6.0 (#105) - [ea03c51](https://github.com/liblaf/actions-src/commit/ea03c51436a5e0622f4742d444f170df47b55819) by [@renovate[bot]](https://github.com/apps/renovate) in [#105](https://github.com/liblaf/actions-src/pull/105)
+- **(deps)** update dependency @actions/github to v8 (#101) - [c5c6a34](https://github.com/liblaf/actions-src/commit/c5c6a348ecd3f3bc45d53a4a3ec12bc36a0d8630) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update dependency @actions/github to v9 (#103) - [5bf7b6c](https://github.com/liblaf/actions-src/commit/5bf7b6c637c3daa820034b0d2206150c1b2a8120) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update dependency @actions/core to v3 (#104) - [96a11e5](https://github.com/liblaf/actions-src/commit/96a11e5069d7c55416fdeb6a76c5e1f7c79dcc66) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update dependency @actions/glob to ^0.6.0 (#105) - [ea03c51](https://github.com/liblaf/actions-src/commit/ea03c51436a5e0622f4742d444f170df47b55819) by [@renovate[bot]](https://github.com/apps/renovate)
 - **(mega-linter)** disable problematic git ownership adjustment - [940c043](https://github.com/liblaf/actions-src/commit/940c043176435d34cca11a91ad9fe8058dbd402e) by [@liblaf](https://github.com/liblaf)
 
 ### ❤️ Contributors
@@ -188,7 +208,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deps)** update dependency @actions/github to v7 (#96) - [dc9f92f](https://github.com/liblaf/actions-src/commit/dc9f92f9d22a3448c3e90e31d4e6698178211c95) by [@renovate[bot]](https://github.com/apps/renovate) in [#96](https://github.com/liblaf/actions-src/pull/96)
+- **(deps)** update dependency @actions/github to v7 (#96) - [dc9f92f](https://github.com/liblaf/actions-src/commit/dc9f92f9d22a3448c3e90e31d4e6698178211c95) by [@renovate[bot]](https://github.com/apps/renovate)
 
 ### ❤️ Contributors
 
@@ -515,7 +535,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deps)** update dependency liblaf-grapes to >=0.2,<0.3 (#19) - [79a6f87](https://github.com/liblaf/actions-src/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326) by [@renovate[bot]](https://github.com/apps/renovate) in [#19](https://github.com/liblaf/actions-src/pull/19)
+- **(deps)** update dependency liblaf-grapes to >=0.2,<0.3 (#19) - [79a6f87](https://github.com/liblaf/actions-src/commit/79a6f878fd12bc43e27b743bf4fb0e926f4a2326) by [@renovate[bot]](https://github.com/apps/renovate)
 
 ### ❤️ Contributors
 
@@ -570,7 +590,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🐛 Bug Fixes
 
-- **(deps)** update dependency rich to v14 (#13) - [0baa503](https://github.com/liblaf/actions-src/commit/0baa503acd4b79af35b8defa03e17f5ee41e48a7) by [@renovate[bot]](https://github.com/apps/renovate) in [#13](https://github.com/liblaf/actions-src/pull/13)
+- **(deps)** update dependency rich to v14 (#13) - [0baa503](https://github.com/liblaf/actions-src/commit/0baa503acd4b79af35b8defa03e17f5ee41e48a7) by [@renovate[bot]](https://github.com/apps/renovate)
 
 ### ❤️ Contributors
 
