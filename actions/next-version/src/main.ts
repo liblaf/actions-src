@@ -1,5 +1,7 @@
 import * as core from "@actions/core";
 
+import { safe } from "@/lib/main";
+
 import type { Release, Releases } from "./git-cliff";
 import { cliffBumpedVersion, cliffContext } from "./git-cliff";
 import { getReleaseAs } from "./git-log";
@@ -33,14 +35,4 @@ async function runUnsafe(): Promise<void> {
   core.setOutput("version", version);
 }
 
-export async function run(): Promise<void> {
-  try {
-    await runUnsafe();
-  } catch (err) {
-    if (typeof err === "string" || err instanceof Error) {
-      core.setFailed(err);
-    } else {
-      core.setFailed(`${err}`);
-    }
-  }
-}
+export const run: () => Promise<void> = safe(runUnsafe);

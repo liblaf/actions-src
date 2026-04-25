@@ -2,7 +2,7 @@ import * as core from "@actions/core";
 import consola from "consola";
 import { Octokit } from "octokit";
 
-import { getOwnerRepo, isErrorStatus } from "@/lib";
+import { getOwnerRepo, isErrorStatus, safe } from "@/lib";
 
 async function hasPages(octokit: Octokit, owner: string, repo: string): Promise<boolean> {
   try {
@@ -46,11 +46,4 @@ export async function runUnsafe(): Promise<void> {
   }
 }
 
-export async function run(): Promise<void> {
-  try {
-    await runUnsafe();
-  } catch (err) {
-    consola.error(err);
-    if (err instanceof Error) core.setFailed(err.message);
-  }
-}
+export const run: () => Promise<void> = safe(runUnsafe);
