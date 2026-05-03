@@ -7,6 +7,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.0](https://github.com/liblaf/actions-src/releases/tag/v3.0.0) - 2026-05-03
+
+### 💥 BREAKING CHANGES
+
+- **(approve)** `reviewer` input is now required. Workflows must be updated to provide this input explicitly. - [f945382](https://github.com/liblaf/actions-src/commit/f945382590e53eb57f6100915f2cec83a0134e39) by [@liblaf](https://github.com/liblaf)
+
+### ✨ Features
+
+- **(approve)** **\[breaking\]** add configurable reviewer input - [f945382](https://github.com/liblaf/actions-src/commit/f945382590e53eb57f6100915f2cec83a0134e39) by [@liblaf](https://github.com/liblaf)
+
+### ♻️ Code Refactoring
+
+- centralize action error handling - [2a2377b](https://github.com/liblaf/actions-src/commit/2a2377b61222f62203c18ed318a170b8028f68a0) by [@liblaf](https://github.com/liblaf)
+
+### ❤️ Contributors
+
+- [@liblaf](https://github.com/liblaf)
+- [@renovate[bot]](https://github.com/apps/renovate)
+
 ## [v2.0.0](https://github.com/liblaf/actions-src/releases/tag/v2.0.0) - 2026-04-25
 
 ### 💥 BREAKING CHANGES
@@ -23,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf](https://github.com/liblaf)
 - [@renovate[bot]](https://github.com/apps/renovate)
 
