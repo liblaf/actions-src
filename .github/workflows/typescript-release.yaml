@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: bun pm pack --destination 'pack'
       - name: Upload Artifacts
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: pack
           path: pack
@@ -93,6 +93,6 @@ jobs:
           name: pack
           path: pack
       - name: Upload Release Assets
-        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3
         with:
           files: pack/*

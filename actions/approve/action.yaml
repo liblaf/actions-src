@@ -26,7 +26,7 @@ inputs:
     description: Pull request number, URL, or branch to review instead of listing pull requests.
     required: false
   reviewer:
-    description: TODO
+    description: GitHub login whose existing approval should skip the pull request.
     required: true
 
 runs:
