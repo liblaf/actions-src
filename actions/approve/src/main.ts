@@ -12,6 +12,7 @@ type Inputs = {
   label: string[];
   listToken: string;
   pull: string;
+  reviewer: string;
 };
 
 type Octokit = InstanceType<typeof GitHub>;
@@ -23,6 +24,7 @@ async function getInputs(): Promise<Inputs> {
     label: core.getMultilineInput("label", { required: true }),
     listToken: core.getInput("list-token", { required: true }),
     pull: core.getInput("pull", { required: false }),
+    reviewer: core.getInput("reviewer", { required: true }),
   };
   return inputs;
 }
@@ -39,9 +41,8 @@ async function runUnsafe(): Promise<void> {
   const { owner, repo } = github.context.repo;
   const errors: unknown[] = [];
   const octokit: Octokit = github.getOctokit(inputs.approveToken);
-  const reviewer: string = (await octokit.rest.users.getAuthenticated()).data.login;
   for (const pr of prs) {
-    if (!requireReview(pr, reviewer)) {
+    if (!requireReview(pr, inputs.reviewer)) {
       core.info(`Skipped ${prettyPr(pr)}`);
       continue;
     }
@@ -52,7 +53,7 @@ async function runUnsafe(): Promise<void> {
         pull_number: pr.number,
         event: "APPROVE",
       });
-      core.notice(`Approved ${prettyPr(pr)} as ${reviewer}`);
+      core.notice(`Approved ${prettyPr(pr)} as ${inputs.reviewer}`);
     } catch (err) {
       core.error(`Failed to review ${prettyPr(pr)}: ${err}`);
       errors.push(err);

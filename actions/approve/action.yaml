@@ -25,6 +25,9 @@ inputs:
   pull:
     description: Pull request number, URL, or branch to review instead of listing pull requests.
     required: false
+  reviewer:
+    description: TODO
+    required: true
 
 runs:
   using: node24
