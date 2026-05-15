@@ -7,6 +7,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.1](https://github.com/liblaf/actions-src/releases/tag/v3.0.1) - 2026-05-15
+
+### ⚙️ Continuous Integrations
+
+- **(custom-deploy)** trigger deploy on published release instead of tag push - [a66acf4](https://github.com/liblaf/actions-src/commit/a66acf408748aa4421c9991c1489f83d17c3d37b) by [@liblaf](https://github.com/liblaf)
+- **(deps)** update actions/create-github-app-token digest to bcd2ba4 (#172) - [e5d41dd](https://github.com/liblaf/actions-src/commit/e5d41dd56502095fc706735079a8a91c50fdcba5) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf](https://github.com/liblaf)
+
 ## [v3.0.0](https://github.com/liblaf/actions-src/releases/tag/v3.0.0) - 2026-05-03
 
 ### 💥 BREAKING CHANGES
@@ -23,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf](https://github.com/liblaf)
 - [@renovate[bot]](https://github.com/apps/renovate)
 
