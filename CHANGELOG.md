@@ -7,6 +7,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.2](https://github.com/liblaf/actions-src/releases/tag/v3.0.2) - 2026-06-19
+
+### ⚙️ Continuous Integrations
+
+- **(deps)** update actions/checkout digest to df4cb1c (#192) - [2cdcc11](https://github.com/liblaf/actions-src/commit/2cdcc11bd31be309fe5ab84cb7469f50f9129f0d) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update astral-sh/setup-uv action to v8.2.0 (#193) - [1db933f](https://github.com/liblaf/actions-src/commit/1db933f06e8b7e22807bc58c23e487af8f6c1262) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update actions/checkout action to v7 (#205) - [254ae8e](https://github.com/liblaf/actions-src/commit/254ae8e2b0417f25150a4bc24ae42a35f4b60f61) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
+
 ## [v3.0.1](https://github.com/liblaf/actions-src/releases/tag/v3.0.1) - 2026-05-23
 
 ### ⚙️ Continuous Integrations
@@ -17,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
 - [@renovate[bot]](https://github.com/apps/renovate)
 - [@liblaf](https://github.com/liblaf)
@@ -745,7 +759,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - delete Git tag reference when removing a release - [96f7646](https://github.com/liblaf/actions-src/commit/96f7646402cab42342bef77a8cd7226c82997921) by [@liblaf](https://github.com/liblaf)
 - correct syntax error in bash script - [395b24e](https://github.com/liblaf/actions-src/commit/395b24e4b545b4e3df21c0ad03d29e4c6b4ed7cc) by [@liblaf](https://github.com/liblaf)
 - handle unset OWNER variable in secret-set.sh - [b7061cf](https://github.com/liblaf/actions-src/commit/b7061cf1fba2c6d9a315d8565755082933bfcf38) by [@liblaf](https://github.com/liblaf)
-- replace \_wait_until_release with asyncio.sleep - [11b0d1c](https://github.com/liblaf/actions-src/commit/11b0d1c9bab53f2eefc2b507e98def89aeff88e1) by [@liblaf](https://github.com/liblaf)
+- replace _wait_until_release with asyncio.sleep - [11b0d1c](https://github.com/liblaf/actions-src/commit/11b0d1c9bab53f2eefc2b507e98def89aeff88e1) by [@liblaf](https://github.com/liblaf)
 - increase sleep duration for tag deletion - [f777b95](https://github.com/liblaf/actions-src/commit/f777b953992d3901bb8711a03e543d3d27f312d7) by [@liblaf](https://github.com/liblaf)
 - handle not found errors in release deletion - [b351994](https://github.com/liblaf/actions-src/commit/b35199411f0423200986fd3898e3ca5cdf41a6d4) by [@liblaf](https://github.com/liblaf)
 - adjust release tag deletion delay - [96ca3e0](https://github.com/liblaf/actions-src/commit/96ca3e02475e1334d7b0232a51e1f0c91fb03a41) by [@liblaf](https://github.com/liblaf)
