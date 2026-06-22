@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@liblaf/config": "0.3.2",
-    "@types/node": "25.9.4",
+    "@types/node": "26.0.0",
     "bunup": "0.16.32",
     "oxfmt": "0.55.0",
     "oxlint": "1.70.0",
