@@ -7,7 +7,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v3.0.4](https://github.com/liblaf/actions-src/releases/tag/v3.0.4) - 2026-07-04
+## [v3.0.5](https://github.com/liblaf/actions-src/releases/tag/v3.0.5) - 2026-07-11
+
+### ⚙️ Continuous Integrations
+
+- **(deps)** update astral-sh/setup-uv action to v8.3.0 (#222) - [3f4f9d8](https://github.com/liblaf/actions-src/commit/3f4f9d8795ec9a866d2afc1bc7923025dff868ec) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update astral-sh/setup-uv action to v8.3.1 (#225) - [3428278](https://github.com/liblaf/actions-src/commit/34282785150a814ddca1af7e5932bdd7689710c9) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update astral-sh/setup-uv action to v8.3.2 (#226) - [73f1ecb](https://github.com/liblaf/actions-src/commit/73f1ecb27c0721a7d9b8e9c976b8aae5c64944fa) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+
+## [v3.0.4](https://github.com/liblaf/actions-src/releases/tag/v3.0.4) - 2026-07-05
 
 ### ⚙️ Continuous Integrations
 
@@ -15,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@renovate[bot]](https://github.com/apps/renovate)
 
 ## [v3.0.3](https://github.com/liblaf/actions-src/releases/tag/v3.0.3) - 2026-06-28
