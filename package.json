@@ -53,7 +53,7 @@
     "bunup": "0.16.32",
     "oxfmt": "0.59.0",
     "oxlint": "1.74.0",
-    "oxlint-tsgolint": "0.24.0",
+    "oxlint-tsgolint": "0.25.0",
     "typescript": "7.0.2"
   },
   "readme": "./README.md"
