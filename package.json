@@ -52,7 +52,7 @@
     "@types/node": "26.1.1",
     "bunup": "0.16.32",
     "oxfmt": "0.60.0",
-    "oxlint": "1.74.0",
+    "oxlint": "1.75.0",
     "oxlint-tsgolint": "0.25.0",
     "typescript": "7.0.2"
   },
