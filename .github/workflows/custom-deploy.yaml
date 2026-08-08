@@ -58,7 +58,7 @@ jobs:
           path: dist
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Deploy to main
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           token: ${{ secrets.DEPLOY_TOKEN }}
           branch: main
@@ -67,7 +67,7 @@ jobs:
           single-commit: true
       - if: ${{ startsWith(github.ref, 'refs/tags/') }}
         name: Deploy to ${{ github.ref_name }}
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           token: ${{ secrets.DEPLOY_TOKEN }}
           branch: release/${{ github.ref_name }}
