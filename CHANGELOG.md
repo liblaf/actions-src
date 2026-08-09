@@ -7,7 +7,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v3.0.6](https://github.com/liblaf/actions-src/releases/tag/v3.0.6) - 2026-07-25
+## [v3.0.7](https://github.com/liblaf/actions-src/releases/tag/v3.0.7) - 2026-08-09
+
+### 🐛 Bug Fixes
+
+- **(deps)** update dependency @octokit/openapi-types to v28 (#247) - [fe04105](https://github.com/liblaf/actions-src/commit/fe04105babf4f0e5b172d4da772d142c26542c67) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ⚙️ Continuous Integrations
+
+- **(deps)** update prefix-dev/setup-pixi digest to f00437f (#249) - [3ba13e5](https://github.com/liblaf/actions-src/commit/3ba13e5587aa0287744bf368ffb360541149303e) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update jamesives/github-pages-deploy-action digest to fa24774 (#253) - [372c21f](https://github.com/liblaf/actions-src/commit/372c21ff5035b85f83945cc9c9d03dc722438529) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
+
+## [v3.0.6](https://github.com/liblaf/actions-src/releases/tag/v3.0.6) - 2026-07-26
 
 ### ⚙️ Continuous Integrations
 
@@ -17,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@renovate[bot]](https://github.com/apps/renovate)
 
 ## [v3.0.5](https://github.com/liblaf/actions-src/releases/tag/v3.0.5) - 2026-07-12
