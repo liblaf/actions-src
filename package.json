@@ -42,7 +42,7 @@
     "@actions/exec": "^3.0.0",
     "@actions/github": "^9.1.1",
     "@actions/glob": "^0.7.0",
-    "@octokit/openapi-types": "^28.0.0",
+    "@octokit/openapi-types": "^29.0.0",
     "consola": "^3.4.2",
     "octokit": "^5.0.5",
     "parse-duration": "^2.1.6"
