@@ -7,7 +7,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v3.0.9](https://github.com/liblaf/actions-src/releases/tag/v3.0.9) - 2026-08-28
+## [v3.0.10](https://github.com/liblaf/actions-src/releases/tag/v3.0.10) - 2026-09-05
+
+### 🐛 Bug Fixes
+
+- **(deps)** update dependency @octokit/openapi-types to v29 (#273) - [4b29fe2](https://github.com/liblaf/actions-src/commit/4b29fe2640bb1d05e7eb589d03a8a142e5675680) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+
+## [v3.0.9](https://github.com/liblaf/actions-src/releases/tag/v3.0.9) - 2026-08-30
 
 ### ⚙️ Continuous Integrations
 
@@ -15,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@renovate[bot]](https://github.com/apps/renovate)
 - [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
 
