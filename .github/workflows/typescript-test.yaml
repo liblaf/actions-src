@@ -80,12 +80,12 @@ jobs:
           --coverage-reporter='lcov' --reporter='junit'
           --reporter-outfile='junit.xml'
       - name: Upload Coverage
-        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7
         with:
           use_oidc: true
       - if: success() || failure()
         name: Upload Test Report
-        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7
         with:
           report_type: test_results
           use_oidc: true
