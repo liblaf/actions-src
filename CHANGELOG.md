@@ -7,7 +7,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v3.0.12](https://github.com/liblaf/actions-src/releases/tag/v3.0.12) - 2026-10-01
+## [v3.0.13](https://github.com/liblaf/actions-src/releases/tag/v3.0.13) - 2026-10-10
+
+### ⚙️ Continuous Integrations
+
+- **(deps)** update prefix-dev/setup-pixi digest to 9dabb60 (#306) - [ed11d0d](https://github.com/liblaf/actions-src/commit/ed11d0d031e8226e4f72cb6de02ba9ccd75a8dbc) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update actions/download-artifact digest to 9000827 (#308) - [d072182](https://github.com/liblaf/actions-src/commit/d072182715a6bd6cd31486424ab0ebbdf540a32f) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update actions/upload-artifact digest to cf430e0 (#309) - [85fd6b7](https://github.com/liblaf/actions-src/commit/85fd6b72777e0ad639ece1183dd502748ff7925b) by [@renovate[bot]](https://github.com/apps/renovate)
+- **(deps)** update astral-sh/setup-uv action to v10.3.0 (#312) - [83ee98e](https://github.com/liblaf/actions-src/commit/83ee98eb8278d4d6e99090f49652253ba93fbc34) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+
+## [v3.0.12](https://github.com/liblaf/actions-src/releases/tag/v3.0.12) - 2026-10-04
 
 ### ⚙️ Continuous Integrations
 
@@ -15,8 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
-- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
+- [@renovate[bot]](https://github.com/apps/renovate)
 
 ## [v3.0.11](https://github.com/liblaf/actions-src/releases/tag/v3.0.11) - 2026-09-13
 
