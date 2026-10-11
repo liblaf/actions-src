@@ -6,4 +6,4 @@
 _.path = ["{{ config_root }}/node_modules/.bin"]
 
 [hooks.enter]
-script = "bun install"
+run = "test -d {{ config_root | quote }}/node_modules/ || bun install"
