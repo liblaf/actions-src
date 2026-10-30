@@ -51,7 +51,7 @@
     "@liblaf/config": "0.3.2",
     "@types/node": "26.6.5",
     "bunup": "0.16.32",
-    "oxfmt": "0.74.0",
+    "oxfmt": "0.75.0",
     "oxlint": "1.89.0",
     "oxlint-tsgolint": "7.0.2005",
     "typescript": "7.0.2"
