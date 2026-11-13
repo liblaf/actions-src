@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.15](https://github.com/liblaf/actions-src/releases/tag/v3.0.15) - 2026-11-13
+
+### ⚙️ Continuous Integrations
+
+- **(deps)** update prefix-dev/setup-pixi digest to 9936258 (#337) - [963a601](https://github.com/liblaf/actions-src/commit/963a6015d4ef8e0b99792388970d2c3fb4d57098) by [@renovate[bot]](https://github.com/apps/renovate)
+
+### ❤️ Contributors
+
+- [@renovate[bot]](https://github.com/apps/renovate)
+- [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
+
 ## [v3.0.14](https://github.com/liblaf/actions-src/releases/tag/v3.0.14) - 2026-11-01
 
 ### ⚙️ Continuous Integrations
@@ -18,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ❤️ Contributors
 
+- [@liblaf-release-please[bot]](https://github.com/apps/liblaf-release-please)
 - [@renovate[bot]](https://github.com/apps/renovate)
 - [@liblaf-copier[bot]](https://github.com/apps/liblaf-copier)
 
